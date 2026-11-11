@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HueLocal - Discover Hue through local eyes</title>
-    <!-- Ảnh đại diện khi share link web lên Facebook / Zalo / Messenger -->
-<meta property="image" content="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
-<meta property="og:image" content="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
+    <meta property="og:image" content="URL_ANH_PREVIEW_CUA_NHOM">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -48,16 +46,15 @@
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a href="#home" class="nav-home hover:text-terracotta transition">Trang chủ</a>
                 <a href="#explore" class="nav-explore hover:text-terracotta transition">Khám phá Huế</a>
-                <a href="#experiences" class="nav-exp hover:text-terracotta transition">Trải nghiệm</a>
                 <a href="#locals" class="nav-locals hover:text-terracotta transition">Local Guide</a>
                 <a href="#stories" class="nav-stories hover:text-terracotta transition">Stories</a>
                 <a href="#partners" class="nav-partners hover:text-terracotta transition">Đối tác</a>
                 <a href="#team" class="nav-member hover:text-terracotta transition text-terracotta font-bold">Thành viên</a>
-                <a href="#contact" class="nav-contact hover:text-terracotta transition">Liên hệ</a>
+                <a href="#contact" class="nav-contact hover:text-terracotta transition">Liên hệ & Đặt chỗ</a>
             </nav>
 
             <div class="hidden md:flex items-center space-x-3">
-                <a href="#experiences" class="bg-terracotta text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition shadow-md">
+                <a href="#contact" class="bg-terracotta text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-terracotta/90 transition shadow-md">
                     <span class="cta-book-btn">Đặt trải nghiệm</span>
                 </a>
             </div>
@@ -72,12 +69,11 @@
         <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-deepBlue/10 px-4 py-4 space-y-3">
             <a href="#home" class="block font-medium nav-home" onclick="toggleMobileMenu()">Trang chủ</a>
             <a href="#explore" class="block font-medium nav-explore" onclick="toggleMobileMenu()">Khám phá Huế</a>
-            <a href="#experiences" class="block font-medium nav-exp" onclick="toggleMobileMenu()">Trải nghiệm</a>
             <a href="#locals" class="block font-medium nav-locals" onclick="toggleMobileMenu()">Local Guide</a>
             <a href="#stories" class="block font-medium nav-stories" onclick="toggleMobileMenu()">Stories</a>
             <a href="#partners" class="block font-medium nav-partners" onclick="toggleMobileMenu()">Đối tác</a>
             <a href="#team" class="block font-medium text-terracotta nav-member" onclick="toggleMobileMenu()">Thành viên</a>
-            <a href="#contact" class="block font-medium nav-contact" onclick="toggleMobileMenu()">Liên hệ</a>
+            <a href="#contact" class="block font-medium nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
 
@@ -106,74 +102,6 @@
                     </select>
                 </div>
                 <button onclick="handleSearch()" id="search-btn" class="bg-deepBlue text-cream px-6 py-3 rounded-xl font-bold hover:bg-terracotta transition">Khám phá</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlights Section -->
-    <section id="experiences" class="py-20 px-4 container mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span id="exp-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Tuyển chọn đặc biệt</span>
-            <h2 id="exp-title" class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Trải nghiệm nổi bật</h2>
-            <p id="exp-subtitle" class="text-dark/70 text-sm">Được thiết kế và dẫn dắt bởi đội ngũ Local Guide người Huế.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-                <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80');">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Food Tour</span>
-                    <span id="tour-1-title" class="absolute bottom-4 left-4 text-white font-bold text-lg">Ẩm thực hẻm phố & Chợ Đông Ba</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <p id="tour-1-desc" class="text-sm text-dark/70 leading-relaxed">Thưởng thức bún bò chuẩn vị, bánh bèo chén, nem lụi và khám phá bí mật ẩm thực hoàng gia trong các hẻm nhỏ xứ Huế.</p>
-                    <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
-                        <div>
-                            <span id="price-label-1" class="text-xs text-dark/50 block">Giá trọn gói</span>
-                            <span class="text-terracotta font-extrabold text-xl">450.000đ <span id="unit-guest-1" class="text-xs font-normal text-dark/60">/ khách</span></span>
-                        </div>
-                        <button onclick="openBookingModal('Food Tour Chợ Đông Ba', '450.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow cta-book-btn">Đặt ngay</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-                <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80');">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Walking Tour</span>
-                    <span id="tour-2-title" class="absolute bottom-4 left-4 text-white font-bold text-lg">Hoàng thành & Bí mật Triều Nguyễn</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <p id="tour-2-desc" class="text-sm text-dark/70 leading-relaxed">Hành trình ngược dòng thời gian khám phá Đại Nội, Tử Cấm Thành cùng giai thoại ít biết từ các nhà nghiên cứu Huế.</p>
-                    <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
-                        <div>
-                            <span id="price-label-2" class="text-xs text-dark/50 block">Giá trọn gói</span>
-                            <span class="text-terracotta font-extrabold text-xl">600.000đ <span id="unit-guest-2" class="text-xs font-normal text-dark/60">/ khách</span></span>
-                        </div>
-                        <button onclick="openBookingModal('Hoàng thành & Bí mật Triều Nguyễn', '600.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow cta-book-btn">Đặt ngay</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
-                <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80');">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Motorbike Tour</span>
-                    <span id="tour-3-title" class="absolute bottom-4 left-4 text-white font-bold text-lg">Lăng tẩm hoàng gia & Đồi Vọng Cảnh</span>
-                </div>
-                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <p id="tour-3-desc" class="text-sm text-dark/70 leading-relaxed">Trải nghiệm xe máy dạo quanh lăng Minh Mạng, Khải Định và ngắm hoàng hôn thơ mộng bên dòng sông Hương.</p>
-                    <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
-                        <div>
-                            <span id="price-label-3" class="text-xs text-dark/50 block">Giá trọn gói</span>
-                            <span class="text-terracotta font-extrabold text-xl">750.000đ <span id="unit-guest-3" class="text-xs font-normal text-dark/60">/ khách</span></span>
-                        </div>
-                        <button onclick="openBookingModal('Lăng tẩm & Đồi Vọng Cảnh', '750.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow cta-book-btn">Đặt ngay</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -402,12 +330,13 @@
         </div>
     </section>
 
+    <!-- Contact & Detailed Booking Form Section -->
     <section id="contact" class="py-20 px-4 container mx-auto max-w-3xl">
         <div class="bg-white rounded-3xl p-10 shadow-2xl border border-deepBlue/10">
             <div class="text-center mb-10 space-y-2">
                 <span id="contact-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hỗ trợ 24/7</span>
-                <h2 id="contact-title" class="font-serif text-3xl font-bold text-deepBlue">Liên hệ với HueLocal</h2>
-                <p id="contact-subtitle" class="text-dark/70 text-sm">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ lịch trình tại Huế cho bạn.</p>
+                <h2 id="contact-title" class="font-serif text-3xl font-bold text-deepBlue">Liên hệ & Đặt trải nghiệm</h2>
+                <p id="contact-subtitle" class="text-dark/70 text-sm">Điền thông tin chi tiết để đội ngũ HueLocal sắp xếp lịch trình tốt nhất cho bạn.</p>
             </div>
 
             <form onsubmit="handleContactSubmit(event)" class="space-y-5">
@@ -417,15 +346,28 @@
                         <input type="text" id="contactName" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
                     </div>
                     <div>
-                        <label id="label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-2">Email / WhatsApp</label>
+                        <label id="label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-2">Email / WhatsApp / Số điện thoại</label>
                         <input type="text" id="contactEmail" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
                     </div>
                 </div>
-                <div>
-                    <label id="label-msg" class="block text-xs font-bold text-deepBlue uppercase mb-2">Lời nhắn</label>
-                    <textarea id="contactMsg" rows="4" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition"></textarea>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label id="label-date" class="block text-xs font-bold text-deepBlue uppercase mb-2">Ngày mong muốn đi</label>
+                        <input type="date" id="contactDate" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                    </div>
+                    <div>
+                        <label id="label-guests" class="block text-xs font-bold text-deepBlue uppercase mb-2">Số lượng khách</label>
+                        <input type="number" id="contactGuests" min="1" value="2" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                    </div>
                 </div>
-                <button type="submit" id="submit-contact-btn" class="w-full bg-deepBlue text-cream py-4 rounded-xl font-bold hover:bg-terracotta transition shadow-xl">Gửi yêu cầu liên hệ</button>
+
+                <div>
+                    <label id="label-msg" class="block text-xs font-bold text-deepBlue uppercase mb-2">Yêu cầu đặc biệt / Lời nhắn</label>
+                    <textarea id="contactMsg" rows="3" class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition" placeholder="Nhập ghi chú hoặc yêu cầu riêng cho chuyến đi..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-contact-btn" class="w-full bg-deepBlue text-cream py-4 rounded-xl font-bold hover:bg-terracotta transition shadow-xl">Gửi yêu cầu đặt chỗ</button>
             </form>
         </div>
     </section>
@@ -442,8 +384,7 @@
                 <ul class="space-y-2.5 text-xs">
                     <li><a href="#explore" id="footer-link-1" class="hover:text-white transition">Di tích lịch sử</a></li>
                     <li><a href="#explore" id="footer-link-2" class="hover:text-white transition">Ẩm thực cố đô</a></li>
-                    <li><a href="#experiences" id="footer-link-3" class="hover:text-white transition">Trải nghiệm & Tour</a></li>
-                    <li><a href="#locals" id="footer-link-4" class="hover:text-white transition">Local Guide</a></li>
+                    <li><a href="#locals" id="footer-link-3" class="hover:text-white transition">Local Guide</a></li>
                 </ul>
             </div>
             <div>
@@ -472,41 +413,6 @@
     </footer>
 
     <!-- MODALS -->
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl animate-fade-in">
-            <button onclick="closeModal('bookingModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-book-title" class="font-serif text-2xl font-bold text-deepBlue mb-1">Đặt trải nghiệm</h3>
-            <p id="tourTitleDisplay" class="text-xs text-terracotta font-bold uppercase tracking-wider mb-6"></p>
-            
-            <form onsubmit="submitBooking(event)" class="space-y-4">
-                <div>
-                    <label id="b-label-name" class="block text-xs font-bold text-deepBlue uppercase mb-1">Họ và tên</label>
-                    <input type="text" id="bookName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
-                </div>
-                <div>
-                    <label id="b-label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / WhatsApp</label>
-                    <input type="text" id="bookContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label id="b-label-date" class="block text-xs font-bold text-deepBlue uppercase mb-1">Ngày mong muốn</label>
-                        <input type="date" id="bookDate" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none">
-                    </div>
-                    <div>
-                        <label id="b-label-guests" class="block text-xs font-bold text-deepBlue uppercase mb-1">Số khách</label>
-                        <input type="number" id="bookGuests" min="1" value="2" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none">
-                    </div>
-                </div>
-                <div>
-                    <label id="b-label-note" class="block text-xs font-bold text-deepBlue uppercase mb-1">Yêu cầu đặc biệt</label>
-                    <textarea id="bookNote" rows="2" class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none"></textarea>
-                </div>
-                <button type="submit" id="b-submit-btn" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow-lg">Gửi yêu cầu đặt chỗ</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Place Detail Modal -->
     <div id="placeModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
@@ -614,7 +520,6 @@
     <!-- Admin Dashboard Modal -->
     <div id="adminDashboardModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="bg-cream rounded-3xl max-w-5xl w-full h-[90vh] flex flex-col text-dark relative shadow-2xl overflow-hidden">
-            <!-- Header -->
             <div class="bg-deepBlue text-white p-6 flex justify-between items-center">
                 <div>
                     <h3 class="font-serif text-2xl font-bold">HueLocal CMS Control Center</h3>
@@ -626,21 +531,20 @@
                 </div>
             </div>
 
-            <!-- Content Area -->
             <div class="flex-1 overflow-y-auto p-6 space-y-8">
                 <!-- Bookings Table -->
                 <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
-                    <h4 class="font-bold text-deepBlue text-base mb-4">1. Yêu cầu đặt chỗ trải nghiệm (<span id="countBookings">0</span>)</h4>
+                    <h4 class="font-bold text-deepBlue text-base mb-4">1. Yêu cầu Đặt chỗ trải nghiệm (<span id="countBookings">0</span>)</h4>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-xs">
                             <thead class="bg-cream text-deepBlue font-bold uppercase">
                                 <tr>
                                     <th class="p-3">Họ tên</th>
                                     <th class="p-3">Liên hệ</th>
-                                    <th class="p-3">Trải nghiệm</th>
                                     <th class="p-3">Ngày đi</th>
                                     <th class="p-3">Số khách</th>
                                     <th class="p-3">Yêu cầu</th>
+                                    <th class="p-3">Thời gian</th>
                                 </tr>
                             </thead>
                             <tbody id="tableBookingsBody" class="divide-y divide-cream"></tbody>
@@ -689,7 +593,6 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        // Data Store (LocalStorage for fallback/CMS view)
         let db = {
             bookings: JSON.parse(localStorage.getItem('huelocal_bookings')) || [],
             guides: JSON.parse(localStorage.getItem('huelocal_guides')) || [],
@@ -702,18 +605,16 @@
             localStorage.setItem('huelocal_partners', JSON.stringify(db.partners));
         }
 
-        // Bộ từ điển song ngữ toàn diện
         const translations = {
             vi: {
                 topBanner: "Khám phá Huế qua lăng kính người bản địa | Discover Hue through local eyes",
                 navHome: "Trang chủ",
                 navExplore: "Khám phá Huế",
-                navExp: "Trải nghiệm",
                 navLocals: "Local Guide",
                 navStories: "Stories",
                 navPartners: "Đối tác",
                 navMember: "Thành viên",
-                navContact: "Liên hệ",
+                navContact: "Liên hệ & Đặt chỗ",
                 ctaBook: "Đặt trải nghiệm",
                 heroBadge: "HueLocal Experience",
                 heroTitle: "Discover Hue through local eyes.",
@@ -725,17 +626,6 @@
                 optFood: "Ẩm thực cung đình & dân gian",
                 optHidden: "Hidden Gems",
                 searchBtn: "Khám phá",
-                expBadge: "Tuyển chọn đặc biệt",
-                expTitle: "Trải nghiệm nổi bật",
-                expSubtitle: "Được thiết kế và dẫn dắt bởi đội ngũ Local Guide người Huế.",
-                tour1Title: "Ẩm thực hẻm phố & Chợ Đông Ba",
-                tour1Desc: "Thưởng thức bún bò chuẩn vị, bánh bèo chén, nem lụi và khám phá bí mật ẩm thực hoàng gia trong các hẻm nhỏ xứ Huế.",
-                tour2Title: "Hoàng thành & Bí mật Triều Nguyễn",
-                tour2Desc: "Hành trình ngược dòng thời gian khám phá Đại Nội, Tử Cấm Thành cùng giai thoại ít biết từ các nhà nghiên cứu Huế.",
-                tour3Title: "Lăng tẩm hoàng gia & Đồi Vọng Cảnh",
-                tour3Desc: "Trải nghiệm xe máy dạo quanh lăng Minh Mạng, Khải Định và ngắm hoàng hôn thơ mộng bên dòng sông Hương.",
-                priceLabel: "Giá trọn gói",
-                unitGuest: "/ khách",
                 exploreBadge: "Sitemap Khám Phá",
                 exploreTitle: "Khám phá Huế",
                 exploreSubtitle: "Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.",
@@ -784,18 +674,19 @@
                 memberDesc3: "Quản lý vận hành, kế hoạch triển khai và kết nối các đối tác dịch vụ trong hệ sinh thái.",
                 memberDesc4: "Dẫn dắt chiến lược truyền thông, kỹ thuật hệ thống web, lập trình CMS và tích hợp dữ liệu.",
                 contactBadge: "Hỗ trợ 24/7",
-                contactTitle: "Liên hệ với HueLocal",
-                contactSubtitle: "Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ lịch trình tại Huế cho bạn.",
+                contactTitle: "Liên hệ & Đặt trải nghiệm",
+                contactSubtitle: "Điền thông tin chi tiết để đội ngũ HueLocal sắp xếp lịch trình tốt nhất cho bạn.",
                 labelName: "Họ và tên",
-                labelContact: "Email / WhatsApp",
-                labelMsg: "Lời nhắn",
-                submitContactBtn: "Gửi yêu cầu liên hệ",
+                labelContact: "Email / WhatsApp / Số điện thoại",
+                labelDate: "Ngày mong muốn đi",
+                labelGuests: "Số lượng khách",
+                labelMsg: "Yêu cầu đặc biệt / Lời nhắn",
+                submitContactBtn: "Gửi yêu cầu đặt chỗ",
                 footerDesc: "Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.",
                 footerCol1: "Khám phá",
                 footerLink1: "Di tích lịch sử",
                 footerLink2: "Ẩm thực cố đô",
-                footerLink3: "Trải nghiệm & Tour",
-                footerLink4: "Local Guide",
+                footerLink3: "Local Guide",
                 footerCol2: "Chính sách",
                 footerPolicy1: "Chính sách bảo mật",
                 footerPolicy2: "Điều khoản sử dụng",
@@ -803,13 +694,6 @@
                 footerCol3: "Kết nối & Quản trị",
                 adminPortalBtn: "Quản trị viên (CMS Portal)",
                 footerCopyright: "&copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.",
-                modalBookTitle: "Đặt trải nghiệm",
-                bLabelName: "Họ và tên",
-                bLabelContact: "Email / WhatsApp",
-                bLabelDate: "Ngày mong muốn",
-                bLabelGuests: "Số khách",
-                bLabelNote: "Yêu cầu đặc biệt",
-                bSubmitBtn: "Gửi yêu cầu đặt chỗ",
                 placeStatus: "Trạng thái: Mở cửa đón khách",
                 closeBtn: "Đóng",
                 modalGuideTitle: "Đăng ký làm Local Guide",
@@ -831,12 +715,11 @@
                 topBanner: "Discover Hue through local eyes | Khám phá Huế qua lăng kính người bản địa",
                 navHome: "Home",
                 navExplore: "Explore Hue",
-                navExp: "Experiences",
                 navLocals: "Local Guide",
                 navStories: "Stories",
                 navPartners: "Partners",
                 navMember: "Membership",
-                navContact: "Contact",
+                navContact: "Contact & Booking",
                 ctaBook: "Book Experience",
                 heroBadge: "HueLocal Experience",
                 heroTitle: "Discover Hue through local eyes.",
@@ -848,17 +731,6 @@
                 optFood: "Royal & Folk Cuisine",
                 optHidden: "Hidden Gems",
                 searchBtn: "Explore",
-                expBadge: "Special Selection",
-                expTitle: "Featured Experiences",
-                expSubtitle: "Designed and guided by local Hue experts.",
-                tour1Title: "Dong Ba Market & Street Food Tour",
-                tour1Desc: "Enjoy authentic bun bo Hue, banh beo, nem lui, and discover royal culinary secrets in Hue's cozy alleyways.",
-                tour2Title: "Imperial Citadel & Nguyen Dynasty Secrets",
-                tour2Desc: "A journey back in time to explore the Imperial City, Forbidden Purple City, and untold stories from Hue researchers.",
-                tour3Title: "Royal Tombs & Vong Canh Hill",
-                tour3Desc: "Experience a motorbike ride around Minh Mang and Khai Dinh tombs while watching the poetic sunset over the Perfume River.",
-                priceLabel: "All-inclusive price",
-                unitGuest: "/ guest",
                 exploreBadge: "Discovery Sitemap",
                 exploreTitle: "Explore Hue",
                 exploreSubtitle: "Heritage sites, unique cafes, and nostalgic hidden corners.",
@@ -907,18 +779,19 @@
                 memberDesc3: "Managing operations, implementation plans, and connecting service partners within the ecosystem.",
                 memberDesc4: "Leading media strategy, web systems engineering, CMS programming, and data integration.",
                 contactBadge: "24/7 Support",
-                contactTitle: "Contact HueLocal",
-                contactSubtitle: "We are always ready to listen and assist with your Hue travel itinerary.",
+                contactTitle: "Contact & Booking",
+                contactSubtitle: "Fill in the details so the HueLocal team can arrange the best itinerary for you.",
                 labelName: "Full Name",
-                labelContact: "Email / WhatsApp",
-                labelMsg: "Message",
-                submitContactBtn: "Send Contact Request",
+                labelContact: "Email / WhatsApp / Phone Number",
+                labelDate: "Preferred Date",
+                labelGuests: "Number of Guests",
+                labelMsg: "Special Request / Message",
+                submitContactBtn: "Send Booking Request",
                 footerDesc: "Discover Hue through local eyes. The leading local travel platform in ancient capital Hue.",
                 footerCol1: "Explore",
                 footerLink1: "Historical Sites",
                 footerLink2: "Ancient Capital Cuisine",
-                footerLink3: "Experiences & Tours",
-                footerLink4: "Local Guide",
+                footerLink3: "Local Guide",
                 footerCol2: "Policies",
                 footerPolicy1: "Privacy Policy",
                 footerPolicy2: "Terms of Use",
@@ -926,13 +799,6 @@
                 footerCol3: "Connect & Admin",
                 adminPortalBtn: "Administrator (CMS Portal)",
                 footerCopyright: "&copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.",
-                modalBookTitle: "Book Experience",
-                bLabelName: "Full Name",
-                bLabelContact: "Email / WhatsApp",
-                bLabelDate: "Preferred Date",
-                bLabelGuests: "Number of Guests",
-                bLabelNote: "Special Request",
-                bSubmitBtn: "Send Booking Request",
                 placeStatus: "Status: Open to visitors",
                 closeBtn: "Close",
                 modalGuideTitle: "Apply as Local Guide",
@@ -964,7 +830,6 @@
 
             const t = translations[lang];
 
-            // Cập nhật text toàn trang
             if(document.getElementById('top-banner-text')) document.getElementById('top-banner-text').innerHTML = `<i class="fa-solid fa-compass mr-2"></i> ${t.topBanner}`;
             if(document.getElementById('hero-badge')) document.getElementById('hero-badge').innerText = t.heroBadge;
             if(document.getElementById('hero-title')) document.getElementById('hero-title').innerText = t.heroTitle;
@@ -976,22 +841,6 @@
             if(document.getElementById('opt-food')) document.getElementById('opt-food').innerText = t.optFood;
             if(document.getElementById('opt-hidden')) document.getElementById('opt-hidden').innerText = t.optHidden;
             if(document.getElementById('search-btn')) document.getElementById('search-btn').innerText = t.searchBtn;
-
-            if(document.getElementById('exp-badge')) document.getElementById('exp-badge').innerText = t.expBadge;
-            if(document.getElementById('exp-title')) document.getElementById('exp-title').innerText = t.expTitle;
-            if(document.getElementById('exp-subtitle')) document.getElementById('exp-subtitle').innerText = t.expSubtitle;
-            if(document.getElementById('tour-1-title')) document.getElementById('tour-1-title').innerText = t.tour1Title;
-            if(document.getElementById('tour-1-desc')) document.getElementById('tour-1-desc').innerText = t.tour1Desc;
-            if(document.getElementById('tour-2-title')) document.getElementById('tour-2-title').innerText = t.tour2Title;
-            if(document.getElementById('tour-2-desc')) document.getElementById('tour-2-desc').innerText = t.tour2Desc;
-            if(document.getElementById('tour-3-title')) document.getElementById('tour-3-title').innerText = t.tour3Title;
-            if(document.getElementById('tour-3-desc')) document.getElementById('tour-3-desc').innerText = t.tour3Desc;
-            if(document.getElementById('price-label-1')) document.getElementById('price-label-1').innerText = t.priceLabel;
-            if(document.getElementById('price-label-2')) document.getElementById('price-label-2').innerText = t.priceLabel;
-            if(document.getElementById('price-label-3')) document.getElementById('price-label-3').innerText = t.priceLabel;
-            if(document.getElementById('unit-guest-1')) document.getElementById('unit-guest-1').innerText = t.unitGuest;
-            if(document.getElementById('unit-guest-2')) document.getElementById('unit-guest-2').innerText = t.unitGuest;
-            if(document.getElementById('unit-guest-3')) document.getElementById('unit-guest-3').innerText = t.unitGuest;
 
             if(document.getElementById('explore-badge')) document.getElementById('explore-badge').innerText = t.exploreBadge;
             if(document.getElementById('explore-title')) document.getElementById('explore-title').innerText = t.exploreTitle;
@@ -1052,6 +901,8 @@
             if(document.getElementById('contact-subtitle')) document.getElementById('contact-subtitle').innerText = t.contactSubtitle;
             if(document.getElementById('label-name')) document.getElementById('label-name').innerText = t.labelName;
             if(document.getElementById('label-contact')) document.getElementById('label-contact').innerText = t.labelContact;
+            if(document.getElementById('label-date')) document.getElementById('label-date').innerText = t.labelDate;
+            if(document.getElementById('label-guests')) document.getElementById('label-guests').innerText = t.labelGuests;
             if(document.getElementById('label-msg')) document.getElementById('label-msg').innerText = t.labelMsg;
             if(document.getElementById('submit-contact-btn')) document.getElementById('submit-contact-btn').innerText = t.submitContactBtn;
 
@@ -1060,7 +911,6 @@
             if(document.getElementById('footer-link-1')) document.getElementById('footer-link-1').innerText = t.footerLink1;
             if(document.getElementById('footer-link-2')) document.getElementById('footer-link-2').innerText = t.footerLink2;
             if(document.getElementById('footer-link-3')) document.getElementById('footer-link-3').innerText = t.footerLink3;
-            if(document.getElementById('footer-link-4')) document.getElementById('footer-link-4').innerText = t.footerLink4;
             if(document.getElementById('footer-col-2-title')) document.getElementById('footer-col-2-title').innerText = t.footerCol2;
             if(document.getElementById('footer-policy-1')) document.getElementById('footer-policy-1').innerText = t.footerPolicy1;
             if(document.getElementById('footer-policy-2')) document.getElementById('footer-policy-2').innerText = t.footerPolicy2;
@@ -1069,13 +919,6 @@
             if(document.getElementById('admin-portal-btn')) document.getElementById('admin-portal-btn').innerHTML = `<i class="fa-solid fa-lock text-terracotta"></i> ${t.adminPortalBtn}`;
             if(document.getElementById('footer-copyright')) document.getElementById('footer-copyright').innerHTML = t.footerCopyright;
 
-            if(document.getElementById('modal-book-title')) document.getElementById('modal-book-title').innerText = t.modalBookTitle;
-            if(document.getElementById('b-label-name')) document.getElementById('b-label-name').innerText = t.bLabelName;
-            if(document.getElementById('b-label-contact')) document.getElementById('b-label-contact').innerText = t.bLabelContact;
-            if(document.getElementById('b-label-date')) document.getElementById('b-label-date').innerText = t.bLabelDate;
-            if(document.getElementById('b-label-guests')) document.getElementById('b-label-guests').innerText = t.bLabelGuests;
-            if(document.getElementById('b-label-note')) document.getElementById('b-label-note').innerText = t.bLabelNote;
-            if(document.getElementById('b-submit-btn')) document.getElementById('b-submit-btn').innerText = t.bSubmitBtn;
             if(document.getElementById('place-status')) document.getElementById('place-status').innerHTML = `<i class="fa-solid fa-circle-check text-green-600 mr-1"></i> ${t.placeStatus}`;
             if(document.getElementById('close-btn-1')) document.getElementById('close-btn-1').innerText = t.closeBtn;
 
@@ -1095,10 +938,8 @@
             if(document.getElementById('p-label-type')) document.getElementById('p-label-type').innerText = t.pLabelType;
             if(document.getElementById('p-submit-btn')) document.getElementById('p-submit-btn').innerText = t.pSubmitBtn;
 
-            // Cập nhật menu ngang và di động
             document.querySelectorAll('.nav-home').forEach(el => el.innerText = t.navHome);
             document.querySelectorAll('.nav-explore').forEach(el => el.innerText = t.navExplore);
-            document.querySelectorAll('.nav-exp').forEach(el => el.innerText = t.navExp);
             document.querySelectorAll('.nav-locals').forEach(el => el.innerText = t.navLocals);
             document.querySelectorAll('.nav-stories').forEach(el => el.innerText = t.navStories);
             document.querySelectorAll('.nav-partners').forEach(el => el.innerText = t.navPartners);
@@ -1116,23 +957,15 @@
             document.getElementById(modalId).classList.add('hidden');
         }
 
-        // Booking Modal with Sheet.best Google Sheets Integration
-        let selectedTourName = '';
-        function openBookingModal(tourName = 'Tour Khám Phá Cố Đô Chung', price = '500.000đ') {
-            selectedTourName = tourName + ' (' + price + ')';
-            document.getElementById('tourTitleDisplay').innerText = selectedTourName;
-            document.getElementById('bookingModal').classList.remove('hidden');
-        }
-
-        function submitBooking(e) {
+        // Contact & Booking Submit to Google Sheets (Sheet.best)
+        function handleContactSubmit(e) {
             e.preventDefault();
             const item = {
-                "Ho Ten": document.getElementById('bookName').value,
-                "Lien He": document.getElementById('bookContact').value,
-                "Tour": selectedTourName,
-                "Ngay Di": document.getElementById('bookDate').value,
-                "So Khach": document.getElementById('bookGuests').value,
-                "Yeu Cau": document.getElementById('bookNote').value || '',
+                "Ho Ten": document.getElementById('contactName').value,
+                "Lien He": document.getElementById('contactEmail').value,
+                "Ngay Di": document.getElementById('contactDate').value,
+                "So Khach": document.getElementById('contactGuests').value,
+                "Loi Nhan": document.getElementById('contactMsg').value || '',
                 "Thoi Gian": new Date().toLocaleString()
             };
 
@@ -1149,16 +982,14 @@
                 db.bookings.push({
                     name: item["Ho Ten"],
                     contact: item["Lien He"],
-                    tour: item["Tour"],
                     date: item["Ngay Di"],
                     guests: item["So Khach"],
-                    note: item["Yeu Cau"],
+                    msg: item["Loi Nhan"],
                     time: item["Thoi Gian"]
                 });
                 saveDB();
 
-                alert('Đã gửi yêu cầu đặt chỗ thành công! Thông tin đã được đồng bộ về Google Sheets.');
-                closeModal('bookingModal');
+                alert('Đã gửi thông tin đặt chỗ thành công! Dữ liệu đã được đồng bộ về Google Sheets.');
                 e.target.reset();
             })
             .catch(error => {
@@ -1166,15 +997,13 @@
                 db.bookings.push({
                     name: item["Ho Ten"],
                     contact: item["Lien He"],
-                    tour: item["Tour"],
                     date: item["Ngay Di"],
                     guests: item["So Khach"],
-                    note: item["Yeu Cau"],
+                    msg: item["Loi Nhan"],
                     time: item["Thoi Gian"]
                 });
                 saveDB();
-                alert('Đã lưu yêu cầu thành công vào hệ thống!');
-                closeModal('bookingModal');
+                alert('Đã lưu thông tin đặt chỗ vào hệ thống!');
                 e.target.reset();
             });
         }
@@ -1237,13 +1066,6 @@
             e.target.reset();
         }
 
-        // Contact Form
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã liên hệ! HueLocal đã tiếp nhận thông tin.');
-            e.target.reset();
-        }
-
         // Explore Filter
         function filterExplore(category) {
             const cards = document.querySelectorAll('.explore-card');
@@ -1288,21 +1110,18 @@
             document.getElementById('countGuides').innerText = db.guides.length;
             document.getElementById('countPartners').innerText = db.partners.length;
 
-            // Bookings
             let bHtml = '';
             db.bookings.forEach(item => {
-                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3 text-terracotta">${item.tour}</td><td class="p-3">${item.date}</td><td class="p-3">${item.guests} khách</td><td class="p-3">${item.note || '-'}</td></tr>`;
+                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.date || '-'}</td><td class="p-3">${item.guests || '-'} khách</td><td class="p-3 text-terracotta">${item.msg || '-'}</td><td class="p-3">${item.time}</td></tr>`;
             });
-            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có dữ liệu đặt chỗ.</td></tr>';
+            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
 
-            // Guides
             let gHtml = '';
             db.guides.forEach(item => {
                 gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td></tr>`;
             });
             document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
 
-            // Partners
             let pHtml = '';
             db.partners.forEach(item => {
                 pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td></tr>`;
