@@ -76,71 +76,92 @@
             <a href="#contact" class="block font-medium nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
-<!-- Hero Section -->
-<section id="home" class="py-16 md:py-24 px-4 container mx-auto text-center max-w-3xl space-y-6">
-    <span id="hero-badge" class="text-xs uppercase tracking-[0.25em] text-terracotta font-bold">Come as a traveler. Leave as a friend.</span>
-    <h1 id="hero-title" class="text-4xl md:text-6xl font-black text-deepBlue tracking-tight leading-tight">Discover Hue through local eyes.</h1>
-    <p id="hero-desc" class="text-base md:text-lg text-dark/80 leading-relaxed font-light max-w-2xl mx-auto">
-        Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.
-    </p>
-    <div class="pt-4 flex justify-center gap-4 flex-wrap">
-        <a href="#explore" class="border-2 border-deepBlue/20 text-deepBlue px-6 py-3 rounded-full text-sm font-bold hover:border-terracotta hover:text-terracotta transition">Xem hình ảnh</a>
+<!-- Hero Section (Phong cách cung đình chuẩn từng đường nét) -->
+<section id="home" class="hero relative bg-[#142D46] text-white py-16 px-4 overflow-hidden" style="padding-top: 70px; background-color: #142D46;">
+    <!-- Dải hoa văn cung đình phía trên -->
+    <div class="absolute top-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
+
+    <!-- Họa tiết trang trí lồng đèn & hoa văn chìm -->
+    <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-d98a0cce-02f2-4ccf-8d9d-62f540f1f855.jpg');"></div>
+
+    <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
+        <!-- Huy hiệu slogan -->
+        <div class="inline-block bg-[#C46B4E] text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md">
+            COME AS A TRAVELER. LEAVE AS A FRIEND.
+        </div>
+
+        <!-- Tiêu đề chính -->
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#F5F0E6]">
+            Discover Hue through local eyes.
+        </h1>
+
+        <!-- Mô tả -->
+        <p class="text-base md:text-lg text-[#F5F0E6]/90 leading-relaxed font-light max-w-2xl mx-auto">
+            Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.
+        </p>
+
+        <!-- Nút bấm hành động -->
+        <div class="pt-4 flex justify-center gap-4 flex-wrap">
+            <a href="#explore" class="border-2 border-[#F5F0E6]/30 hover:border-[#C46B4E] text-[#F5F0E6] px-8 py-3.5 rounded-full text-sm font-bold transition backdrop-blur-sm">
+                Xem hình ảnh
+            </a>
+        </div>
     </div>
+
+    <!-- Khung ảnh Hoàng Gia bo tròn phía dưới -->
+    <div class="container mx-auto max-w-3xl px-4 pt-8 relative z-10">
+        <div class="p-3 bg-[#F5F0E6]/10 backdrop-blur-md rounded-[2.5rem] border-2 border-[#C46B4E]/40 shadow-2xl">
+            <div class="rounded-[2rem] overflow-hidden border border-[#C46B4E]/30 shadow-inner h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-49656e3b-0917-4516-aa89-35f9693144a5.webp');">
+            </div>
+        </div>
+    </div>
+
+    <!-- Dải hoa văn cung đình phía dưới -->
+    <div class="absolute bottom-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
 </section>
 <section class="py-16 px-4 bg-white/60 border-y border-deepBlue/10">
-    <div class="container mx-auto max-w-4xl space-y-12">
+    <div class="container mx-auto max-w-xl space-y-8">
         <div class="text-center space-y-2">
             <h2 class="text-2xl md:text-3xl font-bold text-deepBlue">Vì sao là Huế?</h2>
             <p class="text-xs md:text-sm text-dark/70">Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-cream p-8 rounded-3xl border border-deepBlue/10 text-center space-y-4 shadow-sm">
-                <span class="text-3xl">🏯</span>
-                <h3 class="font-bold text-deepBlue text-base">Cố đô di sản</h3>
-                <p class="text-xs text-dark/70 leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
+        <div class="space-y-6">
+            <!-- Card 1 -->
+            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
+                    🏯
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-deepBlue text-lg">Cố đô di sản</h3>
+                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
+                </div>
             </div>
-            <div class="bg-cream p-8 rounded-3xl border border-deepBlue/10 text-center space-y-4 shadow-sm">
-                <span class="text-3xl">🛶</span>
-                <h3 class="font-bold text-deepBlue text-base">Sông Hương chậm rãi</h3>
-                <p class="text-xs text-dark/70 leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
+
+            <!-- Card 2 -->
+            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
+                    🛶
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-deepBlue text-lg">Sông Hương chậm rãi</h3>
+                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
+                </div>
             </div>
-            <div class="bg-cream p-8 rounded-3xl border border-deepBlue/10 text-center space-y-4 shadow-sm">
-                <span class="text-3xl">🍜</span>
-                <h3 class="font-bold text-deepBlue text-base">Ẩm thực cung đình</h3>
-                <p class="text-xs text-dark/70 leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
+
+            <!-- Card 3 -->
+            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
+                    🍜
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-bold text-deepBlue text-lg">Ẩm thực cung đình</h3>
+                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
+                </div>
             </div>
         </div>
     </div>
-</section>
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-deepBlue text-white py-24 px-4 overflow-hidden">
-        <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-e21260fb-829b-4d26-aac2-527e7b75ef6a.jpg');"></div>
-        <div class="container mx-auto relative z-10 max-w-4xl text-center space-y-6">
-            <span id="hero-badge" class="bg-terracotta/80 text-white text-xs uppercase px-3 py-1 rounded-full font-bold tracking-widest">HueLocal Experience</span>
-            <h1 id="hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight">Discover Hue through local eyes.</h1>
-            <p id="hero-desc" class="text-lg md:text-xl text-cream/90 max-w-2xl mx-auto font-light">Kết nối du khách với những trải nghiệm chân thực, câu chuyện văn hóa sâu sắc và Local Guide tâm huyết tại Cố đô.</p>
-            
-            <!-- Quick Search Bar -->
-            <div class="bg-white p-3 rounded-2xl shadow-xl max-w-2xl mx-auto flex flex-col md:flex-row gap-2 mt-8 text-dark">
-                <div class="flex-1 flex items-center px-3 bg-cream/50 rounded-xl">
-                    <i class="fa-solid fa-location-dot text-terracotta mr-2"></i>
-                    <input type="text" id="searchInput" placeholder="Tìm địa điểm, món ăn, tour..." class="bg-transparent py-2 w-full focus:outline-none text-sm">
-                </div>
-                <div class="flex items-center px-3 bg-cream/50 rounded-xl">
-                    <i class="fa-solid fa-tags text-terracotta mr-2"></i>
-                    <select id="categoryFilter" class="bg-transparent py-2 w-full focus:outline-none text-sm">
-                        <option value="" id="opt-all-cat">Tất cả danh mục</option>
-                        <option value="tour" id="opt-tour">Walking / Food Tour</option>
-                        <option value="heritage" id="opt-heritage">Di tích lịch sử</option>
-                        <option value="food" id="opt-food">Ẩm thực cung đình & dân gian</option>
-                        <option value="hidden" id="opt-hidden">Hidden Gems</option>
-                    </select>
-                </div>
-                <button onclick="handleSearch()" id="search-btn" class="bg-deepBlue text-cream px-6 py-3 rounded-xl font-bold hover:bg-terracotta transition">Khám phá</button>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Explore Section -->
     <section id="explore" class="py-20 px-4 bg-deepBlue text-cream">
