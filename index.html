@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HueLocal - Discover Hue through local eyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#142D46',
+                        cream: '#F9F6F0',
+                        terracotta: '#C46B4E',
+                        dark: '#1E1E1E',
+                        sand: '#EAE3D2'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream text-dark font-sans antialiased selection:bg-terracotta selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-deepBlue text-cream text-xs py-2 px-4 flex justify-between items-center border-b border-white/10">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="flex items-center"><i class="fa-solid fa-compass text-terracotta mr-2 animate-spin"></i> Khám phá Huế qua lăng kính người bản địa | Discover Hue through local eyes</span>
+            <div class="flex items-center space-x-3">
+                <button onclick="switchLang('vi')" id="lang-vi-btn" class="font-bold text-terracotta underline">VI</button>
+                <span class="text-white/40">|</span>
+                <button onclick="switchLang('en')" id="lang-en-btn" class="text-cream/70 hover:text-white">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md border-b border-deepBlue/10 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-black text-deepBlue tracking-wider flex items-center group">
+                <span class="bg-terracotta text-white p-1.5 rounded-xl mr-2 group-hover:rotate-12 transition-transform shadow"><i class="fa-solid fa-mountain-sun text-sm"></i></span>
+                <span>HUE<span class="text-terracotta">LOCAL</span></span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold text-deepBlue/80">
+                <a href="#home" class="hover:text-terracotta transition">Trang chủ</a>
+                <a href="#explore" class="hover:text-terracotta transition">Khám phá Huế</a>
+                <a href="#experiences" class="hover:text-terracotta transition">Trải nghiệm</a>
+                <a href="#locals" class="hover:text-terracotta transition">Local Guide</a>
+                <a href="#stories" class="hover:text-terracotta transition">Stories</a>
+                <a href="#partners" class="hover:text-terracotta transition">Đối tác</a>
+                <a href="#membership" class="text-terracotta hover:opacity-80 transition font-bold">Thành viên</a>
+                <a href="#contact" class="hover:text-terracotta transition">Liên hệ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="#experiences" class="bg-terracotta text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta/90 transition shadow-md shadow-terracotta/20 flex items-center gap-2">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Đặt tour ngay</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-deepBlue text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cream border-b border-deepBlue/10 px-6 py-6 space-y-4 shadow-xl">
+            <a href="#home" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Trang chủ</a>
+            <a href="#explore" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Khám phá Huế</a>
+            <a href="#experiences" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Trải nghiệm</a>
+            <a href="#locals" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Local Guide</a>
+            <a href="#stories" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Stories</a>
+            <a href="#partners" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Đối tác</a>
+            <a href="#membership" onclick="toggleMobileMenu()" class="block font-bold text-terracotta">Thành viên (Phase 2)</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block font-bold text-deepBlue">Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-deepBlue text-white py-28 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-25 bg-cover bg-center transform scale-105 transition-transform duration-1000" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1800&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-deepBlue via-deepBlue/60 to-transparent"></div>
+        
+        <div class="container mx-auto relative z-10 max-w-4xl text-center space-y-6">
+            <span class="bg-terracotta text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md inline-block">Nền tảng du lịch bản địa Cố đô</span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">Discover Hue through local eyes.</h1>
+            <p class="text-base sm:text-xl text-cream/90 max-w-2xl mx-auto font-light leading-relaxed">Trải nghiệm Cố đô Huế chân thực nhất cùng những người bản địa nhiệt huyết, thưởng thức ẩm thực hẻm phố và khám phá di sản.</p>
+            
+            <!-- Quick Search Form -->
+            <div class="bg-white p-3 rounded-2xl shadow-2xl max-w-2xl mx-auto flex flex-col md:flex-row gap-3 mt-10 text-dark border border-white/20">
+                <div class="flex-1 flex items-center px-4 py-2 bg-cream/70 rounded-xl">
+                    <i class="fa-solid fa-location-dot text-terracotta mr-3"></i>
+                    <input type="text" id="searchInput" placeholder="Bạn muốn tìm địa điểm, món ăn nào ở Huế?" class="bg-transparent w-full focus:outline-none text-sm font-medium">
+                </div>
+                <button onclick="handleSearch()" class="bg-deepBlue text-cream px-8 py-3 rounded-xl font-bold hover:bg-terracotta transition-colors shadow">Tìm kiếm</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section (Trải nghiệm nổi bật) -->
+    <section id="experiences" class="py-20 px-4 container mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Trải nghiệm độc quyền</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Tour bản địa & Khám phá Huế</h2>
+            <p class="text-dark/70 text-sm">Được thiết kế và dẫn dắt trực tiếp bởi các Local Guide sinh ra và lớn lên tại Huế<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+            <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('[https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80)');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Food Tour</span>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Ẩm thực hẻm phố & Chợ Đông Ba</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-dark/70 leading-relaxed">Thưởng thức bún bò chuẩn vị, bánh bèo chén, nem lụi và khám phá bí mật ẩm thực hoàng gia trong các hẻm nhỏ xứ Huế.</p>
+                <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-dark/50 block">Giá trọn gói</span>
+                        <span class="text-terracotta font-extrabold text-xl">450.000đ <span class="text-xs font-normal text-dark/60">/ khách</span></span>
+                    </div>
+                    <button onclick="openBookingModal('Food Tour Chợ Đông Ba', '450.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow">Đặt ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+            <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('[https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80)');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Walking Tour</span>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Hoàng thành & Bí mật Triều Nguyễn</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-dark/70 leading-relaxed">Hành trình ngược dòng thời gian khám phá Đại Nội, Tử Cấm Thành cùng giai thoại ít biết từ các nhà nghiên cứu Huế.</p>
+                <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-dark/50 block">Giá trọn gói</span>
+                        <span class="text-terracotta font-extrabold text-xl">600.000đ <span class="text-xs font-normal text-dark/60">/ khách</span></span>
+                    </div>
+                    <button onclick="openBookingModal('Hoàng thành & Bí mật Triều Nguyễn', '600.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow">Đặt ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col group hover:-translate-y-1.5 transition-all duration-300">
+            <div class="relative h-64 bg-cover bg-center overflow-hidden" style="background-image: url('[https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80](https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80)');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-terracotta text-white text-xs px-3 py-1 rounded-full font-bold shadow">Motorbike Tour</span>
+                <span class="absolute bottom-4 left-4 text-white font-bold text-lg">Lăng tẩm hoàng gia & Đồi Vọng Cảnh</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-dark/70 leading-relaxed">Trải nghiệm xe máy dạo quanh lăng Minh Mạng, Khải Định và ngắm hoàng hôn thơ mộng bên dòng sông Hương.</p>
+                <div class="pt-4 border-t border-deepBlue/10 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs text-dark/50 block">Giá trọn gói</span>
+                        <span class="text-terracotta font-extrabold text-xl">750.000đ <span class="text-xs font-normal text-dark/60">/ khách</span></span>
+                    </div>
+                    <button onclick="openBookingModal('Lăng tẩm & Đồi Vọng Cảnh', '750.000đ')" class="bg-deepBlue text-cream px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-terracotta transition shadow">Đặt ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Explore Section (Khám phá Huế) -->
+<section id="explore" class="py-20 px-4 bg-deepBlue text-cream">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div class="space-y-2">
+                <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-white/10 px-3 py-1 rounded-full">Sitemap Khám Phá</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">Khám phá Huế</h2>
+                <p class="text-cream/80 text-sm">Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.</p>
+            </div>
+            <div class="flex gap-2 mt-6 md:mt-0 flex-wrap">
+                <button onclick="filterExplore('all')" class="explore-btn px-5 py-2 rounded-full bg-terracotta text-white text-xs font-bold transition shadow">Tất cả</button>
+                <button onclick="filterExplore('heritage')" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Di tích</button>
+                <button onclick="filterExplore('cafe')" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Cà phê</button>
+                <button onclick="filterExplore('hidden')" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Hidden Gems</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Place 1 -->
+            <div class="explore-card heritage bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đại Nội Huế', 'Kinh thành triều Nguyễn với kiến trúc cung điện nguy nga, nơi lưu giữ dấu ấn lịch sử hàng trăm năm.', '23 Đoàn Thị Điểm, TP. Huế')">
+                <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('[https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80)');"></div>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Heritage</span>
+                <h3 class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Đại Nội Huế</h3>
+                <p class="text-xs text-cream/70 mt-2 leading-relaxed">Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...</p>
+            </div>
+            <!-- Place 2 -->
+            <div class="explore-card cafe bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Cà phê muối Chợ Gia Hội', 'Quán cà phê truyền thống nổi tiếng với hương vị cà phê muối đậm đà chất Huế, không gian hoài cổ.', '10 Nguyễn Huệ, TP. Huế')">
+                <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('[https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80)');"></div>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Cafe</span>
+                <h3 class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Cà phê muối truyền thống</h3>
+                <p class="text-xs text-cream/70 mt-2 leading-relaxed">Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...</p>
+            </div>
+            <!-- Place 3 -->
+            <div class="explore-card hidden bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đồi Vọng Cảnh', 'Điểm ngắm hoàng hôn tuyệt đẹp bên dòng sông Hương, rợp bóng thông xanh và lăng tẩm ẩn hiện.', 'Đồi Vọng Cảnh, Điện Biên Phủ, TP. Huế')">
+                <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('[https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80)');"></div>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Hidden Gem</span>
+                <h3 class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Đồi Vọng Cảnh</h3>
+                <p class="text-xs text-cream/70 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meet the Locals Section -->
+<section id="locals" class="py-20 px-4 container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div class="space-y-3">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Người bản địa</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Meet the Locals</h2>
+            <p class="text-dark/70 text-sm">Những hướng dẫn viên tâm huyết mang câu chuyện Cố đô đến gần hơn với bạn.</p>
+        </div>
+        <button onclick="openGuideModal()" class="mt-6 md:mt-0 bg-terracotta text-white px-6 py-3 rounded-xl font-bold hover:bg-terracotta/90 transition shadow-lg shadow-terracotta/20">Đăng ký làm Local Guide</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
+            <img src="[https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80)" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
+            <div>
+                <h3 class="text-xl font-bold text-deepBlue">Lê Hoàng Bảo Ngọc</h3>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Food Tour & Văn hóa</span>
+            </div>
+            <p class="text-sm text-dark/70 italic leading-relaxed">"Sinh ra và lớn lên ở Huế, mình sẽ đưa các bạn đi ăn những món ngon đậm vị tình quê."</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
+            <img src="[https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80)" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
+            <div>
+                <h3 class="text-xl font-bold text-deepBlue">Nguyễn Minh Quân</h3>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Lịch sử & Di tích</span>
+            </div>
+            <p class="text-sm text-dark/70 italic leading-relaxed">"Đam mê tìm hiểu triều đại nhà Nguyễn và những câu chuyện thâm cung bí sử tại Đại Nội."</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
+            <img src="[https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80](https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80)" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
+            <div>
+                <h3 class="text-xl font-bold text-deepBlue">Trần Thảo Vy</h3>
+                <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Photo & Hidden Gems</span>
+            </div>
+            <p class="text-sm text-dark/70 italic leading-relaxed">"Săn lùng những góc chụp ảnh nên thơ nhất ở xứ Huế mộng mơ cùng du khách gần xa."</p>
+        </div>
+    </div>
+</section>
+
+<!-- HueLocal Stories (Blog) -->
+<section id="stories" class="py-20 px-4 bg-deepBlue/5 border-y border-deepBlue/10">
+    <div class="container mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Nhật ký & Góc nhìn</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">HueLocal Stories</h2>
+            <p class="text-dark/70 text-sm">Góc nhìn văn hóa, lịch sử và cảm nhận chân thực từ những chuyến đi.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col md:flex-row cursor-pointer group" onclick="openStoryModal('Bí mật đằng sau tô bún bò Huế chuẩn vị xưa', 'Bún bò Huế không chỉ là một món ăn sáng quen thuộc mà còn là tinh hoa ẩm thực cung đình được gìn giữ qua nhiều thế hệ...', 'Nguyễn Minh Quân')">
+                <div class="md:w-1/2 h-56 md:h-auto bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('[https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80)');"></div>
+                <div class="p-8 md:w-1/2 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Ẩm thực</span>
+                        <h3 class="text-xl font-bold text-deepBlue mt-1 group-hover:text-terracotta transition">Bí mật đằng sau tô bún bò Huế chuẩn vị xưa</h3>
+                        <p class="text-xs text-dark/60 mt-2">12/11/2026 • Bởi Nguyễn Minh Quân</p>
+                    </div>
+                    <span class="text-sm font-bold text-terracotta inline-flex items-center gap-2">Đọc tiếp <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-deepBlue/10 flex flex-col md:flex-row cursor-pointer group" onclick="openStoryModal('Nhịp sống chậm rãi bên dòng sông Hương buổi sớm', 'Khi sương sớm còn vương trên cầu Trường Tiền, Huế hiện lên với một vẻ đẹp thanh bình khó tả...', 'Trần Thảo Vy')">
+                <div class="md:w-1/2 h-56 md:h-auto bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('[https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80](https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80)');"></div>
+                <div class="p-8 md:w-1/2 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Nhật ký khách</span>
+                        <h3 class="text-xl font-bold text-deepBlue mt-1 group-hover:text-terracotta transition">Nhịp sống chậm rãi bên dòng sông Hương buổi sớm</h3>
+                        <p class="text-xs text-dark/60 mt-2">10/11/2026 • Bởi Trần Thảo Vy</p>
+                    </div>
+                    <span class="text-sm font-bold text-terracotta inline-flex items-center gap-2">Đọc tiếp <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section id="partners" class="py-20 px-4 container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div class="space-y-3">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hệ sinh thái liên kết</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Đối tác địa phương</h2>
+            <p class="text-dark/70 text-sm">Đồng hành cùng các thương hiệu lưu trú, ẩm thực và dịch vụ hàng đầu tại Huế.</p>
+        </div>
+        <button onclick="openPartnerModal()" class="mt-6 md:mt-0 bg-deepBlue text-cream px-6 py-3 rounded-xl font-bold hover:bg-terracotta transition shadow-lg">Trở thành đối tác</button>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-deepBlue/10 flex flex-col items-center justify-center space-y-3 hover:border-terracotta transition">
+            <i class="fa-solid fa-hotel text-4xl text-terracotta"></i>
+            <h4 class="font-bold text-deepBlue">Hue Riverside Hotel</h4>
+            <p class="text-xs text-dark/60">Lưu trú & Nghỉ dưỡng</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-deepBlue/10 flex flex-col items-center justify-center space-y-3 hover:border-terracotta transition">
+            <i class="fa-solid fa-mug-hot text-4xl text-terracotta"></i>
+            <h4 class="font-bold text-deepBlue">Mộc Cafe Huế</h4>
+            <p class="text-xs text-dark/60">Ẩm thực & Cà phê</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-deepBlue/10 flex flex-col items-center justify-center space-y-3 hover:border-terracotta transition">
+            <i class="fa-solid fa-bicycle text-4xl text-terracotta"></i>
+            <h4 class="font-bold text-deepBlue">Cố Đô Bike Rental</h4>
+            <p class="text-xs text-dark/60">Di chuyển & Cho thuê xe</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-deepBlue/10 flex flex-col items-center justify-center space-y-3 hover:border-terracotta transition">
+            <i class="fa-solid fa-store text-4xl text-terracotta"></i>
+            <h4 class="font-bold text-deepBlue">Đặc sản Cố Đô</h4>
+            <p class="text-xs text-dark/60">Quà lưu niệm thủ công</p>
+        </div>
+    </div>
+</section>
+
+<!-- Membership Section (Phase 2) -->
+<section id="membership" class="py-20 px-4 bg-deepBlue text-cream">
+    <div class="container mx-auto max-w-4xl text-center space-y-8">
+        <span class="bg-terracotta text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold shadow">Phase 2 Preview</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold">HueLocal Membership & QR Ưu đãi</h2>
+        <p class="text-cream/80 max-w-xl mx-auto text-sm leading-relaxed">Trở thành thành viên để nhận mã QR định danh riêng, tích lũy ưu đãi độc quyền khi trải nghiệm dịch vụ tại các đối tác liên kết của HueLocal.</p>
+        
+        <div class="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-sm mx-auto space-y-6 shadow-2xl backdrop-blur-sm">
+            <div class="bg-white p-4 rounded-2xl inline-block shadow-lg">
+                <img src="[https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=HueLocal-Member-VIP-2026](https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=HueLocal-Member-VIP-2026)" alt="QR Code" class="mx-auto w-40 h-40">
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-white">Hạng thành viên: VIP Explorer</h3>
+                <p class="text-xs text-cream/70 mt-1">Mã định danh: <span class="font-mono text-terracotta font-bold text-sm">HL-VIP-8826</span></p>
+            </div>
+            <button onclick="alert('Tính năng thẻ thành viên và quét QR sẽ chính thức hoạt động ở Phase 2!')" class="w-full bg-terracotta text-white py-3.5 rounded-xl font-bold hover:bg-terracotta/90 transition shadow">Xem quyền lợi thành viên</button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-4 container mx-auto max-w-3xl">
+    <div class="bg-white rounded-3xl p-10 shadow-2xl border border-deepBlue/10">
+        <div class="text-center mb-10 space-y-2">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hỗ trợ 24/7</span>
+            <h2 class="font-serif text-3xl font-bold text-deepBlue">Liên hệ với HueLocal</h2>
+            <p class="text-dark/70 text-sm">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ lịch trình tại Huế cho bạn.</p>
+        </div>
+
+        <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Họ và tên</label>
+                    <input type="text" id="contactName" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Email / WhatsApp</label>
+                    <input type="text" id="contactEmail" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Lời nhắn</label>
+                <textarea id="contactMsg" rows="4" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-deepBlue text-cream py-4 rounded-xl font-bold hover:bg-terracotta transition shadow-xl">Gửi yêu cầu liên hệ</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-deepBlue text-cream/70 border-t border-white/10 py-16 px-4">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="space-y-4">
+            <h3 class="text-2xl font-black text-white tracking-wider">HUE<span class="text-terracotta">LOCAL</span></h3>
+            <p class="text-xs leading-relaxed">Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.</p>
+        </div>
+        <div>
+            <h4 class="font-bold text-white text-sm mb-4">Khám phá</h4>
+            <ul class="space-y-2.5 text-xs">
+                <li><a href="#explore" class="hover:text-white transition">Di tích lịch sử</a></li>
+                <li><a href="#explore" class="hover:text-white transition">Ẩm thực cố đô</a></li>
+                <li><a href="#experiences" class="hover:text-white transition">Trải nghiệm & Tour</a></li>
+                <li><a href="#locals" class="hover:text-white transition">Local Guide</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-white text-sm mb-4">Chính sách</h4>
+            <ul class="space-y-2.5 text-xs">
+                <li><a href="#" onclick="alert('Chính sách quyền riêng tư: Bảo mật tuyệt đối thông tin cá nhân khách hàng.')" class="hover:text-white transition">Chính sách bảo mật</a></li>
+                <li><a href="#" onclick="alert('Điều khoản sử dụng áp dụng theo quy định pháp luật Việt Nam.')" class="hover:text-white transition">Điều khoản sử dụng</a></li>
+                <li><a href="#" onclick="alert('Chính sách đổi/hủy tour linh hoạt trước 24h khởi hành.')" class="hover:text-white transition">Chính sách hoàn hủy</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-white text-sm mb-4">Kết nối & Quản trị</h4>
+            <div class="flex space-x-4 text-xl mb-6">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="pt-3 border-t border-white/10">
+                <button onclick="openAdminLogin()" class="text-xs text-cream/90 hover:text-white underline font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-lock text-terracotta"></i> Quản trị viên (CMS Portal)</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto text-center text-xs text-cream/50 pt-8 border-t border-white/10">
+        &copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.
+    </div>
+</footer>
+
+<!-- MODALS -->
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl animate-fade-in">
+        <button onclick="closeModal('bookingModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đặt trải nghiệm</h3>
+        <p id="tourTitleDisplay" class="text-xs text-terracotta font-bold uppercase tracking-wider mb-6"></p>
+        
+        <form onsubmit="submitBooking(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Họ và tên</label>
+                <input type="text" id="bookName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / WhatsApp</label>
+                <input type="text" id="bookContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Ngày mong muốn</label>
+                    <input type="date" id="bookDate" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Số khách</label>
+                    <input type="number" id="bookGuests" min="1" value="2" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-2.5 text-sm focus:outline-none">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Yêu cầu đặc biệt</label>
+                <textarea id="bookNote" rows="2" class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow-lg">Gửi yêu cầu đặt chỗ</button>
+        </form>
+    </div>
+</div>
+
+<!-- Place Detail Modal -->
+<div id="placeModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 text-dark relative shadow-2xl">
+        <button onclick="closeModal('placeModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h3 id="placeTitle" class="font-serif text-2xl font-bold text-deepBlue mb-2"></h3>
+        <p id="placeAddress" class="text-xs text-terracotta font-bold mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-2"></i> <span></span></p>
+        <p id="placeDesc" class="text-sm text-dark/80 leading-relaxed mb-6"></p>
+        <div class="bg-cream p-4 rounded-2xl flex items-center justify-between">
+            <span class="text-xs font-bold text-deepBlue"><i class="fa-solid fa-circle-check text-green-600 mr-1"></i> Trạng thái: Mở cửa đón khách</span>
+            <button onclick="closeModal('placeModal')" class="bg-deepBlue text-cream px-5 py-2 rounded-xl text-xs font-bold">Đóng</button>
+        </div>
+    </div>
+</div>
+
+<!-- Story Detail Modal -->
+<div id="storyModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-8 text-dark relative shadow-2xl max-h-[90vh] overflow-y-auto">
+        <button onclick="closeModal('storyModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <span id="storyAuthor" class="text-xs text-terracotta font-bold uppercase tracking-wider"></span>
+        <h3 id="storyTitle" class="font-serif text-2xl md:text-3xl font-bold text-deepBlue mt-1 mb-4"></h3>
+        <div id="storyContent" class="text-sm text-dark/80 leading-relaxed space-y-4"></div>
+    </div>
+</div>
+
+<!-- Guide Modal -->
+<div id="guideModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
+        <button onclick="closeModal('guideModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký làm Local Guide</h3>
+        <p class="text-xs text-dark/60 mb-6">Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.</p>
+        
+        <form onsubmit="submitGuide(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Họ và tên</label>
+                <input type="text" id="gName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / Số điện thoại</label>
+                <input type="text" id="gContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Ngôn ngữ thông thạo</label>
+                <input type="text" id="gLang" placeholder="VD: Tiếng Việt, English..." required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Giới thiệu bản thân & kinh nghiệm</label>
+                <textarea id="gBio" rows="3" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Gửi đơn ứng tuyển</button>
+        </form>
+    </div>
+</div>
+
+<!-- Partner Modal -->
+<div id="partnerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
+        <button onclick="closeModal('partnerModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký Hợp tác đối tác</h3>
+        <p class="text-xs text-dark/60 mb-6">Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.</p>
+        
+        <form onsubmit="submitPartner(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Tên thương hiệu / Doanh nghiệp</label>
+                <input type="text" id="pBrand" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Người liên hệ</label>
+                <input type="text" id="pName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / Số điện thoại</label>
+                <input type="text" id="pContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Loại hình dịch vụ</label>
+                <input type="text" id="pType" placeholder="VD: Khách sạn, Nhà hàng, Cà phê..." required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+            </div>
+            <button type="submit" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Gửi yêu cầu hợp tác</button>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Login Modal -->
+<div id="adminLoginModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-dark relative shadow-2xl">
+        <button onclick="closeModal('adminLoginModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng nhập Quản trị</h3>
+        <p class="text-xs text-dark/60 mb-6">HueLocal CMS Control Center</p>
+        
+        <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email Admin</label>
+                <input type="email" id="adminEmailInput" value="admin@huelocal.vn" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Mật khẩu</label>
+                <input type="password" id="adminPassInput" value="123456" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none">
+            </div>
+            <button type="submit" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Đăng nhập CMS</button>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Dashboard Modal -->
+<div id="adminDashboardModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-cream rounded-3xl max-w-5xl w-full h-[90vh] flex flex-col text-dark relative shadow-2xl overflow-hidden">
+        <!-- Header -->
+        <div class="bg-deepBlue text-white p-6 flex justify-between items-center">
+            <div>
+                <h3 class="font-serif text-2xl font-bold">HueLocal CMS Control Center</h3>
+                <p class="text-xs text-cream/70">Quản lý trực tiếp yêu cầu đặt chỗ, ứng tuyển HDV và đối tác</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="logoutAdmin()" class="bg-terracotta text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition">Đăng xuất</button>
+                <button onclick="closeModal('adminDashboardModal')" class="text-white text-xl px-2"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-8">
+            <!-- Bookings Table -->
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
+                <h4 class="font-bold text-deepBlue text-base mb-4">1. Yêu cầu đặt chỗ trải nghiệm (<span id="countBookings">0</span>)</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-cream text-deepBlue font-bold uppercase">
+                            <tr>
+                                <th class="p-3">Họ tên</th>
+                                <th class="p-3">Liên hệ</th>
+                                <th class="p-3">Trải nghiệm</th>
+                                <th class="p-3">Ngày đi</th>
+                                <th class="p-3">Số khách</th>
+                                <th class="p-3">Yêu cầu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBookingsBody" class="divide-y divide-cream"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Guides Table -->
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
+                <h4 class="font-bold text-deepBlue text-base mb-4">2. Đơn ứng tuyển Local Guide (<span id="countGuides">0</span>)</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-cream text-deepBlue font-bold uppercase">
+                            <tr>
+                                <th class="p-3">Họ tên</th>
+                                <th class="p-3">Liên hệ</th>
+                                <th class="p-3">Ngôn ngữ</th>
+                                <th class="p-3">Giới thiệu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableGuidesBody" class="divide-y divide-cream"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Partners Table -->
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
+                <h4 class="font-bold text-deepBlue text-base mb-4">3. Yêu cầu Hợp tác đối tác (<span id="countPartners">0</span>)</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-cream text-deepBlue font-bold uppercase">
+                            <tr>
+                                <th class="p-3">Thương hiệu</th>
+                                <th class="p-3">Người liên hệ</th>
+                                <th class="p-3">Liên hệ</th>
+                                <th class="p-3">Loại hình</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablePartnersBody" class="divide-y divide-cream"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Application Logic -->
+<script>
+    // Data Store (LocalStorage)
+    let db = {
+        bookings: JSON.parse(localStorage.getItem('huelocal_bookings')) || [],
+        guides: JSON.parse(localStorage.getItem('huelocal_guides')) || [],
+        partners: JSON.parse(localStorage.getItem('huelocal_partners')) || []
+    };
+
+    function saveDB() {
+        localStorage.setItem('huelocal_bookings', JSON.stringify(db.bookings));
+        localStorage.setItem('huelocal_guides', JSON.stringify(db.guides));
+        localStorage.setItem('huelocal_partners', JSON.stringify(db.partners));
+    }
+
+    // Language Switcher
+    function switchLang(lang) {
+        if(lang === 'en') {
+            document.getElementById('lang-en-btn').className = 'font-bold text-terracotta underline';
+            document.getElementById('lang-vi-btn').className = 'text-cream/70 hover:text-white';
+            alert('English mode is active! (Demo interface)');
+        } else {
+            document.getElementById('lang-vi-btn').className = 'font-bold text-terracotta underline';
+            document.getElementById('lang-en-btn').className = 'text-cream/70 hover:text-white';
+        }
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+    }
+
+    // Booking Modal
+    let selectedTourName = '';
+    function openBookingModal(tourName = 'Tour Khám Phá Cố Đô Chung', price = '500.000đ') {
+        selectedTourName = tourName + ' (' + price + ')';
+        document.getElementById('tourTitleDisplay').innerText = selectedTourName;
+        document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function submitBooking(e) {
+        e.preventDefault();
+        const item = {
+            name: document.getElementById('bookName').value,
+            contact: document.getElementById('bookContact').value,
+            tour: selectedTourName,
+            date: document.getElementById('bookDate').value,
+            guests: document.getElementById('bookGuests').value,
+            note: document.getElementById('bookNote').value,
+            time: new Date().toLocaleString()
+        };
+        db.bookings.push(item);
+        saveDB();
+        alert('Đã gửi yêu cầu đặt chỗ thành công! Đội ngũ HueLocal đã ghi nhận.');
+        closeModal('bookingModal');
+        e.target.reset();
+    }
+
+    // Place Modal
+    function openPlaceDetail(title, desc, address) {
+        document.getElementById('placeTitle').innerText = title;
+        document.getElementById('placeDesc').innerText = desc;
+        document.querySelector('#placeAddress span').innerText = address;
+        document.getElementById('placeModal').classList.remove('hidden');
+    }
+
+    // Story Modal
+    function openStoryModal(title, content, author) {
+        document.getElementById('storyTitle').innerText = title;
+        document.getElementById('storyContent').innerHTML = `<p>${content}</p><p class="mt-4">Nội dung chi tiết được biên soạn bởi đội ngũ HueLocal Stories, phản ánh chân thực nhịp sống và văn hóa Cố đô.</p>`;
+        document.getElementById('storyAuthor').innerText = 'Bởi ' + author;
+        document.getElementById('storyModal').classList.remove('hidden');
+    }
+
+    // Guide Modal
+    function openGuideModal() {
+        document.getElementById('guideModal').classList.remove('hidden');
+    }
+
+    function submitGuide(e) {
+        e.preventDefault();
+        const item = {
+            name: document.getElementById('gName').value,
+            contact: document.getElementById('gContact').value,
+            lang: document.getElementById('gLang').value,
+            bio: document.getElementById('gBio').value,
+            time: new Date().toLocaleString()
+        };
+        db.guides.push(item);
+        saveDB();
+        alert('Đã gửi đơn ứng tuyển Local Guide thành công!');
+        closeModal('guideModal');
+        e.target.reset();
+    }
+
+    // Partner Modal
+    function openPartnerModal() {
+        document.getElementById('partnerModal').classList.remove('hidden');
+    }
+
+    function submitPartner(e) {
+        e.preventDefault();
+        const item = {
+            brand: document.getElementById('pBrand').value,
+            name: document.getElementById('pName').value,
+            contact: document.getElementById('pContact').value,
+            type: document.getElementById('pType').value,
+            time: new Date().toLocaleString()
+        };
+        db.partners.push(item);
+        saveDB();
+        alert('Đã gửi yêu cầu hợp tác thành công!');
+        closeModal('partnerModal');
+        e.target.reset();
+    }
+
+    // Contact Form
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        alert('Cảm ơn bạn đã liên hệ! HueLocal đã tiếp nhận thông tin.');
+        e.target.reset();
+    }
+
+    // Explore Filter
+    function filterExplore(category) {
+        const cards = document.querySelectorAll('.explore-card');
+        cards.forEach(card => {
+            if(category === 'all' || card.classList.contains(category)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Admin Portal
+    function openAdminLogin() {
+        document.getElementById('adminLoginModal').classList.remove('hidden');
+    }
+
+    function handleAdminLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('adminEmailInput').value;
+        const pass = document.getElementById('adminPassInput').value;
+        if(email === 'admin@huelocal.vn' && pass === '123456') {
+            closeModal('adminLoginModal');
+            openAdminDashboard();
+        } else {
+            alert('Sai tài khoản hoặc mật khẩu! Vui lòng dùng: admin@huelocal.vn / 123456');
+        }
+    }
+
+    function openAdminDashboard() {
+        renderAdminTables();
+        document.getElementById('adminDashboardModal').classList.remove('hidden');
+    }
+
+    function logoutAdmin() {
+        closeModal('adminDashboardModal');
+        alert('Đã đăng xuất tài khoản quản trị.');
+    }
+
+    function renderAdminTables() {
+        document.getElementById('countBookings').innerText = db.bookings.length;
+        document.getElementById('countGuides').innerText = db.guides.length;
+        document.getElementById('countPartners').innerText = db.partners.length;
+
+        // Bookings
+        let bHtml = '';
+        db.bookings.forEach(item => {
+            bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3 text-terracotta">${item.tour}</td><td class="p-3">${item.date}</td><td class="p-3">${item.guests} khách</td><td class="p-3">${item.note || '-'}</td></tr>`;
+        });
+        document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có dữ liệu đặt chỗ. Hãy thử test gửi form trên web!</td></tr>';
+
+        // Guides
+        let gHtml = '';
+        db.guides.forEach(item => {
+            gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td></tr>`;
+        });
+        document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
+
+        // Partners
+        let pHtml = '';
+        db.partners.forEach(item => {
+            pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td></tr>`;
+        });
+        document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
+    }
+
+    function handleSearch() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        if(query.trim() !== '') {
+            alert('Đang tìm kiếm kết quả cho: "' + query + '" tại khu vực Huế.');
+            document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Vui lòng nhập nội dung cần tìm kiếm!');
+        }
+    }
+</script>
