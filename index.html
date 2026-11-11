@@ -328,57 +328,48 @@
             </div>
         </div>
     </section>
-
-    <!-- Membership Section (Phase 2) -->
-    <section id="membership" class="py-20 px-4 bg-deepBlue text-cream">
-        <div class="container mx-auto max-w-4xl text-center space-y-8">
-            <span class="bg-terracotta text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold shadow">Phase 2 Preview</span>
-            <h2 class="font-serif text-3xl sm:text-5xl font-bold">HueLocal Membership & QR Ưu đãi</h2>
-            <p class="text-cream/80 max-w-xl mx-auto text-sm leading-relaxed">Trở thành thành viên để nhận mã QR định danh riêng, tích lũy ưu đãi độc quyền khi trải nghiệm dịch vụ tại các đối tác liên kết của HueLocal.</p>
-            
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-sm mx-auto space-y-6 shadow-2xl backdrop-blur-sm">
-                <div class="bg-white p-4 rounded-2xl inline-block shadow-lg">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=HueLocal-Member-VIP-2026" alt="QR Code" class="mx-auto w-40 h-40">
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-white">Hạng thành viên: VIP Explorer</h3>
-                    <p class="text-xs text-cream/70 mt-1">Mã định danh: <span class="font-mono text-terracotta font-bold text-sm">HL-VIP-8826</span></p>
-                </div>
-                <button onclick="alert('Tính năng thẻ thành viên và quét QR sẽ chính thức hoạt động ở Phase 2!')" class="w-full bg-terracotta text-white py-3.5 rounded-xl font-bold hover:bg-terracotta/90 transition shadow">Xem quyền lợi thành viên</button>
-            </div>
+<!-- Team Members Section (Thành viên / Nhóm phát triển) -->
+<section id="team" class="py-20 px-4 bg-white border-t border-deepBlue/10">
+    <div class="container mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Đội ngũ sáng lập</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Thành viên HueLocal</h2>
+            <p class="text-dark/70 text-sm">Những bạn trẻ đam mê công nghệ và khát vọng quảng bá văn hóa Cố đô.</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 container mx-auto max-w-3xl">
-        <div class="bg-white rounded-3xl p-10 shadow-2xl border border-deepBlue/10">
-            <div class="text-center mb-10 space-y-2">
-                <span class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hỗ trợ 24/7</span>
-                <h2 class="font-serif text-3xl font-bold text-deepBlue">Liên hệ với HueLocal</h2>
-                <p class="text-dark/70 text-sm">Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ lịch trình tại Huế cho bạn.</p>
-            </div>
-
-            <form onsubmit="handleContactSubmit(event)" class="space-y-5">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Họ và tên</label>
-                        <input type="text" id="contactName" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Email / WhatsApp</label>
-                        <input type="text" id="contactEmail" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Thành viên 1 -->
+            <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
+                <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="text-center sm:text-left space-y-2">
+                    <span class="text-xs text-terracotta font-bold uppercase tracking-wider">website designer</span>
+                    <h3 class="text-xl font-bold text-deepBlue">Ngô Hoàng Minh Đạt</h3>
+                    <p class="text-xs text-dark/70 leading-relaxed">Chịu trách nhiệm kiến trúc hệ thống, lập trình giao diện Web, tích hợp cơ sở dữ liệu và quản trị CMS.</p>
+                    <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-deepBlue uppercase mb-2">Lời nhắn</label>
-                    <textarea id="contactMsg" rows="4" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-deepBlue text-cream py-4 rounded-xl font-bold hover:bg-terracotta transition shadow-xl">Gửi yêu cầu liên hệ</button>
-            </form>
-        </div>
-    </section>
+            </div>
 
-    <!-- Footer -->
+            <!-- Thành viên 2 (Hoặc bổ sung đồng đội nếu có) -->
+            <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
+                <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="text-center sm:text-left space-y-2">
+                    <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Content & Operations</span>
+                    <h3 class="text-xl font-bold text-deepBlue">Cộng sự HueLocal</h3>
+                    <p class="text-xs text-dark/70 leading-relaxed">Đồng hành nghiên cứu văn hóa bản địa, biên soạn nội dung du lịch và kết nối mạng lưới Local Guide.</p>
+                    <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <footer class="bg-deepBlue text-cream/70 border-t border-white/10 py-16 px-4">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div class="space-y-4">
