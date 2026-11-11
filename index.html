@@ -53,9 +53,7 @@
                 <a href="#contact" class="nav-contact hover:text-terracotta transition">Liên hệ & Đặt chỗ</a>
             </nav>
 
-            <div class="hidden md:flex items-center space-x-3">
-                </a>
-            </div>
+            <div class="hidden md:flex items-center space-x-3"></div>
 
             <!-- Mobile Hamburger -->
             <button onclick="toggleMobileMenu()" class="md:hidden text-deepBlue text-xl focus:outline-none">
@@ -74,92 +72,77 @@
             <a href="#contact" class="block font-medium nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
-<!-- Hero Section (Phong cách cung đình chuẩn từng đường nét) -->
-<section id="home" class="hero relative bg-[#142D46] text-white py-16 px-4 overflow-hidden" style="padding-top: 70px; background-color: #142D46;">
-    <!-- Dải hoa văn cung đình phía trên -->
-    <div class="absolute top-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
 
-    <!-- Họa tiết trang trí lồng đèn & hoa văn chìm -->
-    <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-d98a0cce-02f2-4ccf-8d9d-62f540f1f855.jpg');"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero relative bg-[#142D46] text-white py-16 px-4 overflow-hidden" style="padding-top: 70px; background-color: #142D46;">
+        <div class="absolute top-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-d98a0cce-02f2-4ccf-8d9d-62f540f1f855.jpg');"></div>
 
-    <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
-        <!-- Huy hiệu slogan -->
-        <div class="inline-block bg-[#C46B4E] text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md">
-            COME AS A TRAVELER. LEAVE AS A FRIEND.
-        </div>
-
-        <!-- Tiêu đề chính -->
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#F5F0E6]">
-            Discover Hue through local eyes.
-        </h1>
-
-        <!-- Mô tả -->
-        <p class="text-base md:text-lg text-[#F5F0E6]/90 leading-relaxed font-light max-w-2xl mx-auto">
-            Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.
-        </p>
-
-        <!-- Nút bấm hành động -->
-        <div class="pt-4 flex justify-center gap-4 flex-wrap">
-            <a href="#explore" class="border-2 border-[#F5F0E6]/30 hover:border-[#C46B4E] text-[#F5F0E6] px-8 py-3.5 rounded-full text-sm font-bold transition backdrop-blur-sm">
-                Xem hình ảnh
-            </a>
-        </div>
-    </div>
-
-    <!-- Khung ảnh Hoàng Gia bo tròn phía dưới -->
-    <div class="container mx-auto max-w-3xl px-4 pt-8 relative z-10">
-        <div class="p-3 bg-[#F5F0E6]/10 backdrop-blur-md rounded-[2.5rem] border-2 border-[#C46B4E]/40 shadow-2xl">
-            <div class="rounded-[2rem] overflow-hidden border border-[#C46B4E]/30 shadow-inner h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-49656e3b-0917-4516-aa89-35f9693144a5.webp');">
+        <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
+            <div id="hero-badge" class="inline-block bg-[#C46B4E] text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md">
+                COME AS A TRAVELER. LEAVE AS A FRIEND.
+            </div>
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#F5F0E6]">
+                Discover Hue through local eyes.
+            </h1>
+            <p id="hero-desc" class="text-base md:text-lg text-[#F5F0E6]/90 leading-relaxed font-light max-w-2xl mx-auto">
+                Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.
+            </p>
+            <div class="pt-4 flex justify-center gap-4 flex-wrap">
+                <a href="#explore" id="hero-btn" class="border-2 border-[#F5F0E6]/30 hover:border-[#C46B4E] text-[#F5F0E6] px-8 py-3.5 rounded-full text-sm font-bold transition backdrop-blur-sm">
+                    Xem hình ảnh
+                </a>
             </div>
         </div>
-    </div>
 
-    <!-- Dải hoa văn cung đình phía dưới -->
-    <div class="absolute bottom-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
-</section>
-<section class="py-16 px-4 bg-white/60 border-y border-deepBlue/10">
-    <div class="container mx-auto max-w-xl space-y-8">
-        <div class="text-center space-y-2">
-            <h2 class="text-2xl md:text-3xl font-bold text-deepBlue">Vì sao là Huế?</h2>
-            <p class="text-xs md:text-sm text-dark/70">Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.</p>
-        </div>
-
-        <div class="space-y-6">
-            <!-- Card 1 -->
-            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
-                    🏯
-                </div>
-                <div class="space-y-1">
-                    <h3 class="font-bold text-deepBlue text-lg">Cố đô di sản</h3>
-                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
-                    🛶
-                </div>
-                <div class="space-y-1">
-                    <h3 class="font-bold text-deepBlue text-lg">Sông Hương chậm rãi</h3>
-                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">
-                    🍜
-                </div>
-                <div class="space-y-1">
-                    <h3 class="font-bold text-deepBlue text-lg">Ẩm thực cung đình</h3>
-                    <p class="text-xs md:text-sm text-dark/70 leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
+        <div class="container mx-auto max-w-3xl px-4 pt-8 relative z-10">
+            <div class="p-3 bg-[#F5F0E6]/10 backdrop-blur-md rounded-[2.5rem] border-2 border-[#C46B4E]/40 shadow-2xl">
+                <div class="rounded-[2rem] overflow-hidden border border-[#C46B4E]/30 shadow-inner h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-49656e3b-0917-4516-aa89-35f9693144a5.webp');">
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="absolute bottom-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
+    </section>
+
+    <!-- Why Hue Section ("Vì sao là Huế?") -->
+    <section class="py-16 px-4 bg-white/60 border-y border-deepBlue/10">
+        <div class="container mx-auto max-w-xl space-y-8">
+            <div class="text-center space-y-2">
+                <h2 id="why-title" class="text-2xl md:text-3xl font-bold text-deepBlue">Vì sao là Huế?</h2>
+                <p id="why-subtitle" class="text-xs md:text-sm text-dark/70">Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Card 1 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🏯</div>
+                    <div class="space-y-1">
+                        <h3 id="why-1-title" class="font-bold text-deepBlue text-lg">Cố đô di sản</h3>
+                        <p id="why-1-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🛶</div>
+                    <div class="space-y-1">
+                        <h3 id="why-2-title" class="font-bold text-deepBlue text-lg">Sông Hương chậm rãi</h3>
+                        <p id="why-2-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🍜</div>
+                    <div class="space-y-1">
+                        <h3 id="why-3-title" class="font-bold text-deepBlue text-lg">Ẩm thực cung đình</h3>
+                        <p id="why-3-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Explore Section -->
     <section id="explore" class="py-20 px-4 bg-deepBlue text-cream">
@@ -179,21 +162,18 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Place 1 -->
                 <div class="explore-card heritage bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đại Nội Huế', 'Kinh thành triều Nguyễn với kiến trúc cung điện nguy nga, nơi lưu giữ dấu ấn lịch sử hàng trăm năm.', '23 Đoàn Thị Điểm, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=600&q=80');"></div>
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Heritage</span>
                     <h3 id="place-1-title" class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Đại Nội Huế</h3>
                     <p id="place-1-desc" class="text-xs text-cream/70 mt-2 leading-relaxed">Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...</p>
                 </div>
-                <!-- Place 2 -->
                 <div class="explore-card cafe bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Cà phê muối Chợ Gia Hội', 'Quán cà phê truyền thống nổi tiếng với hương vị cà phê muối đậm đà chất Huế, không gian hoài cổ.', '10 Nguyễn Huệ, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80');"></div>
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Cafe</span>
                     <h3 id="place-2-title" class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Cà phê muối truyền thống</h3>
                     <p id="place-2-desc" class="text-xs text-cream/70 mt-2 leading-relaxed">Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...</p>
                 </div>
-                <!-- Place 3 -->
                 <div class="explore-card hidden bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đồi Vọng Cảnh', 'Điểm ngắm hoàng hôn tuyệt đẹp bên dòng sông Hương, rợp bóng thông xanh và lăng tẩm ẩn hiện.', 'Đồi Vọng Cảnh, Điện Biên Phủ, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80');"></div>
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Hidden Gem</span>
@@ -290,33 +270,35 @@
             </div>
             <button onclick="openPartnerModal()" id="partner-btn" class="mt-6 md:mt-0 bg-deepBlue text-cream px-6 py-3 rounded-xl font-bold hover:bg-terracotta transition shadow-lg">Trở thành đối tác</button>
         </div>
-<!-- Khối đối tác "Rồng Rắn Lên Mây" -->
-    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-deepBlue/10 max-w-lg mx-auto my-8 text-center space-y-6">
-        <div class="relative rounded-2xl overflow-hidden border-2 border-deepBlue/10 bg-cream p-4">
-            <img src="https://cdn.phototourl.com/member/2026-11-11-39403a29-aad2-4894-bbba-c0f0619c55c7.jpg" alt="Rồng Rắn Lên Mây" class="w-full h-auto object-cover rounded-xl shadow-inner">
+
+        <!-- Khối đối tác "Rồng Rắn Lên Mây" -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-deepBlue/10 max-w-lg mx-auto my-8 text-center space-y-6">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-deepBlue/10 bg-cream p-4">
+                <img src="https://cdn.phototourl.com/member/2026-11-11-39403a29-aad2-4894-bbba-c0f0619c55c7.jpg" alt="Rồng Rắn Lên Mây" class="w-full h-auto object-cover rounded-xl shadow-inner">
+            </div>
+
+            <div class="space-y-1">
+                <span class="text-xs text-terracotta font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-deepBlue tracking-wide" style="font-family: Arial, sans-serif;">Rồng Rắn Lên Mây</h3>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <a href="https://www.facebook.com/profile.php?id=61581662163890" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-facebook text-terracotta"></i> Facebook · Rồng rắn lên mây
+                </a>
+                <a href="https://www.instagram.com/_rongran.lenmay_/" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-instagram text-terracotta"></i> Instagram · _rongran.lenmay_
+                </a>
+                <a href="LINK_TIKTOK" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-tiktok text-terracotta"></i> TikTok · Rồng rắn lên mây
+                </a>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border border-deepBlue/10 shadow-md">
+                <img src="https://cdn.phototourl.com/member/2026-11-11-06ff133e-dfc5-434c-a1a3-b45156f325db.jpg" alt="Banner Rồng Rắn Lên Mây" class="w-full h-auto object-cover">
+            </div>
         </div>
 
-        <div class="space-y-1">
-            <span class="text-xs text-terracotta font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
-            <h3 class="text-2xl sm:text-3xl font-black text-deepBlue tracking-wide" style="font-family: Arial, sans-serif;">Rồng Rắn Lên Mây</h3>
-        </div>
-
-        <div class="flex flex-col gap-3">
-            <a href="https://www.facebook.com/profile.php?id=61581662163890" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                <i class="fa-brands fa-facebook text-terracotta"></i> Facebook · Rồng rắn lên mây
-            </a>
-            <a href="https://www.instagram.com/_rongran.lenmay_/" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                <i class="fa-brands fa-instagram text-terracotta"></i> Instagram · _rongran.lenmay_
-            </a>
-            <a href="LINK_TIKTOK" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                <i class="fa-brands fa-tiktok text-terracotta"></i> TikTok · Rồng rắn lên mây
-            </a>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden border border-deepBlue/10 shadow-md">
-            <img src="https://cdn.phototourl.com/member/2026-11-11-06ff133e-dfc5-434c-a1a3-b45156f325db.jpg" alt="Banner Rồng Rắn Lên Mây" class="w-full h-auto object-cover">
-        </div>
-    </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div class="bg-white p-8 rounded-3xl shadow-xl border border-deepBlue/10 flex flex-col items-center justify-center space-y-3 hover:border-terracotta transition">
                 <i class="fa-solid fa-hotel text-4xl text-terracotta"></i>
@@ -341,7 +323,7 @@
         </div>
     </section>
 
-    <!-- Team Members Section (4 Thành viên) -->
+    <!-- Team Members Section -->
     <section id="team" class="py-20 px-4 bg-white border-t border-deepBlue/10">
         <div class="container mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -351,60 +333,40 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Thành viên 1: Hoài Bảo -->
+                <!-- Hoài Bảo -->
                 <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
                     <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-1b0296aa-e16e-4825-8e05-61c01590c957.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
                         <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Leader</span>
                         <h3 class="text-xl font-bold text-deepBlue">Hoài Bảo</h3>
                         <p id="member-desc-1" class="text-xs text-dark/70 leading-relaxed">Định hướng chiến lược, điều phối hoạt động chung và dẫn dắt đội ngũ phát triển dự án HueLocal.</p>
-                        <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Thành viên 2: Gia Hiếu -->
+                <!-- Gia Hiếu -->
                 <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
                     <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-61e4b830-769c-4595-9ba2-de6905278287.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
                         <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Visual</span>
                         <h3 class="text-xl font-bold text-deepBlue">Gia Hiếu</h3>
                         <p id="member-desc-2" class="text-xs text-dark/70 leading-relaxed">Thiết kế giao diện, hình ảnh thương hiệu và định hình phong cách thẩm mỹ mang đậm dấu ấn Cố đô.</p>
-                        <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Thành viên 3: Hùng Hồ -->
+                <!-- Hùng Hồ -->
                 <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
                     <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-23734635-9ac1-4a80-b63b-6d1230430d28.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
                         <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Manager</span>
                         <h3 class="text-xl font-bold text-deepBlue">Hùng Hồ</h3>
                         <p id="member-desc-3" class="text-xs text-dark/70 leading-relaxed">Quản lý vận hành, kế hoạch triển khai và kết nối các đối tác dịch vụ trong hệ sinh thái.</p>
-                        <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
                     </div>
                 </div>
-
-                <!-- Thành viên 4: Minh Đạt -->
+                <!-- Minh Đạt -->
                 <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
                     <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-9367a0f3-467a-427b-8b48-5f909fad60ee.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
                         <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Media leader</span>
                         <h3 class="text-xl font-bold text-deepBlue">Minh Đạt</h3>
                         <p id="member-desc-4" class="text-xs text-dark/70 leading-relaxed">Dẫn dắt chiến lược truyền thông, kỹ thuật hệ thống web, lập trình CMS và tích hợp dữ liệu.</p>
-                        <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-github"></i></a>
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="hover:text-terracotta transition"><i class="fa-solid fa-envelope"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -494,8 +456,6 @@
     </footer>
 
     <!-- MODALS -->
-
-    <!-- Place Detail Modal -->
     <div id="placeModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-lg w-full p-8 text-dark relative shadow-2xl">
             <button onclick="closeModal('placeModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
@@ -509,7 +469,6 @@
         </div>
     </div>
 
-    <!-- Story Detail Modal -->
     <div id="storyModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-xl w-full p-8 text-dark relative shadow-2xl max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('storyModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
@@ -519,13 +478,11 @@
         </div>
     </div>
 
-    <!-- Guide Modal -->
     <div id="guideModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
             <button onclick="closeModal('guideModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
             <h3 id="modal-guide-title" class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký làm Local Guide</h3>
             <p id="modal-guide-sub" class="text-xs text-dark/60 mb-6">Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.</p>
-            
             <form onsubmit="submitGuide(event)" class="space-y-4">
                 <div>
                     <label id="g-label-name" class="block text-xs font-bold text-deepBlue uppercase mb-1">Họ và tên</label>
@@ -548,13 +505,11 @@
         </div>
     </div>
 
-    <!-- Partner Modal -->
     <div id="partnerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
             <button onclick="closeModal('partnerModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
             <h3 id="modal-partner-title" class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký Hợp tác đối tác</h3>
             <p id="modal-partner-sub" class="text-xs text-dark/60 mb-6">Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.</p>
-            
             <form onsubmit="submitPartner(event)" class="space-y-4">
                 <div>
                     <label id="p-label-brand" class="block text-xs font-bold text-deepBlue uppercase mb-1">Tên thương hiệu / Doanh nghiệp</label>
@@ -583,7 +538,6 @@
             <button onclick="closeModal('adminLoginModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng nhập Quản trị</h3>
             <p class="text-xs text-dark/60 mb-6">HueLocal CMS Control Center</p>
-            
             <form onsubmit="handleAdminLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email Admin</label>
@@ -626,6 +580,7 @@
                                     <th class="p-3">Số khách</th>
                                     <th class="p-3">Yêu cầu</th>
                                     <th class="p-3">Thời gian</th>
+                                    <th class="p-3 text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody id="tableBookingsBody" class="divide-y divide-cream"></tbody>
@@ -644,6 +599,7 @@
                                     <th class="p-3">Liên hệ</th>
                                     <th class="p-3">Ngôn ngữ</th>
                                     <th class="p-3">Giới thiệu</th>
+                                    <th class="p-3 text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody id="tableGuidesBody" class="divide-y divide-cream"></tbody>
@@ -662,6 +618,7 @@
                                     <th class="p-3">Người liên hệ</th>
                                     <th class="p-3">Liên hệ</th>
                                     <th class="p-3">Loại hình</th>
+                                    <th class="p-3 text-center">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody id="tablePartnersBody" class="divide-y divide-cream"></tbody>
@@ -697,16 +654,18 @@
                 navMember: "Thành viên",
                 navContact: "Liên hệ & Đặt chỗ",
                 ctaBook: "Đặt trải nghiệm",
-                heroBadge: "HueLocal Experience",
+                heroBadge: "COME AS A TRAVELER. LEAVE AS A FRIEND.",
                 heroTitle: "Discover Hue through local eyes.",
-                heroDesc: "Kết nối du khách với những trải nghiệm chân thực, câu chuyện văn hóa sâu sắc và Local Guide tâm huyết tại Cố đô.",
-                searchInputPlaceholder: "Tìm địa điểm, món ăn, tour...",
-                optAllCat: "Tất cả danh mục",
-                optTour: "Walking / Food Tour",
-                optHeritage: "Di tích lịch sử",
-                optFood: "Ẩm thực cung đình & dân gian",
-                optHidden: "Hidden Gems",
-                searchBtn: "Khám phá",
+                heroDesc: "Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.",
+                heroBtn: "Xem hình ảnh",
+                whyTitle: "Vì sao là Huế?",
+                whySubtitle: "Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.",
+                why1Title: "Cố đô di sản",
+                why1Desc: "Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.",
+                why2Title: "Sông Hương chậm rãi",
+                why2Desc: "Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.",
+                why3Title: "Ẩm thực cung đình",
+                why3Desc: "Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.",
                 exploreBadge: "Sitemap Khám Phá",
                 exploreTitle: "Khám phá Huế",
                 exploreSubtitle: "Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.",
@@ -802,16 +761,18 @@
                 navMember: "Membership",
                 navContact: "Contact & Booking",
                 ctaBook: "Book Experience",
-                heroBadge: "HueLocal Experience",
+                heroBadge: "COME AS A TRAVELER. LEAVE AS A FRIEND.",
                 heroTitle: "Discover Hue through local eyes.",
-                heroDesc: "Connecting travelers with authentic experiences, deep cultural stories, and passionate local guides in the ancient capital.",
-                searchInputPlaceholder: "Search places, food, tours...",
-                optAllCat: "All Categories",
-                optTour: "Walking / Food Tour",
-                optHeritage: "Historical Heritage",
-                optFood: "Royal & Folk Cuisine",
-                optHidden: "Hidden Gems",
-                searchBtn: "Explore",
+                heroDesc: "The ancient capital of Hue through local eyes: mossy paths, flavorful meals, and royal stories echoing in every tiled roof.",
+                heroBtn: "Explore Gallery",
+                whyTitle: "Why Hue?",
+                whySubtitle: "Three things that make Hue unlike anywhere else you've ever been.",
+                why1Title: "Heritage Capital",
+                why1Desc: "The Imperial Citadel, royal tombs, and Nguyen dynasty palaces embedded right in daily life.",
+                why2Title: "Slow Perfume River",
+                why2Desc: "Gentle rhythm of life, boats on the river, and sunset reflecting on temple roofs.",
+                why3Title: "Royal Cuisine",
+                why3Desc: "From beef noodle soup to delicate dishes associated with royal culinary arts.",
                 exploreBadge: "Discovery Sitemap",
                 exploreTitle: "Explore Hue",
                 exploreSubtitle: "Heritage sites, unique cafes, and nostalgic hidden corners.",
@@ -915,13 +876,16 @@
             if(document.getElementById('hero-badge')) document.getElementById('hero-badge').innerText = t.heroBadge;
             if(document.getElementById('hero-title')) document.getElementById('hero-title').innerText = t.heroTitle;
             if(document.getElementById('hero-desc')) document.getElementById('hero-desc').innerText = t.heroDesc;
-            if(document.getElementById('searchInput')) document.getElementById('searchInput').placeholder = t.searchInputPlaceholder;
-            if(document.getElementById('opt-all-cat')) document.getElementById('opt-all-cat').innerText = t.optAllCat;
-            if(document.getElementById('opt-tour')) document.getElementById('opt-tour').innerText = t.optTour;
-            if(document.getElementById('opt-heritage')) document.getElementById('opt-heritage').innerText = t.optHeritage;
-            if(document.getElementById('opt-food')) document.getElementById('opt-food').innerText = t.optFood;
-            if(document.getElementById('opt-hidden')) document.getElementById('opt-hidden').innerText = t.optHidden;
-            if(document.getElementById('search-btn')) document.getElementById('search-btn').innerText = t.searchBtn;
+            if(document.getElementById('hero-btn')) document.getElementById('hero-btn').innerText = t.heroBtn;
+
+            if(document.getElementById('why-title')) document.getElementById('why-title').innerText = t.whyTitle;
+            if(document.getElementById('why-subtitle')) document.getElementById('why-subtitle').innerText = t.whySubtitle;
+            if(document.getElementById('why-1-title')) document.getElementById('why-1-title').innerText = t.why1Title;
+            if(document.getElementById('why-1-desc')) document.getElementById('why-1-desc').innerText = t.why1Desc;
+            if(document.getElementById('why-2-title')) document.getElementById('why-2-title').innerText = t.why2Title;
+            if(document.getElementById('why-2-desc')) document.getElementById('why-2-desc').innerText = t.why2Desc;
+            if(document.getElementById('why-3-title')) document.getElementById('why-3-title').innerText = t.why3Title;
+            if(document.getElementById('why-3-desc')) document.getElementById('why-3-desc').innerText = t.why3Desc;
 
             if(document.getElementById('explore-badge')) document.getElementById('explore-badge').innerText = t.exploreBadge;
             if(document.getElementById('explore-title')) document.getElementById('explore-title').innerText = t.exploreTitle;
@@ -1038,7 +1002,6 @@
             document.getElementById(modalId).classList.add('hidden');
         }
 
-        // Contact & Booking Submit to Google Sheets (Sheet.best)
         function handleContactSubmit(e) {
             e.preventDefault();
             const item = {
@@ -1054,34 +1017,20 @@
 
             fetch(SHEET_BEST_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(item)
             })
             .then(response => {
                 db.bookings.push({
-                    name: item["Ho Ten"],
-                    contact: item["Lien He"],
-                    date: item["Ngay Di"],
-                    guests: item["So Khach"],
-                    msg: item["Loi Nhan"],
-                    time: item["Thoi Gian"]
+                    name: item["Ho Ten"], contact: item["Lien He"], date: item["Ngay Di"], guests: item["So Khach"], msg: item["Loi Nhan"], time: item["Thoi Gian"]
                 });
                 saveDB();
-
                 alert('Đã gửi thông tin đặt chỗ thành công! Dữ liệu đã được đồng bộ về Google Sheets.');
                 e.target.reset();
             })
             .catch(error => {
-                console.error('Error:', error);
                 db.bookings.push({
-                    name: item["Ho Ten"],
-                    contact: item["Lien He"],
-                    date: item["Ngay Di"],
-                    guests: item["So Khach"],
-                    msg: item["Loi Nhan"],
-                    time: item["Thoi Gian"]
+                    name: item["Ho Ten"], contact: item["Lien He"], date: item["Ngay Di"], guests: item["So Khach"], msg: item["Loi Nhan"], time: item["Thoi Gian"]
                 });
                 saveDB();
                 alert('Đã lưu thông tin đặt chỗ vào hệ thống!');
@@ -1089,7 +1038,6 @@
             });
         }
 
-        // Place Modal
         function openPlaceDetail(title, desc, address) {
             document.getElementById('placeTitle').innerText = title;
             document.getElementById('placeDesc').innerText = desc;
@@ -1097,7 +1045,6 @@
             document.getElementById('placeModal').classList.remove('hidden');
         }
 
-        // Story Modal
         function openStoryModal(title, content, author) {
             document.getElementById('storyTitle').innerText = title;
             document.getElementById('storyContent').innerHTML = `<p>${content}</p><p class="mt-4">Nội dung chi tiết được biên soạn bởi đội ngũ HueLocal Stories, phản ánh chân thực nhịp sống và văn hóa Cố đô.</p>`;
@@ -1105,7 +1052,6 @@
             document.getElementById('storyModal').classList.remove('hidden');
         }
 
-        // Guide Modal
         function openGuideModal() {
             document.getElementById('guideModal').classList.remove('hidden');
         }
@@ -1126,7 +1072,6 @@
             e.target.reset();
         }
 
-        // Partner Modal
         function openPartnerModal() {
             document.getElementById('partnerModal').classList.remove('hidden');
         }
@@ -1147,7 +1092,6 @@
             e.target.reset();
         }
 
-        // Explore Filter
         function filterExplore(category) {
             const cards = document.querySelectorAll('.explore-card');
             cards.forEach(card => {
@@ -1159,7 +1103,6 @@
             });
         }
 
-        // Admin Portal
         function openAdminLogin() {
             document.getElementById('adminLoginModal').classList.remove('hidden');
         }
@@ -1186,38 +1129,38 @@
             alert('Đã đăng xuất tài khoản quản trị.');
         }
 
+        function deleteRecord(type, index) {
+            if(confirm('Bạn có chắc chắn muốn xóa mục này không?')) {
+                if(type === 'booking') db.bookings.splice(index, 1);
+                if(type === 'guide') db.guides.splice(index, 1);
+                if(type === 'partner') db.partners.splice(index, 1);
+                saveDB();
+                renderAdminTables();
+            }
+        }
+
         function renderAdminTables() {
             document.getElementById('countBookings').innerText = db.bookings.length;
             document.getElementById('countGuides').innerText = db.guides.length;
             document.getElementById('countPartners').innerText = db.partners.length;
 
             let bHtml = '';
-            db.bookings.forEach(item => {
-                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.date || '-'}</td><td class="p-3">${item.guests || '-'} khách</td><td class="p-3 text-terracotta">${item.msg || '-'}</td><td class="p-3">${item.time}</td></tr>`;
+            db.bookings.forEach((item, index) => {
+                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.date || '-'}</td><td class="p-3">${item.guests || '-'} khách</td><td class="p-3 text-terracotta">${item.msg || '-'}</td><td class="p-3">${item.time}</td><td class="p-3 text-center"><button onclick="deleteRecord('booking', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
+            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="7" class="p-4 text-center text-dark/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
 
             let gHtml = '';
-            db.guides.forEach(item => {
-                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td></tr>`;
+            db.guides.forEach((item, index) => {
+                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td><td class="p-3 text-center"><button onclick="deleteRecord('guide', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
+            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="5" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
 
             let pHtml = '';
-            db.partners.forEach(item => {
-                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td></tr>`;
+            db.partners.forEach((item, index) => {
+                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td><td class="p-3 text-center"><button onclick="deleteRecord('partner', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
-        }
-
-        function handleSearch() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            if(query.trim() !== '') {
-                alert('Đang tìm kiếm kết quả cho: "' + query + '" tại khu vực Huế.');
-                document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                alert('Vui lòng nhập nội dung cần tìm kiếm!');
-            }
+            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="5" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
         }
     </script>
 </body>
