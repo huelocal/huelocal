@@ -344,7 +344,7 @@
                 <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80');"></div>
                 <div class="text-center sm:text-left space-y-2">
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Leader</span>
-                    <h3 class="text-xl font-bold text-deepBlue">Hoài Bảo</h3>
+                    <h3 class="text-xl font-bold text-deepBlue">Nguyễn Phan Hoài Bảo</h3>
                     <p class="text-xs text-dark/70 leading-relaxed">Định hướng chiến lược, điều phối hoạt động chung và dẫn dắt đội ngũ phát triển dự án HueLocal.</p>
                     <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
                         <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
@@ -358,7 +358,7 @@
                 <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80');"></div>
                 <div class="text-center sm:text-left space-y-2">
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Visual</span>
-                    <h3 class="text-xl font-bold text-deepBlue">Gia Hiếu</h3>
+                    <h3 class="text-xl font-bold text-deepBlue">Phạm Gia Hiếu</h3>
                     <p class="text-xs text-dark/70 leading-relaxed">Thiết kế giao diện, hình ảnh thương hiệu và định hình phong cách thẩm mỹ mang đậm dấu ấn Cố đô.</p>
                     <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
                         <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-instagram"></i></a>
@@ -372,7 +372,7 @@
                 <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80');"></div>
                 <div class="text-center sm:text-left space-y-2">
                     <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Manager</span>
-                    <h3 class="text-xl font-bold text-deepBlue">Hùng Hồ</h3>
+                    <h3 class="text-xl font-bold text-deepBlue">Hồ Hùng</h3>
                     <p class="text-xs text-dark/70 leading-relaxed">Quản lý vận hành, kế hoạch triển khai và kết nối các đối tác dịch vụ trong hệ sinh thái.</p>
                     <div class="pt-2 flex justify-center sm:justify-start space-x-3 text-deepBlue">
                         <a href="#" class="hover:text-terracotta transition"><i class="fa-brands fa-facebook"></i></a>
@@ -656,246 +656,285 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        // Data Store (LocalStorage for fallback/CMS view)
-        let db = {
-            bookings: JSON.parse(localStorage.getItem('huelocal_bookings')) || [],
-            guides: JSON.parse(localStorage.getItem('huelocal_guides')) || [],
-            partners: JSON.parse(localStorage.getItem('huelocal_partners')) || []
+    // Data Store (LocalStorage for fallback/CMS view)
+    let db = {
+        bookings: JSON.parse(localStorage.getItem('huelocal_bookings')) || [],
+        guides: JSON.parse(localStorage.getItem('huelocal_guides')) || [],
+        partners: JSON.parse(localStorage.getItem('huelocal_partners')) || []
+    };
+
+    function saveDB() {
+        localStorage.setItem('huelocal_bookings', JSON.stringify(db.bookings));
+        localStorage.setItem('huelocal_guides', JSON.stringify(db.guides));
+        localStorage.setItem('huelocal_partners', JSON.stringify(db.partners));
+    }
+
+    // Từ điển ngôn ngữ Song ngữ (VI - EN)
+    const translations = {
+        vi: {
+            banner: "Khám phá Huế qua lăng kính người bản địa | Discover Hue through local eyes",
+            navHome: "Trang chủ",
+            navExplore: "Khám phá Huế",
+            navExp: "Trải nghiệm",
+            navLocals: "Local Guide",
+            navStories: "Stories",
+            navPartners: "Đối tác",
+            navMember: "Thành viên",
+            navContact: "Liên hệ",
+            ctaBook: "Đặt trải nghiệm"
+        },
+        en: {
+            banner: "Discover Hue through local eyes",
+            navHome: "Home",
+            navExplore: "Explore Hue",
+            navExp: "Experiences",
+            navLocals: "Local Guide",
+            navStories: "Stories",
+            navPartners: "Partners",
+            navMember: "Membership",
+            navContact: "Contact",
+            ctaBook: "Book Experience"
+        }
+    };
+
+    function switchLang(lang) {
+        if(lang === 'en') {
+            document.getElementById('lang-en-btn').className = 'font-bold text-terracotta underline';
+            document.getElementById('lang-vi-btn').className = 'text-cream/70 hover:text-white';
+        } else {
+            document.getElementById('lang-vi-btn').className = 'font-bold text-terracotta underline';
+            document.getElementById('lang-en-btn').className = 'text-cream/70 hover:text-white';
+            lang = 'vi';
+        }
+
+        // Cập nhật text các mục chính trên thanh điều hướng
+        const t = translations[lang];
+        document.getElementById('top-banner-text').innerHTML = `<i class="fa-solid fa-compass mr-2"></i> ${t.banner}`;
+        
+        // Cập nhật Menu desktop & mobile
+        document.querySelectorAll('.nav-home').forEach(el => el.innerText = t.navHome);
+        document.querySelectorAll('.nav-explore').forEach(el => el.innerText = t.navExplore);
+        document.querySelectorAll('.nav-exp').forEach(el => el.innerText = t.navExp);
+        document.querySelectorAll('.nav-locals').forEach(el => el.innerText = t.navLocals);
+        document.querySelectorAll('.nav-stories').forEach(el => el.innerText = t.navStories);
+        document.querySelectorAll('.nav-partners').forEach(el => el.innerText = t.navPartners);
+        document.querySelectorAll('.nav-member').forEach(el => el.innerText = t.navMember);
+        document.querySelectorAll('.nav-contact').forEach(el => el.innerText = t.navContact);
+        document.querySelectorAll('.cta-book-btn').forEach(el => el.innerText = t.ctaBook);
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+    }
+
+    // Booking Modal with Sheet.best Google Sheets Integration
+    let selectedTourName = '';
+    function openBookingModal(tourName = 'Tour Khám Phá Cố Đô Chung', price = '500.000đ') {
+        selectedTourName = tourName + ' (' + price + ')';
+        document.getElementById('tourTitleDisplay').innerText = selectedTourName;
+        document.getElementById('bookingModal').classList.remove('hidden');
+    }
+
+    function submitBooking(e) {
+        e.preventDefault();
+        const item = {
+            "Ho Ten": document.getElementById('bookName').value,
+            "Lien He": document.getElementById('bookContact').value,
+            "Tour": selectedTourName,
+            "Ngay Di": document.getElementById('bookDate').value,
+            "So Khach": document.getElementById('bookGuests').value,
+            "Yeu Cau": document.getElementById('bookNote').value || '',
+            "Thoi Gian": new Date().toLocaleString()
         };
 
-        function saveDB() {
-            localStorage.setItem('huelocal_bookings', JSON.stringify(db.bookings));
-            localStorage.setItem('huelocal_guides', JSON.stringify(db.guides));
-            localStorage.setItem('huelocal_partners', JSON.stringify(db.partners));
-        }
+        const SHEET_BEST_URL = 'https://api.sheetbest.com/sheets/b528dd02-deea-4083-a934-840b4872d09e';
 
-        function switchLang(lang) {
-            if(lang === 'en') {
-                document.getElementById('lang-en-btn').className = 'font-bold text-terracotta underline';
-                document.getElementById('lang-vi-btn').className = 'text-cream/70 hover:text-white';
-                alert('English mode is active!');
-            } else {
-                document.getElementById('lang-vi-btn').className = 'font-bold text-terracotta underline';
-                document.getElementById('lang-en-btn').className = 'text-cream/70 hover:text-white';
-            }
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        // Booking Modal with Sheet.best Google Sheets Integration
-        let selectedTourName = '';
-        function openBookingModal(tourName = 'Tour Khám Phá Cố Đô Chung', price = '500.000đ') {
-            selectedTourName = tourName + ' (' + price + ')';
-            document.getElementById('tourTitleDisplay').innerText = selectedTourName;
-            document.getElementById('bookingModal').classList.remove('hidden');
-        }
-
-        function submitBooking(e) {
-            e.preventDefault();
-            const item = {
-                "Ho Ten": document.getElementById('bookName').value,
-                "Lien He": document.getElementById('bookContact').value,
-                "Tour": selectedTourName,
-                "Ngay Di": document.getElementById('bookDate').value,
-                "So Khach": document.getElementById('bookGuests').value,
-                "Yeu Cau": document.getElementById('bookNote').value || '',
-                "Thoi Gian": new Date().toLocaleString()
-            };
-
-            // LƯU Ý: Đạt hãy thay thế URL bên dưới bằng Connection URL từ trang Sheet.best của Đạt nhé!
-            const SHEET_BEST_URL = 'https://api.sheetbest.com/sheets/b528dd02-deea-4083-a934-840b4872d09e';
-
-            // Gửi dữ liệu lên Google Sheets
-            fetch(SHEET_BEST_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(item)
-            })
-            .then(response => {
-                // Đồng thời lưu vào localStorage để xem trên CMS nội bộ nếu cần
-                db.bookings.push({
-                    name: item["Ho Ten"],
-                    contact: item["Lien He"],
-                    tour: item["Tour"],
-                    date: item["Ngay Di"],
-                    guests: item["So Khach"],
-                    note: item["Yeu Cau"],
-                    time: item["Thoi Gian"]
-                });
-                saveDB();
-
-                alert('Đã gửi yêu cầu đặt chỗ thành công! Thông tin đã được đồng bộ về Google Sheets.');
-                closeModal('bookingModal');
-                e.target.reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Fallback lưu local nếu chưa cấu hình URL Sheet.best
-                db.bookings.push({
-                    name: item["Ho Ten"],
-                    contact: item["Lien He"],
-                    tour: item["Tour"],
-                    date: item["Ngay Di"],
-                    guests: item["So Khach"],
-                    note: item["Yeu Cau"],
-                    time: item["Thoi Gian"]
-                });
-                saveDB();
-                alert('Đã lưu yêu cầu thành công vào hệ thống!');
-                closeModal('bookingModal');
-                e.target.reset();
+        fetch(SHEET_BEST_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+        .then(response => {
+            db.bookings.push({
+                name: item["Ho Ten"],
+                contact: item["Lien He"],
+                tour: item["Tour"],
+                date: item["Ngay Di"],
+                guests: item["So Khach"],
+                note: item["Yeu Cau"],
+                time: item["Thoi Gian"]
             });
-        }
-
-        // Place Modal
-        function openPlaceDetail(title, desc, address) {
-            document.getElementById('placeTitle').innerText = title;
-            document.getElementById('placeDesc').innerText = desc;
-            document.querySelector('#placeAddress span').innerText = address;
-            document.getElementById('placeModal').classList.remove('hidden');
-        }
-
-        // Story Modal
-        function openStoryModal(title, content, author) {
-            document.getElementById('storyTitle').innerText = title;
-            document.getElementById('storyContent').innerHTML = `<p>${content}</p><p class="mt-4">Nội dung chi tiết được biên soạn bởi đội ngũ HueLocal Stories, phản ánh chân thực nhịp sống và văn hóa Cố đô.</p>`;
-            document.getElementById('storyAuthor').innerText = 'Bởi ' + author;
-            document.getElementById('storyModal').classList.remove('hidden');
-        }
-
-        // Guide Modal
-        function openGuideModal() {
-            document.getElementById('guideModal').classList.remove('hidden');
-        }
-
-        function submitGuide(e) {
-            e.preventDefault();
-            const item = {
-                name: document.getElementById('gName').value,
-                contact: document.getElementById('gContact').value,
-                lang: document.getElementById('gLang').value,
-                bio: document.getElementById('gBio').value,
-                time: new Date().toLocaleString()
-            };
-            db.guides.push(item);
             saveDB();
-            alert('Đã gửi đơn ứng tuyển Local Guide thành công!');
-            closeModal('guideModal');
+
+            alert('Đã gửi yêu cầu đặt chỗ thành công! Thông tin đã được đồng bộ về Google Sheets.');
+            closeModal('bookingModal');
             e.target.reset();
-        }
-
-        // Partner Modal
-        function openPartnerModal() {
-            document.getElementById('partnerModal').classList.remove('hidden');
-        }
-
-        function submitPartner(e) {
-            e.preventDefault();
-            const item = {
-                brand: document.getElementById('pBrand').value,
-                name: document.getElementById('pName').value,
-                contact: document.getElementById('pContact').value,
-                type: document.getElementById('pType').value,
-                time: new Date().toLocaleString()
-            };
-            db.partners.push(item);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            db.bookings.push({
+                name: item["Ho Ten"],
+                contact: item["Lien He"],
+                tour: item["Tour"],
+                date: item["Ngay Di"],
+                guests: item["So Khach"],
+                note: item["Yeu Cau"],
+                time: item["Thoi Gian"]
+            });
             saveDB();
-            alert('Đã gửi yêu cầu hợp tác thành công!');
-            closeModal('partnerModal');
+            alert('Đã lưu yêu cầu thành công vào hệ thống!');
+            closeModal('bookingModal');
             e.target.reset();
-        }
+        });
+    }
 
-        // Contact Form
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã liên hệ! HueLocal đã tiếp nhận thông tin.');
-            e.target.reset();
-        }
+    // Place Modal
+    function openPlaceDetail(title, desc, address) {
+        document.getElementById('placeTitle').innerText = title;
+        document.getElementById('placeDesc').innerText = desc;
+        document.querySelector('#placeAddress span').innerText = address;
+        document.getElementById('placeModal').classList.remove('hidden');
+    }
 
-        // Explore Filter
-        function filterExplore(category) {
-            const cards = document.querySelectorAll('.explore-card');
-            cards.forEach(card => {
-                if(category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+    // Story Modal
+    function openStoryModal(title, content, author) {
+        document.getElementById('storyTitle').innerText = title;
+        document.getElementById('storyContent').innerHTML = `<p>${content}</p><p class="mt-4">Nội dung chi tiết được biên soạn bởi đội ngũ HueLocal Stories, phản ánh chân thực nhịp sống và văn hóa Cố đô.</p>`;
+        document.getElementById('storyAuthor').innerText = 'Bởi ' + author;
+        document.getElementById('storyModal').classList.remove('hidden');
+    }
 
-        // Admin Portal
-        function openAdminLogin() {
-            document.getElementById('adminLoginModal').classList.remove('hidden');
-        }
+    // Guide Modal
+    function openGuideModal() {
+        document.getElementById('guideModal').classList.remove('hidden');
+    }
 
-        function handleAdminLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('adminEmailInput').value;
-            const pass = document.getElementById('adminPassInput').value;
-            if(email === 'admin@huelocal.vn' && pass === '123456') {
-                closeModal('adminLoginModal');
-                openAdminDashboard();
+    function submitGuide(e) {
+        e.preventDefault();
+        const item = {
+            name: document.getElementById('gName').value,
+            contact: document.getElementById('gContact').value,
+            lang: document.getElementById('gLang').value,
+            bio: document.getElementById('gBio').value,
+            time: new Date().toLocaleString()
+        };
+        db.guides.push(item);
+        saveDB();
+        alert('Đã gửi đơn ứng tuyển Local Guide thành công!');
+        closeModal('guideModal');
+        e.target.reset();
+    }
+
+    // Partner Modal
+    function openPartnerModal() {
+        document.getElementById('partnerModal').classList.remove('hidden');
+    }
+
+    function submitPartner(e) {
+        e.preventDefault();
+        const item = {
+            brand: document.getElementById('pBrand').value,
+            name: document.getElementById('pName').value,
+            contact: document.getElementById('pContact').value,
+            type: document.getElementById('pType').value,
+            time: new Date().toLocaleString()
+        };
+        db.partners.push(item);
+        saveDB();
+        alert('Đã gửi yêu cầu hợp tác thành công!');
+        closeModal('partnerModal');
+        e.target.reset();
+    }
+
+    // Contact Form
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        alert('Cảm ơn bạn đã liên hệ! HueLocal đã tiếp nhận thông tin.');
+        e.target.reset();
+    }
+
+    // Explore Filter
+    function filterExplore(category) {
+        const cards = document.querySelectorAll('.explore-card');
+        cards.forEach(card => {
+            if(category === 'all' || card.classList.contains(category)) {
+                card.style.display = 'block';
             } else {
-                alert('Sai tài khoản hoặc mật khẩu! Vui lòng dùng: admin@huelocal.vn / 123456');
+                card.style.display = 'none';
             }
+        });
+    }
+
+    // Admin Portal
+    function openAdminLogin() {
+        document.getElementById('adminLoginModal').classList.remove('hidden');
+    }
+
+    function handleAdminLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('adminEmailInput').value;
+        const pass = document.getElementById('adminPassInput').value;
+        if(email === 'admin@huelocal.vn' && pass === '123456') {
+            closeModal('adminLoginModal');
+            openAdminDashboard();
+        } else {
+            alert('Sai tài khoản hoặc mật khẩu! Vui lòng dùng: admin@huelocal.vn / 123456');
         }
+    }
 
-        function openAdminDashboard() {
-            renderAdminTables();
-            document.getElementById('adminDashboardModal').classList.remove('hidden');
+    function openAdminDashboard() {
+        renderAdminTables();
+        document.getElementById('adminDashboardModal').classList.remove('hidden');
+    }
+
+    function logoutAdmin() {
+        closeModal('adminDashboardModal');
+        alert('Đã đăng xuất tài khoản quản trị.');
+    }
+
+    function renderAdminTables() {
+        document.getElementById('countBookings').innerText = db.bookings.length;
+        document.getElementById('countGuides').innerText = db.guides.length;
+        document.getElementById('countPartners').innerText = db.partners.length;
+
+        // Bookings
+        let bHtml = '';
+        db.bookings.forEach(item => {
+            bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3 text-terracotta">${item.tour}</td><td class="p-3">${item.date}</td><td class="p-3">${item.guests} khách</td><td class="p-3">${item.note || '-'}</td></tr>`;
+        });
+        document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có dữ liệu đặt chỗ.</td></tr>';
+
+        // Guides
+        let gHtml = '';
+        db.guides.forEach(item => {
+            gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td></tr>`;
+        });
+        document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
+
+        // Partners
+        let pHtml = '';
+        db.partners.forEach(item => {
+            pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td></tr>`;
+        });
+        document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
+    }
+
+    function handleSearch() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        if(query.trim() !== '') {
+            alert('Đang tìm kiếm kết quả cho: "' + query + '" tại khu vực Huế.');
+            document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
+        } else {
+            alert('Vui lòng nhập nội dung cần tìm kiếm!');
         }
-
-        function logoutAdmin() {
-            closeModal('adminDashboardModal');
-            alert('Đã đăng xuất tài khoản quản trị.');
-        }
-
-        function renderAdminTables() {
-            document.getElementById('countBookings').innerText = db.bookings.length;
-            document.getElementById('countGuides').innerText = db.guides.length;
-            document.getElementById('countPartners').innerText = db.partners.length;
-
-            // Bookings
-            let bHtml = '';
-            db.bookings.forEach(item => {
-                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3 text-terracotta">${item.tour}</td><td class="p-3">${item.date}</td><td class="p-3">${item.guests} khách</td><td class="p-3">${item.note || '-'}</td></tr>`;
-            });
-            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="6" class="p-4 text-center text-dark/50">Chưa có dữ liệu đặt chỗ.</td></tr>';
-
-            // Guides
-            let gHtml = '';
-            db.guides.forEach(item => {
-                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td></tr>`;
-            });
-            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
-
-            // Partners
-            let pHtml = '';
-            db.partners.forEach(item => {
-                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td></tr>`;
-            });
-            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="4" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
-        }
-
-        function handleSearch() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            if(query.trim() !== '') {
-                alert('Đang tìm kiếm kết quả cho: "' + query + '" tại khu vực Huế.');
-                document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                alert('Vui lòng nhập nội dung cần tìm kiếm!');
-            }
-        }
-    </script>
+    }
+</script>
 </body>
 </html>
