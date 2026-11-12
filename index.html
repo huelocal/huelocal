@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HueLocal - Discover Hue through local eyes</title>
-    
-    <!-- Thêm dòng Favicon logo chuẩn ở đây -->
-    <link rel="icon" type="image/jpeg" href="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
-    
     <meta property="og:image" content="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Import Google Fonts -->
+    <!-- Import Google Fonts để chữ có chân (Serif) và chữ không chân (Sans) hiển thị chuẩn đẹp, đồng nhất mọi trình duyệt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -73,7 +69,7 @@
             </div>
           </a>
             
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
                 <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
                 <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
@@ -221,33 +217,70 @@
                 <div class="space-y-2">
                     <span id="explore-badge" class="text-[#F3C68F] font-bold uppercase text-xs tracking-widest bg-white/10 px-3 py-1 rounded-full">Sitemap Khám Phá</span>
                     <h2 id="explore-title" class="font-serif text-3xl sm:text-4xl font-bold text-white">Khám phá Huế</h2>
-                    <p id="explore-subtitle" class="text-cream/90 text-sm font-light">Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.</p>
+                    <p id="explore-subtitle" class="text-cream/90 text-sm font-light">Điểm đến di sản, làng nghề truyền thống và những góc khuất đầy hoài niệm.</p>
                 </div>
                 <div class="flex gap-2 mt-6 md:mt-0 flex-wrap">
                     <button onclick="filterExplore('all')" id="filter-all" class="explore-btn px-5 py-2 rounded-full bg-cream text-[#0D3322] text-xs font-bold transition shadow">Tất cả</button>
                     <button onclick="filterExplore('heritage')" id="filter-heritage" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Di tích</button>
+                    <button onclick="filterExplore('craft')" id="filter-craft" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Làng nghề</button>
+                    <button onclick="filterExplore('cafe')" id="filter-cafe" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Cà phê</button>
                     <button onclick="filterExplore('hidden')" id="filter-hidden" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Hidden Gems</button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 1. Đại Nội -->
                 <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Đại Nội Huế', 'Kinh thành triều Nguyễn với kiến trúc cung điện nguy nga, nơi lưu giữ dấu ấn lịch sử hàng trăm năm.', '23 Đoàn Thị Điểm, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
                     <h3 id="place-1-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đại Nội Huế</h3>
                     <p id="place-1-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...</p>
                 </div>
+                
+                <!-- 2. Làng Nón Tây Hồ -->
+                <div class="explore-card craft bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Làng Nón Lá Tây Hồ', 'Trải nghiệm chằm nón bài thơ xứ Huế, ngắm những chiếc nón lấp lánh thơ văn dưới ánh nắng sông Bồi.', 'Làng Tây Hồ, xã Phú Hồ, huyện Phú Vang, Thừa Thiên Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-56548139-5e67-4b92-a2d1-a2a739171661.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Traditional Craft</span>
+                    <h3 id="place-2-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Làng Nón Lá Tây Hồ</h3>
+                    <p id="place-2-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Nơi lưu giữ hồn thơ chiếc nón bài thơ xứ Huế qua bàn tay khéo léo của nghệ nhân lâu năm...</p>
+                </div>
+
+                <!-- 3. Làng Hương Thủy Xuân -->
+                <div class="explore-card craft bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Làng Hương Thủy Xuân', 'Check-in rực rỡ sắc màu các chân hương xanh, đỏ, vàng và tự tay trải nghiệm làm hương trầm truyền thống.', '84 Huyền Trân Công Chúa, TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-2c4869d2-e37e-475e-b20b-64c8531d1d0b.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Traditional Craft</span>
+                    <h3 id="place-3-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Làng Hương Thủy Xuân</h3>
+                    <p id="place-3-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Làng nghề làm hương lâu đời với những bó hương xòe rộng rực rỡ dưới nắng sớm...</p>
+                </div>
+
+                <!-- 4. Lăng Khải Định -->
+                <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Lăng Khải Định (Ứng Lăng)', 'Công trình lăng tẩm độc đáo bậc nhất kết hợp tinh hoa kiến trúc Đông - Tây và nghệ thuật khảm sành sứ tinh xảo.', 'Thủy Bằng, Hương Thủy, Thừa Thiên Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-7666042f-755d-40c3-87b3-123089cf45bd.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
+                    <h3 id="place-4-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Lăng Khải Định</h3>
+                    <p id="place-4-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Kiệt tác kiến trúc khảm sành sứ đỉnh cao, giao thoa văn hóa Đông - Tây độc đáo...</p>
+                </div>
+
+                <!-- 5. Đầm phá Tam Giang -->
+                <div class="explore-card hidden bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Đầm phá Tam Giang', 'Đầm nước lợ lớn nhất Đông Nam Á, nơi ngắm hoàng hôn buông xuống đẹp đến nao lòng trên những chài lưới mưu sinh.', 'Quảng Điền / Phú Vang, Thừa Thiên Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-9929d0ea-30fe-42d7-a8be-e5aa33279766.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Scenic / Hidden Gem</span>
+                    <h3 id="place-5-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đầm phá Tam Giang</h3>
+                    <p id="place-5-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Trải nghiệm không gian mênh mông nước và chiêm ngưỡng hoàng hôn rực rỡ đẹp nhất xứ Huế...</p>
+                </div>
+
+                <!-- 6. Đồi Vọng Cảnh -->
                 <div class="explore-card hidden bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Đồi Vọng Cảnh', 'Điểm ngắm hoàng hôn tuyệt đẹp bên dòng sông Hương, rợp bóng thông xanh và lăng tẩm ẩn hiện.', 'Đồi Vọng Cảnh, Điện Biên Phủ, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Hidden Gem</span>
-                    <h3 id="place-3-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đồi Vọng Cảnh</h3>
-                    <p id="place-3-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
+                    <h3 id="place-6-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đồi Vọng Cảnh</h3>
+                    <p id="place-6-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Thêm phần Những chuyến đi (Journey Stories / Nhật ký hành trình) với 4 ảnh và note chuẩn song ngữ -->
+    <!-- Nhật ký hành trình -->
     <section id="stories" class="py-20 px-4 container mx-auto relative z-10">
         <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span id="stories-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Nhật ký hành trình</span>
@@ -288,7 +321,7 @@
 
             <!-- Story 4 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
-                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-a2a58c52-fc13-40b5-99d6-4633f007e5ab.jpg');"></div>
+                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-e6250c6d-5d68-4ae1-8009-3592a1ab85f1.jpg');"></div>
                 <div class="p-6 space-y-2">
                     <span id="story-tag-4" class="text-xs text-[#0D3322] font-bold uppercase tracking-wider bg-[#0D3322]/10 px-3 py-1 rounded-full">Cố đô hoài niệm</span>
                     <h3 id="story-h-4" class="text-xl font-bold text-[#0D3322] font-serif pt-2">Dáng vẻ truyền thống</h3>
@@ -315,7 +348,7 @@
             </div>
 
             <div class="space-y-1">
-                <span class="text-xs text-[#0D3322] font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
+                <span id="partner-sub-tag" class="text-xs text-[#0D3322] font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
                 <h3 class="text-2xl sm:text-3xl font-black text-[#0D3322] tracking-wide" style="font-family: Arial, sans-serif;">Rồng Rắn Lên Mây</h3>
             </div>
 
@@ -326,7 +359,7 @@
                 <a href="https://www.instagram.com/_rongran.lenmay_/" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
                     <i class="fa-brands fa-instagram text-[#0D3322]"></i> Instagram · _rongran.lenmay_
                 </a>
-                <a href="https://www.tiktok.com/@rongranlenmay.cp?_r=1&_t=ZS-9BLJJgrmKay" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                <a href="LINK_TIKTOK" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
                     <i class="fa-brands fa-tiktok text-[#0D3322]"></i> TikTok · Rồng rắn lên mây
                 </a>
             </div>
@@ -424,7 +457,8 @@
             </form>
         </div>
     </section>
-<!-- Video tự động phát khi lướt tới -->
+
+    <!-- Video tự động phát khi lướt tới -->
     <section class="py-12 px-4 container mx-auto max-w-4xl relative z-10 text-center">
         <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#0D3322]/15 bg-black">
             <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[500px]">
@@ -433,6 +467,7 @@
             </video>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="bg-[#0D3322] text-cream/90 border-t border-white/10 py-16 px-4 relative z-10">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
@@ -484,60 +519,6 @@
                 <span id="place-status" class="text-xs font-bold text-[#0D3322]"><i class="fa-solid fa-circle-check text-green-600 mr-1"></i> Trạng thái: Mở cửa đón khách</span>
                 <button onclick="closeModal('placeModal')" id="close-btn-1" class="bg-[#0D3322] text-cream px-5 py-2 rounded-xl text-xs font-bold">Đóng</button>
             </div>
-        </div>
-    </div>
-
-    <div id="guideModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-black relative shadow-2xl">
-            <button onclick="closeModal('guideModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-guide-title" class="font-serif text-2xl font-bold text-[#0D3322] mb-1">Đăng ký làm Local Guide</h3>
-            <p id="modal-guide-sub" class="text-xs text-black/70 mb-6">Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.</p>
-            <form onsubmit="submitGuide(event)" class="space-y-4">
-                <div>
-                    <label id="g-label-name" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Họ và tên</label>
-                    <input type="text" id="gName" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="g-label-contact" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Email / Số điện thoại</label>
-                    <input type="text" id="gContact" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="g-label-lang" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Ngôn ngữ thông thạo</label>
-                    <input type="text" id="gLang" placeholder="VD: Tiếng Việt, English..." required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="g-label-bio" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Giới thiệu bản thân & kinh nghiệm</label>
-                    <textarea id="gBio" rows="3" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]"></textarea>
-                </div>
-                <button type="submit" id="g-submit-btn" class="w-full bg-[#0D3322] text-cream py-3.5 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow">Gửi đơn ứng tuyển</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="partnerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-black relative shadow-2xl">
-            <button onclick="closeModal('partnerModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-partner-title" class="font-serif text-2xl font-bold text-[#0D3322] mb-1">Đăng ký Hợp tác đối tác</h3>
-            <p id="modal-partner-sub" class="text-xs text-black/70 mb-6">Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.</p>
-            <form onsubmit="submitPartner(event)" class="space-y-4">
-                <div>
-                    <label id="p-label-brand" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Tên thương hiệu / Doanh nghiệp</label>
-                    <input type="text" id="pBrand" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="p-label-name" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Người liên hệ</label>
-                    <input type="text" id="pName" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="p-label-contact" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Email / Số điện thoại</label>
-                    <input type="text" id="pContact" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <div>
-                    <label id="p-label-type" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Loại hình dịch vụ</label>
-                    <input type="text" id="pType" placeholder="VD: Khách sạn, Nhà hàng, Cà phê..." required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
-                </div>
-                <button type="submit" id="p-submit-btn" class="w-full bg-[#0D3322] text-cream py-3.5 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow">Gửi yêu cầu hợp tác</button>
-            </form>
         </div>
     </div>
 
@@ -595,47 +576,11 @@
                         </table>
                     </div>
                 </div>
-
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-[#0D3322]/15">
-                    <h4 class="font-bold text-[#0D3322] text-base mb-4">2. Đơn ứng tuyển Local Guide (<span id="countGuides">0</span>)</h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs text-black">
-                            <thead class="bg-cream text-[#0D3322] font-bold uppercase">
-                                <tr>
-                                    <th class="p-3">Họ tên</th>
-                                    <th class="p-3">Liên hệ</th>
-                                    <th class="p-3">Ngôn ngữ</th>
-                                    <th class="p-3">Giới thiệu</th>
-                                    <th class="p-3 text-center">Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableGuidesBody" class="divide-y divide-cream"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-[#0D3322]/15">
-                    <h4 class="font-bold text-[#0D3322] text-base mb-4">3. Yêu cầu Hợp tác đối tác (<span id="countPartners">0</span>)</h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs text-black">
-                            <thead class="bg-cream text-[#0D3322] font-bold uppercase">
-                                <tr>
-                                    <th class="p-3">Thương hiệu</th>
-                                    <th class="p-3">Người liên hệ</th>
-                                    <th class="p-3">Liên hệ</th>
-                                    <th class="p-3">Loại hình</th>
-                                    <th class="p-3 text-center">Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tablePartnersBody" class="divide-y divide-cream"></tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript Application Logic -->
+    <!-- JavaScript Application Logic & Translations -->
     <script>
         let db = {
             bookings: JSON.parse(localStorage.getItem('huelocal_bookings')) || [],
@@ -656,11 +601,9 @@
                 navAbout: "Giới thiệu",
                 navExplore: "Khám phá Huế",
                 navStories: "Những chuyến đi",
-                navLocals: "Local Guide",
                 navPartners: "Đối tác",
                 navMember: "Thành viên",
                 navContact: "Liên hệ & Đặt chỗ",
-                ctaBook: "Đặt trải nghiệm",
                 heroBadge: "COME AS A TRAVELER. LEAVE AS A FRIEND.",
                 heroTitle: "Discover Hue through local eyes.",
                 heroDesc: "Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.",
@@ -685,17 +628,24 @@
                 why3Desc: "Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.",
                 exploreBadge: "Sitemap Khám Phá",
                 exploreTitle: "Khám phá Huế",
-                exploreSubtitle: "Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.",
+                exploreSubtitle: "Điểm đến di sản, làng nghề truyền thống và những góc khuất đầy hoài niệm.",
                 filterAll: "Tất cả",
                 filterHeritage: "Di tích",
+                filterCraft: "Làng nghề",
                 filterCafe: "Cà phê",
                 filterHidden: "Hidden Gems",
                 place1Title: "Đại Nội Huế",
                 place1Desc: "Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...",
-                place2Title: "Cà phê muối truyền thống",
-                place2Desc: "Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...",
-                place3Title: "Đồi Vọng Cảnh",
-                place3Desc: "Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...",
+                place2Title: "Làng Nón Lá Tây Hồ",
+                place2Desc: "Nơi lưu giữ hồn thơ chiếc nón bài thơ xứ Huế qua bàn tay khéo léo của nghệ nhân lâu năm...",
+                place3Title: "Làng Hương Thủy Xuân",
+                place3Desc: "Làng nghề làm hương lâu đời với những bó hương xòe rộng rực rỡ dưới nắng sớm...",
+                place4Title: "Lăng Khải Định",
+                place4Desc: "Kiệt tác kiến trúc khảm sành sứ đỉnh cao, giao thoa văn hóa Đông - Tây độc đáo...",
+                place5Title: "Đầm phá Tam Giang",
+                place5Desc: "Trải nghiệm không gian mênh mông nước và chiêm ngưỡng hoàng hôn rực rỡ đẹp nhất xứ Huế...",
+                place6Title: "Đồi Vọng Cảnh",
+                place6Desc: "Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...",
                 storiesBadge: "Nhật ký hành trình",
                 storiesTitle: "Những chuyến đi qua lăng kính bản địa",
                 storiesSubtitle: "Mỗi bước chân qua những con ngõ nhỏ, mỗi sớm mai bên dòng Hương là một câu chuyện tình yêu Đạt viết riêng cho Huế.",
@@ -715,6 +665,7 @@
                 partnersTitle: "Đối tác địa phương",
                 partnersSubtitle: "Đồng hành cùng các thương hiệu lưu trú, ẩm thực và dịch vụ hàng đầu tại Huế.",
                 partnerBtn: "Trở thành đối tác",
+                partnerSubTag: "Đồng hành cùng HueLocal",
                 teamBadge: "Đội ngũ sáng lập",
                 teamTitle: "Thành viên HueLocal",
                 teamSubtitle: "Những bạn trẻ đam mê công nghệ và khát vọng quảng bá văn hóa Cố đô.",
@@ -744,21 +695,7 @@
                 adminPortalBtn: "Quản trị viên (CMS Portal)",
                 footerCopyright: "&copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.",
                 placeStatus: "Trạng thái: Mở cửa đón khách",
-                closeBtn: "Đóng",
-                modalGuideTitle: "Đăng ký làm Local Guide",
-                modalGuideSub: "Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.",
-                gLabelName: "Họ và tên",
-                gLabelContact: "Email / Số điện thoại",
-                gLabelLang: "Ngôn ngữ thông thạo",
-                gLabelBio: "Giới thiệu bản thân & kinh nghiệm",
-                gSubmitBtn: "Gửi đơn ứng tuyển",
-                modalPartnerTitle: "Đăng ký Hợp tác đối tác",
-                modalPartnerSub: "Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.",
-                pLabelBrand: "Tên thương hiệu / Doanh nghiệp",
-                pLabelName: "Người liên hệ",
-                pLabelContact: "Email / Số điện thoại",
-                pLabelType: "Loại hình dịch vụ",
-                pSubmitBtn: "Gửi yêu cầu hợp tác"
+                closeBtn: "Đóng"
             },
             en: {
                 topBanner: "Discover Hue through local eyes | Khám phá Huế qua lăng kính người bản địa",
@@ -769,7 +706,6 @@
                 navPartners: "Partners",
                 navMember: "Membership",
                 navContact: "Contact & Booking",
-                ctaBook: "Book Experience",
                 heroBadge: "COME AS A TRAVELER. LEAVE AS A FRIEND.",
                 heroTitle: "Discover Hue through local eyes.",
                 heroDesc: "The ancient capital of Hue through local eyes: mossy paths, flavorful meals, and royal stories echoing in every tiled roof.",
@@ -794,17 +730,24 @@
                 why3Desc: "From beef noodle soup to delicate dishes associated with royal culinary arts.",
                 exploreBadge: "Discovery Sitemap",
                 exploreTitle: "Explore Hue",
-                exploreSubtitle: "Heritage sites, unique cafes, and nostalgic hidden corners.",
+                exploreSubtitle: "Heritage sites, traditional craft villages, and nostalgic hidden corners.",
                 filterAll: "All",
                 filterHeritage: "Heritage",
+                filterCraft: "Craft Villages",
                 filterCafe: "Cafe",
                 filterHidden: "Hidden Gems",
                 place1Title: "Hue Imperial Citadel",
-                place1Desc: "The power center of the Nguyen Dynasty featuring magnificent palaces and centuries of history...",
-                place2Title: "Traditional Salt Coffee",
-                place2Desc: "The birthplace of the unique salt coffee flavor that captivates travelers in the ancient capital...",
-                place3Title: "Vong Canh Hill",
-                place3Desc: "A breathtaking sunset spot by the Perfume River where time stands still...",
+                place1Desc: "The power center of the Nguyen Dynasty featuring magnificent palaces...",
+                place2Title: "Tay Ho Conical Hat Village",
+                place2Desc: "Experience weaving Hue's iconic poetic conical hats glittering with verses under the sunlight...",
+                place3Title: "Thuy Xuan Incense Village",
+                place3Desc: "An ancient incense-making village with vibrant bundles spreading out under the morning sun...",
+                place4Title: "Khai Dinh Tomb",
+                place4Desc: "A masterpiece of mosaic architecture blending unique Eastern and Western cultural traits...",
+                place5Title: "Tam Giang Lagoon",
+                place5Desc: "Experience the vast watery expanse and admire the breathtaking glowing sunset...",
+                place6Title: "Vong Canh Hill",
+                place6Desc: "A breathtaking sunset spot by the Perfume River where time stands still...",
                 storiesBadge: "Journey Diary",
                 storiesTitle: "Journey Stories Through Local Eyes",
                 storiesSubtitle: "Every step through small alleys, every early morning by the Perfume River is a love story written exclusively for Hue.",
@@ -824,6 +767,7 @@
                 partnersTitle: "Local Partners",
                 partnersSubtitle: "Collaborating with top accommodation, dining, and service brands in Hue.",
                 partnerBtn: "Become a Partner",
+                partnerSubTag: "Partnering with HueLocal",
                 teamBadge: "Founding Team",
                 teamTitle: "HueLocal Members",
                 teamSubtitle: "Young individuals passionate about technology and dedicated to promoting ancient capital culture.",
@@ -853,21 +797,7 @@
                 adminPortalBtn: "Administrator (CMS Portal)",
                 footerCopyright: "&copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.",
                 placeStatus: "Status: Open to visitors",
-                closeBtn: "Close",
-                modalGuideTitle: "Apply as Local Guide",
-                modalGuideSub: "Join the HueLocal native guide team.",
-                gLabelName: "Full Name",
-                gLabelContact: "Email / Phone Number",
-                gLabelLang: "Proficient Languages",
-                gLabelBio: "Self-Introduction & Experience",
-                gSubmitBtn: "Submit Application",
-                modalPartnerTitle: "Partner Collaboration Registration",
-                modalPartnerSub: "Connect your service with the HueLocal ecosystem.",
-                pLabelBrand: "Brand / Business Name",
-                pLabelName: "Contact Person",
-                pLabelContact: "Email / Phone Number",
-                pLabelType: "Service Type",
-                pSubmitBtn: "Send Partnership Request"
+                closeBtn: "Close"
             }
         };
 
@@ -914,6 +844,7 @@
             if(document.getElementById('explore-subtitle')) document.getElementById('explore-subtitle').innerText = t.exploreSubtitle;
             if(document.getElementById('filter-all')) document.getElementById('filter-all').innerText = t.filterAll;
             if(document.getElementById('filter-heritage')) document.getElementById('filter-heritage').innerText = t.filterHeritage;
+            if(document.getElementById('filter-craft')) document.getElementById('filter-craft').innerText = t.filterCraft;
             if(document.getElementById('filter-cafe')) document.getElementById('filter-cafe').innerText = t.filterCafe;
             if(document.getElementById('filter-hidden')) document.getElementById('filter-hidden').innerText = t.filterHidden;
 
@@ -923,6 +854,12 @@
             if(document.getElementById('place-2-desc')) document.getElementById('place-2-desc').innerText = t.place2Desc;
             if(document.getElementById('place-3-title')) document.getElementById('place-3-title').innerText = t.place3Title;
             if(document.getElementById('place-3-desc')) document.getElementById('place-3-desc').innerText = t.place3Desc;
+            if(document.getElementById('place-4-title')) document.getElementById('place-4-title').innerText = t.place4Title;
+            if(document.getElementById('place-4-desc')) document.getElementById('place-4-desc').innerText = t.place4Desc;
+            if(document.getElementById('place-5-title')) document.getElementById('place-5-title').innerText = t.place5Title;
+            if(document.getElementById('place-5-desc')) document.getElementById('place-5-desc').innerText = t.place5Desc;
+            if(document.getElementById('place-6-title')) document.getElementById('place-6-title').innerText = t.place6Title;
+            if(document.getElementById('place-6-desc')) document.getElementById('place-6-desc').innerText = t.place6Desc;
 
             if(document.getElementById('stories-badge')) document.getElementById('stories-badge').innerText = t.storiesBadge;
             if(document.getElementById('stories-title')) document.getElementById('stories-title').innerText = t.storiesTitle;
@@ -931,15 +868,12 @@
             if(document.getElementById('story-tag-1')) document.getElementById('story-tag-1').innerText = t.storyTag1;
             if(document.getElementById('story-h-1')) document.getElementById('story-h-1').innerText = t.storyH1;
             if(document.getElementById('story-p-1')) document.getElementById('story-p-1').innerText = t.storyP1;
-
             if(document.getElementById('story-tag-2')) document.getElementById('story-tag-2').innerText = t.storyTag2;
             if(document.getElementById('story-h-2')) document.getElementById('story-h-2').innerText = t.storyH2;
             if(document.getElementById('story-p-2')) document.getElementById('story-p-2').innerText = t.storyP2;
-
             if(document.getElementById('story-tag-3')) document.getElementById('story-tag-3').innerText = t.storyTag3;
             if(document.getElementById('story-h-3')) document.getElementById('story-h-3').innerText = t.storyH3;
             if(document.getElementById('story-p-3')) document.getElementById('story-p-3').innerText = t.storyP3;
-
             if(document.getElementById('story-tag-4')) document.getElementById('story-tag-4').innerText = t.storyTag4;
             if(document.getElementById('story-h-4')) document.getElementById('story-h-4').innerText = t.storyH4;
             if(document.getElementById('story-p-4')) document.getElementById('story-p-4').innerText = t.storyP4;
@@ -948,6 +882,7 @@
             if(document.getElementById('partners-title')) document.getElementById('partners-title').innerText = t.partnersTitle;
             if(document.getElementById('partners-subtitle')) document.getElementById('partners-subtitle').innerText = t.partnersSubtitle;
             if(document.getElementById('partner-btn')) document.getElementById('partner-btn').innerText = t.partnerBtn;
+            if(document.getElementById('partner-sub-tag')) document.getElementById('partner-sub-tag').innerText = t.partnerSubTag;
 
             if(document.getElementById('team-badge')) document.getElementById('team-badge').innerText = t.teamBadge;
             if(document.getElementById('team-title')) document.getElementById('team-title').innerText = t.teamTitle;
@@ -982,22 +917,6 @@
 
             if(document.getElementById('place-status')) document.getElementById('place-status').innerHTML = `<i class="fa-solid fa-circle-check text-green-600 mr-1"></i> ${t.placeStatus}`;
             if(document.getElementById('close-btn-1')) document.getElementById('close-btn-1').innerText = t.closeBtn;
-
-            if(document.getElementById('modal-guide-title')) document.getElementById('modal-guide-title').innerText = t.modalGuideTitle;
-            if(document.getElementById('modal-guide-sub')) document.getElementById('modal-guide-sub').innerText = t.modalGuideSub;
-            if(document.getElementById('g-label-name')) document.getElementById('g-label-name').innerText = t.gLabelName;
-            if(document.getElementById('g-label-contact')) document.getElementById('g-label-contact').innerText = t.gLabelContact;
-            if(document.getElementById('g-label-lang')) document.getElementById('g-label-lang').innerText = t.gLabelLang;
-            if(document.getElementById('g-label-bio')) document.getElementById('g-label-bio').innerText = t.gLabelBio;
-            if(document.getElementById('g-submit-btn')) document.getElementById('g-submit-btn').innerText = t.gSubmitBtn;
-
-            if(document.getElementById('modal-partner-title')) document.getElementById('modal-partner-title').innerText = t.modalPartnerTitle;
-            if(document.getElementById('modal-partner-sub')) document.getElementById('modal-partner-sub').innerText = t.modalPartnerSub;
-            if(document.getElementById('p-label-brand')) document.getElementById('p-label-brand').innerText = t.pLabelBrand;
-            if(document.getElementById('p-label-name')) document.getElementById('p-label-name').innerText = t.pLabelName;
-            if(document.getElementById('p-label-contact')) document.getElementById('p-label-contact').innerText = t.pLabelContact;
-            if(document.getElementById('p-label-type')) document.getElementById('p-label-type').innerText = t.pLabelType;
-            if(document.getElementById('p-submit-btn')) document.getElementById('p-submit-btn').innerText = t.pSubmitBtn;
 
             document.querySelectorAll('.nav-home').forEach(el => el.innerText = t.navHome);
             document.querySelectorAll('.nav-about').forEach(el => el.innerText = t.navAbout);
@@ -1035,18 +954,14 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(item)
             })
-            .then(response => {
-                db.bookings.push({
-                    name: item["Ho Ten"], contact: item["Lien He"], date: item["Ngay Di"], guests: item["So Khach"], msg: item["Loi Nhan"], time: item["Thoi Gian"]
-                });
+            .then(() => {
+                db.bookings.push(item);
                 saveDB();
                 alert('Đã gửi thông tin đặt chỗ thành công! Dữ liệu đã được đồng bộ về Google Sheets.');
                 e.target.reset();
             })
-            .catch(error => {
-                db.bookings.push({
-                    name: item["Ho Ten"], contact: item["Lien He"], date: item["Ngay Di"], guests: item["So Khach"], msg: item["Loi Nhan"], time: item["Thoi Gian"]
-                });
+            .catch(() => {
+                db.bookings.push(item);
                 saveDB();
                 alert('Đã lưu thông tin đặt chỗ vào hệ thống!');
                 e.target.reset();
@@ -1058,46 +973,6 @@
             document.getElementById('placeDesc').innerText = desc;
             document.querySelector('#placeAddress span').innerText = address;
             document.getElementById('placeModal').classList.remove('hidden');
-        }
-
-        function openGuideModal() {
-            document.getElementById('guideModal').classList.remove('hidden');
-        }
-
-        function submitGuide(e) {
-            e.preventDefault();
-            const item = {
-                name: document.getElementById('gName').value,
-                contact: document.getElementById('gContact').value,
-                lang: document.getElementById('gLang').value,
-                bio: document.getElementById('gBio').value,
-                time: new Date().toLocaleString()
-            };
-            db.guides.push(item);
-            saveDB();
-            alert('Đã gửi đơn ứng tuyển Local Guide thành công!');
-            closeModal('guideModal');
-            e.target.reset();
-        }
-
-        function openPartnerModal() {
-            document.getElementById('partnerModal').classList.remove('hidden');
-        }
-
-        function submitPartner(e) {
-            e.preventDefault();
-            const item = {
-                brand: document.getElementById('pBrand').value,
-                name: document.getElementById('pName').value,
-                contact: document.getElementById('pContact').value,
-                type: document.getElementById('pType').value,
-                time: new Date().toLocaleString()
-            };
-            db.partners.push(item);
-            saveDB();
-            alert('Đã gửi yêu cầu hợp tác thành công!');
-            closeModal('partnerModal');
-            e.target.reset();
         }
 
         function filterExplore(category) {
@@ -1140,8 +1015,6 @@
         function deleteRecord(type, index) {
             if(confirm('Bạn có chắc chắn muốn xóa mục này không?')) {
                 if(type === 'booking') db.bookings.splice(index, 1);
-                if(type === 'guide') db.guides.splice(index, 1);
-                if(type === 'partner') db.partners.splice(index, 1);
                 saveDB();
                 renderAdminTables();
             }
@@ -1149,26 +1022,11 @@
 
         function renderAdminTables() {
             document.getElementById('countBookings').innerText = db.bookings.length;
-            document.getElementById('countGuides').innerText = db.guides.length;
-            document.getElementById('countPartners').innerText = db.partners.length;
-
             let bHtml = '';
             db.bookings.forEach((item, index) => {
-                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.date || '-'}</td><td class="p-3 text-black">${item.guests || '-'} khách</td><td class="p-3 text-[#0D3322] font-semibold">${item.msg || '-'}</td><td class="p-3 text-black">${item.time}</td><td class="p-3 text-center"><button onclick="deleteRecord('booking', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
+                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item["Ho Ten"]}</td><td class="p-3 text-black">${item["Lien He"]}</td><td class="p-3 text-black">${item["Ngay Di"] || '-'}</td><td class="p-3 text-black">${item["So Khach"] || '-'} khách</td><td class="p-3 text-[#0D3322] font-semibold">${item["Loi Nhan"] || '-'}</td><td class="p-3 text-black">${item["Thoi Gian"]}</td><td class="p-3 text-center"><button onclick="deleteRecord('booking', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
             document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="7" class="p-4 text-center text-black/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
-
-            let gHtml = '';
-            db.guides.forEach((item, index) => {
-                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.lang}</td><td class="p-3 text-black">${item.bio}</td><td class="p-3 text-center"><button onclick="deleteRecord('guide', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
-            });
-            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="5" class="p-4 text-center text-black/50">Chưa có đơn ứng tuyển nào.</td></tr>';
-
-            let pHtml = '';
-            db.partners.forEach((item, index) => {
-                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.brand}</td><td class="p-3 text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.type}</td><td class="p-3 text-center"><button onclick="deleteRecord('partner', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
-            });
-            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="5" class="p-4 text-center text-black/50">Chưa có yêu cầu đối tác nào.</td></tr>';
         }
     </script>
 </body>
