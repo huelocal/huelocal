@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Import Google Fonts để chữ có chân (Serif) và chữ không chân (Sans) hiển thị chuẩn đẹp, đồng nhất mọi trình duyệt -->
+    <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-<!-- Main Navigation Header -->
+    <!-- Main Navigation Header -->
     <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
           <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
@@ -277,6 +277,54 @@
                     <h3 id="place-6-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đồi Vọng Cảnh</h3>
                     <p id="place-6-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
                 </div>
+
+                <!-- BỔ SUNG: Chùa Thiên Mụ -->
+                <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Chùa Thiên Mụ', 'Ngôi cổ tự linh thiêng bên dòng sông Hương thơ mộng, biểu tượng cổ kính gắn liền với văn hóa tâm linh xứ Huế.', 'Đồi Hà Khê, phường Hương Long, TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-784b59b1-2681-43ab-b65c-155380574d78.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
+                    <h3 id="place-7-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Chùa Thiên Mụ</h3>
+                    <p id="place-7-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Biểu tượng tâm linh lâu đời với Tháp Phước Duyên uy nghiêm soi bóng xuống dòng sông Hương...</p>
+                </div>
+
+                <!-- BỔ SUNG: Lăng Minh Mạng -->
+                <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Lăng Minh Mạng (Hiếu Lăng)', 'Công trình lăng tẩm uy nghi, hài hòa tuyệt mỹ giữa kiến trúc cung đình thâm nghiêm và thiên nhiên sơn thủy hữu tình.', 'Xã Hương Thọ, thành phố Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-16f1a11b-320f-4cfb-8ca7-a27fac301b1c.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
+                    <h3 id="place-8-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Lăng Minh Mạng</h3>
+                    <p id="place-8-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Quần thể kiến trúc hoàng gia mang đậm triết lý Nho giáo, bao bọc bởi hồ nước và rừng thông tĩnh lặng...</p>
+                </div>
+
+                <!-- BỔ SUNG: Cung An Định -->
+                <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cung An Định', 'Dinh thự hoàng gia mang phong cách kiến trúc châu Âu kết hợp truyền thống Á Đông đầy lãng mạn và cổ kính.', '179 Phan Đình Phùng, TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-13fdcaf4-df3c-4e4d-9f8d-50927ec26dad.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
+                    <h3 id="place-9-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Cung An Định</h3>
+                    <p id="place-9-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Dinh thự tuyệt đẹp của vua Khải Định và Bảo Đại với những đường nét kiến trúc Tây phương tinh tế...</p>
+                </div>
+
+                <!-- BỔ SUNG: Làng hoa giấy Thanh Tiên -->
+                <div class="explore-card craft bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Làng hoa giấy Thanh Tiên', 'Làng nghề làm hoa giấy truyền thống hơn 300 năm tuổi, nổi tiếng với những cành hoa rực rỡ sắc màu phục vụ đời sống tâm linh.', 'Làng Thanh Tiên, xã Phú Mậu, huyện Phú Vang, Thừa Thiên Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-e7ed25bf-7841-44ad-a4b3-ca380cb0e38c.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Traditional Craft</span>
+                    <h3 id="place-10-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Làng hoa giấy Thanh Tiên</h3>
+                    <p id="place-10-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Nơi lưu giữ nghệ thuật làm hoa thủ công truyền thống bên dòng sông Truồi và phá Tam Giang...</p>
+                </div>
+
+                <!-- BỔ SUNG: Cổ Lầu -->
+                <div class="explore-card cafe bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cổ Lầu Cafe', 'Không gian cà phê mang đậm dấu ấn hoài cổ, nơi thưởng thức hương vị trà và cà phê đậm chất Huế xưa.', 'Khu vực nội thành TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-66667d58-36d9-4e35-abba-035c3d4ad970.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Cafe</span>
+                    <h3 id="place-11-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Cổ Lầu</h3>
+                    <p id="place-11-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Điểm dừng chân thư giãn tuyệt vời với kiến trúc cổ kính và không gian yên bình đậm chất Cố đô...</p>
+                </div>
+
+                <!-- BỔ SUNG: Hồ Thủy Tiên -->
+                <div class="explore-card hidden bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Hồ Thủy Tiên', 'Công viên nước bỏ hoang đầy kỳ bí và mê hoặc, điểm check-in nổi tiếng cho những ai yêu thích khám phá vẻ đẹp hoang sơ.', 'Đồi Thiên An, xã Thủy Bằng, TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-e685fa09-85ef-4124-8d31-404757748df5.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Hidden Gem</span>
+                    <h3 id="place-12-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Hồ Thủy Tiên</h3>
+                    <p id="place-12-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Khu công viên nước ma mị nằm ẩn mình giữa rừng thông Thiên An, thu hút đông đảo du khách tò mò...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -475,6 +523,16 @@
             <div class="space-y-4">
                 <h3 class="text-2xl font-black text-white tracking-wider">HUE<span class="text-[#F3C68F]">LOCAL</span></h3>
                 <p id="footer-desc" class="text-xs leading-relaxed text-cream/80">Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.</p>
+                
+                <!-- BỔ SUNG: Hai ảnh mã QR ở góc dưới cùng bên trái -->
+                <div class="flex items-center gap-3 pt-2">
+                    <div class="w-16 h-16 bg-white p-1 rounded-xl shadow border border-white/20">
+                        <img src="https://cdn.phototourl.com/member/2026-11-12-0f6c54e5-8aad-4d84-9f8a-29d3d2edb64b.png" alt="QR Code 1" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-16 h-16 bg-white p-1 rounded-xl shadow border border-white/20">
+                        <img src="https://cdn.phototourl.com/member/2026-11-12-3392f5df-e46f-4c8e-83a3-b76b5de23c63.png" alt="QR Code 2" class="w-full h-full object-contain">
+                    </div>
+                </div>
             </div>
             <div>
                 <h4 id="footer-col-1-title" class="font-bold text-white text-sm mb-4">Khám phá</h4>
@@ -647,6 +705,18 @@
                 place5Desc: "Trải nghiệm không gian mênh mông nước và chiêm ngưỡng hoàng hôn rực rỡ đẹp nhất xứ Huế...",
                 place6Title: "Đồi Vọng Cảnh",
                 place6Desc: "Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...",
+                place7Title: "Chùa Thiên Mụ",
+                place7Desc: "Biểu tượng tâm linh lâu đời với Tháp Phước Duyên uy nghiêm soi bóng xuống dòng sông Hương...",
+                place8Title: "Lăng Minh Mạng",
+                place8Desc: "Quần thể kiến trúc hoàng gia mang đậm triết lý Nho giáo, bao bọc bởi hồ nước và rừng thông tĩnh lặng...",
+                place9Title: "Cung An Định",
+                place9Desc: "Dinh thự tuyệt đẹp của vua Khải Định và Bảo Đại với những đường nét kiến trúc Tây phương tinh tế...",
+                place10Title: "Làng hoa giấy Thanh Tiên",
+                place10Desc: "Nơi lưu giữ nghệ thuật làm hoa thủ công truyền thống bên dòng sông Truồi và phá Tam Giang...",
+                place11Title: "Cổ Lầu",
+                place11Desc: "Điểm dừng chân thư giãn tuyệt vời với kiến trúc cổ kính và không gian yên bình đậm chất Cố đô...",
+                place12Title: "Hồ Thủy Tiên",
+                place12Desc: "Khu công viên nước ma mị nằm ẩn mình giữa rừng thông Thiên An, thu hút đông đảo du khách tò mò...",
                 storiesBadge: "Nhật ký hành trình",
                 storiesTitle: "Những chuyến đi qua lăng kính bản địa",
                 storiesSubtitle: "Mỗi bước chân qua những con ngõ nhỏ, mỗi sớm mai bên dòng Hương là một câu chuyện tình yêu Đạt viết riêng cho Huế.",
@@ -749,6 +819,18 @@
                 place5Desc: "Experience the vast watery expanse and admire the breathtaking glowing sunset...",
                 place6Title: "Vong Canh Hill",
                 place6Desc: "A breathtaking sunset spot by the Perfume River where time stands still...",
+                place7Title: "Thien Mu Pagoda",
+                place7Desc: "An ancient sacred pagoda by the poetic Perfume River, an enduring spiritual symbol of Hue...",
+                place8Title: "Minh Mang Tomb",
+                place8Desc: "A majestic royal tomb harmoniously blending solemn imperial architecture with picturesque natural scenery...",
+                place9Title: "An Dinh Palace",
+                place9Desc: "A romantic royal mansion blending European and traditional Asian architectural styles...",
+                place10Title: "Thanh Tien Paper Flower Village",
+                place10Desc: "A traditional paper flower crafting village over 300 years old, famous for its vibrant colored blossoms...",
+                place11Title: "Co Lau Cafe",
+                place11Desc: "A nostalgic cafe space offering traditional tea and coffee flavors with an authentic old-Hue vibe...",
+                place12Title: "Thuy Tien Lake",
+                place12Desc: "An eerie abandoned water park hidden within the Thien An pine hills, a famous check-in spot for explorers...",
                 storiesBadge: "Journey Diary",
                 storiesTitle: "Journey Stories Through Local Eyes",
                 storiesSubtitle: "Every step through small alleys, every early morning by the Perfume River is a love story written exclusively for Hue.",
@@ -861,6 +943,18 @@
             if(document.getElementById('place-5-desc')) document.getElementById('place-5-desc').innerText = t.place5Desc;
             if(document.getElementById('place-6-title')) document.getElementById('place-6-title').innerText = t.place6Title;
             if(document.getElementById('place-6-desc')) document.getElementById('place-6-desc').innerText = t.place6Desc;
+            if(document.getElementById('place-7-title')) document.getElementById('place-7-title').innerText = t.place7Title;
+            if(document.getElementById('place-7-desc')) document.getElementById('place-7-desc').innerText = t.place7Desc;
+            if(document.getElementById('place-8-title')) document.getElementById('place-8-title').innerText = t.place8Title;
+            if(document.getElementById('place-8-desc')) document.getElementById('place-8-desc').innerText = t.place8Desc;
+            if(document.getElementById('place-9-title')) document.getElementById('place-9-title').innerText = t.place9Title;
+            if(document.getElementById('place-9-desc')) document.getElementById('place-9-desc').innerText = t.place9Desc;
+            if(document.getElementById('place-10-title')) document.getElementById('place-10-title').innerText = t.place10Title;
+            if(document.getElementById('place-10-desc')) document.getElementById('place-10-desc').innerText = t.place10Desc;
+            if(document.getElementById('place-11-title')) document.getElementById('place-11-title').innerText = t.place11Title;
+            if(document.getElementById('place-11-desc')) document.getElementById('place-11-desc').innerText = t.place11Desc;
+            if(document.getElementById('place-12-title')) document.getElementById('place-12-title').innerText = t.place12Title;
+            if(document.getElementById('place-12-desc')) document.getElementById('place-12-desc').innerText = t.place12Desc;
 
             if(document.getElementById('stories-badge')) document.getElementById('stories-badge').innerText = t.storiesBadge;
             if(document.getElementById('stories-title')) document.getElementById('stories-title').innerText = t.storiesTitle;
