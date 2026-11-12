@@ -7,29 +7,52 @@
     <meta property="og:image" content="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Import Google Fonts để chữ có chân (Serif) và chữ không chân (Sans) hiển thị chuẩn đẹp, đồng nhất mọi trình duyệt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        deepBlue: '#142D46',
+                        deepBlue: '#0D3322',
                         cream: '#F5F0E6',
-                        terracotta: '#C46B4E',
-                        dark: '#202020',
+                        terracotta: '#0D3322',
+                        dark: '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
 </head>
-<body class="bg-cream text-dark font-sans antialiased selection:bg-terracotta selection:text-white">
+<body class="bg-cream text-black font-sans antialiased selection:bg-terracotta selection:text-white relative">
+
+    <!-- Hình nền toàn trang sắc nét 100% chuẩn thiết kế Canva -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-100" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-9924d86c-5bbb-4f17-9f02-6690dd51e943.png');"></div>
+    </div>
 
     <!-- Top Notification & Language Bar -->
-    <div class="bg-deepBlue text-cream text-xs py-2 px-4 flex justify-between items-center">
+    <div class="relative z-50 bg-[#142D46] text-cream text-xs py-2 px-4 flex justify-between items-center">
         <div class="container mx-auto flex justify-between items-center">
             <span id="top-banner-text"><i class="fa-solid fa-compass mr-2"></i> Khám phá Huế qua lăng kính người bản địa | Discover Hue through local eyes</span>
             <div class="flex items-center space-x-4">
-                <button onclick="switchLang('vi')" id="lang-vi-btn" class="font-bold underline text-terracotta">VI</button>
+                <button onclick="switchLang('vi')" id="lang-vi-btn" class="font-bold underline text-[#F3C68F]">VI</button>
                 <span>|</span>
                 <button onclick="switchLang('en')" id="lang-en-btn" class="opacity-70 hover:opacity-100">EN</button>
             </div>
@@ -37,107 +60,150 @@
     </div>
 
     <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-deepBlue/10 shadow-sm">
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-black text-deepBlue tracking-wider flex items-center">
-                <span class="text-terracotta mr-1">HUE</span>LOCAL
-            </a>
+          <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
+            <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="HueLocal Logo" class="w-9 h-9 object-cover rounded-xl border border-[#0D3322]/20 shadow-sm">
+            <div>
+                <span class="text-[#0D3322] mr-0.5">HUE</span>LOCAL
+            </div>
+          </a>
             
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <a href="#home" class="nav-home hover:text-terracotta transition">Trang chủ</a>
-                <a href="#explore" class="nav-explore hover:text-terracotta transition">Khám phá Huế</a>
-                <a href="#locals" class="nav-locals hover:text-terracotta transition">Local Guide</a>
-                <a href="#stories" class="nav-stories hover:text-terracotta transition">Stories</a>
-                <a href="#partners" class="nav-partners hover:text-terracotta transition">Đối tác</a>
-                <a href="#team" class="nav-member hover:text-terracotta transition text-terracotta font-bold">Thành viên</a>
-                <a href="#contact" class="nav-contact hover:text-terracotta transition">Liên hệ & Đặt chỗ</a>
+                <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
+                <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
+                <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
+                <a href="#stories" class="nav-stories hover:text-[#0D3322] font-semibold text-black transition">Những chuyến đi</a>
+                <a href="#partners" class="nav-partners hover:text-[#0D3322] font-semibold text-black transition">Đối tác</a>
+                <a href="#team" class="nav-member hover:text-[#0D3322] transition text-[#0D3322] font-bold">Thành viên</a>
+                <a href="#contact" class="nav-contact hover:text-[#0D3322] font-semibold text-black transition">Liên hệ & Đặt chỗ</a>
             </nav>
 
-            <div class="hidden md:flex items-center space-x-3"></div>
-
             <!-- Mobile Hamburger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-deepBlue text-xl focus:outline-none">
+            <button onclick="toggleMobileMenu()" class="md:hidden text-[#0D3322] text-xl focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-deepBlue/10 px-4 py-4 space-y-3">
-            <a href="#home" class="block font-medium nav-home" onclick="toggleMobileMenu()">Trang chủ</a>
-            <a href="#explore" class="block font-medium nav-explore" onclick="toggleMobileMenu()">Khám phá Huế</a>
-            <a href="#locals" class="block font-medium nav-locals" onclick="toggleMobileMenu()">Local Guide</a>
-            <a href="#stories" class="block font-medium nav-stories" onclick="toggleMobileMenu()">Stories</a>
-            <a href="#partners" class="block font-medium nav-partners" onclick="toggleMobileMenu()">Đối tác</a>
-            <a href="#team" class="block font-medium text-terracotta nav-member" onclick="toggleMobileMenu()">Thành viên</a>
-            <a href="#contact" class="block font-medium nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-[#0D3322]/10 px-4 py-4 space-y-3">
+            <a href="#home" class="block font-medium text-black nav-home" onclick="toggleMobileMenu()">Trang chủ</a>
+            <a href="#about" class="block font-medium text-black nav-about" onclick="toggleMobileMenu()">Giới thiệu</a>
+            <a href="#explore" class="block font-medium text-black nav-explore" onclick="toggleMobileMenu()">Khám phá Huế</a>
+            <a href="#stories" class="block font-medium text-black nav-stories" onclick="toggleMobileMenu()">Những chuyến đi</a>
+            <a href="#partners" class="block font-medium text-black nav-partners" onclick="toggleMobileMenu()">Đối tác</a>
+            <a href="#team" class="block font-medium text-[#0D3322] font-bold nav-member" onclick="toggleMobileMenu()">Thành viên</a>
+            <a href="#contact" class="block font-medium text-black nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero relative bg-[#142D46] text-white py-16 px-4 overflow-hidden" style="padding-top: 70px; background-color: #142D46;">
-        <div class="absolute top-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
-        <div class="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-d98a0cce-02f2-4ccf-8d9d-62f540f1f855.jpg');"></div>
-
+    <section id="home" class="hero relative text-[#0D3322] py-16 px-4 overflow-hidden z-10" style="padding-top: 70px;">
         <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
-            <div id="hero-badge" class="inline-block bg-[#C46B4E] text-white text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md">
+            <div id="hero-badge" class="inline-block bg-[#0D3322] text-cream text-xs uppercase px-4 py-1.5 rounded-full font-bold tracking-widest shadow-md">
                 COME AS A TRAVELER. LEAVE AS A FRIEND.
             </div>
-            <h1 id="hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#F5F0E6]">
+            <h1 id="hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-[#0D3322]">
                 Discover Hue through local eyes.
             </h1>
-            <p id="hero-desc" class="text-base md:text-lg text-[#F5F0E6]/90 leading-relaxed font-light max-w-2xl mx-auto">
+            <p id="hero-desc" class="text-base md:text-lg text-black leading-relaxed font-normal max-w-2xl mx-auto">
                 Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.
             </p>
             <div class="pt-4 flex justify-center gap-4 flex-wrap">
-                <a href="#explore" id="hero-btn" class="border-2 border-[#F5F0E6]/30 hover:border-[#C46B4E] text-[#F5F0E6] px-8 py-3.5 rounded-full text-sm font-bold transition backdrop-blur-sm">
+                <a href="#explore" id="hero-btn" class="bg-[#0D3322] text-cream hover:bg-[#0D3322]/90 px-8 py-3.5 rounded-full text-sm font-bold transition shadow-md">
                     Xem hình ảnh
                 </a>
             </div>
         </div>
 
         <div class="container mx-auto max-w-3xl px-4 pt-8 relative z-10">
-            <div class="p-3 bg-[#F5F0E6]/10 backdrop-blur-md rounded-[2.5rem] border-2 border-[#C46B4E]/40 shadow-2xl">
-                <div class="rounded-[2rem] overflow-hidden border border-[#C46B4E]/30 shadow-inner h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-49656e3b-0917-4516-aa89-35f9693144a5.webp');">
+            <div class="p-3 bg-white/40 backdrop-blur-md rounded-[2.5rem] border-2 border-[#0D3322]/30 shadow-2xl">
+                <div class="rounded-[2rem] overflow-hidden border border-[#0D3322]/20 shadow-inner h-64 md:h-80 bg-cover bg-center" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-49656e3b-0917-4516-aa89-35f9693144a5.webp');">
                 </div>
             </div>
         </div>
-
-        <div class="absolute bottom-0 left-0 right-0 h-6 bg-repeat-x opacity-95 z-20" style="background-image: linear-gradient(90deg, #c46b4e 50%, #142D46 50%); background-size: 20px 8px;"></div>
     </section>
 
-    <!-- Why Hue Section ("Vì sao là Huế?") -->
-    <section class="py-16 px-4 bg-white/60 border-y border-deepBlue/10">
+    <!-- Giới thiệu chung về Huế & HueLocal -->
+    <section id="about" class="py-16 px-4 bg-white/60 backdrop-blur-md relative z-10 border-b border-[#0D3322]/10">
+        <div class="container mx-auto max-w-4xl space-y-12">
+            
+            <div class="bg-cream/90 rounded-3xl p-8 shadow-lg border border-[#0D3322]/15 space-y-4">
+                <div id="about-hue-badge" class="inline-block bg-[#0D3322]/10 text-[#0D3322] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    Về Cố Đô Huế
+                </div>
+                <h2 id="about-hue-title" class="font-serif text-2xl md:text-3xl font-bold text-[#0D3322]">
+                    Hồn thơ xứ Cố đô
+                </h2>
+                <p id="about-hue-desc" class="text-sm md:text-base text-black leading-relaxed">
+                    Huế trầm mặc bên dòng Hương giang là trung tâm văn hóa, lịch sử đặc sắc với hệ thống cung điện, lăng tẩm triều Nguyễn uy nghi và tinh hoa ẩm thực phong phú. Sức hút của Huế còn đến từ nhịp sống chậm rãi và tình cảm chân thành của con người nơi đây.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-[#0D3322]/20 space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-[#0D3322]/10 pb-6">
+                    <div>
+                        <span id="about-huelocal-badge" class="text-xs text-[#0D3322] font-bold uppercase tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Về chúng tôi</span>
+                        <h2 id="about-huelocal-title" class="font-serif text-2xl md:text-3xl font-bold text-[#0D3322] mt-2">HueLocal là gì?</h2>
+                    </div>
+                    <div id="about-slogan" class="bg-[#0D3322] text-cream px-4 py-2 rounded-2xl text-xs font-bold italic shadow">
+                        “Come as a traveler. Leave as a friend.”
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-black leading-relaxed">
+                    <div class="space-y-3">
+                        <h3 id="mission-title" class="font-bold text-[#0D3322] text-base flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-[#0D3322]"></i> Mục đích thành lập
+                        </h3>
+                        <p id="mission-desc">
+                            Được điều phối bởi <strong>Nguyễn Phan Hoài Bảo</strong>, HueLocal tạo ra cầu nối gần gũi giữa du khách và người bản địa. Giúp du khách hiểu sâu sắc hơn về Huế qua những câu chuyện đời thường và tạo môi trường cho người trẻ quảng bá quê hương.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 id="meaning-title" class="font-bold text-[#0D3322] text-base flex items-center gap-2">
+                            <i class="fa-solid fa-compass text-[#0D3322]"></i> Ý nghĩa thương hiệu
+                        </h3>
+                        <p id="meaning-desc">
+                            Sự kết hợp giữa <strong>“Hue”</strong> và <strong>“Local”</strong> thể hiện góc nhìn chân thực của người bản địa. Màu sắc và logo tượng trưng cho di sản, dòng sông, ánh mặt trời năng lượng và nụ cười hiếu khách.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Hue Section -->
+    <section class="py-16 px-4 bg-white/50 backdrop-blur-sm border-y border-[#0D3322]/10 relative z-10">
         <div class="container mx-auto max-w-xl space-y-8">
             <div class="text-center space-y-2">
-                <h2 id="why-title" class="text-2xl md:text-3xl font-bold text-deepBlue">Vì sao là Huế?</h2>
-                <p id="why-subtitle" class="text-xs md:text-sm text-dark/70">Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.</p>
+                <h2 id="why-title" class="text-2xl md:text-3xl font-bold text-[#0D3322]">Vì sao là Huế?</h2>
+                <p id="why-subtitle" class="text-xs md:text-sm text-black font-medium">Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.</p>
             </div>
 
             <div class="space-y-6">
-                <!-- Card 1 -->
-                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🏯</div>
+                <div class="bg-cream/90 p-6 sm:p-8 rounded-3xl border border-[#0D3322]/15 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-[#0D3322] text-cream flex items-center justify-center shrink-0 shadow-sm text-2xl">🏯</div>
                     <div class="space-y-1">
-                        <h3 id="why-1-title" class="font-bold text-deepBlue text-lg">Cố đô di sản</h3>
-                        <p id="why-1-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
+                        <h3 id="why-1-title" class="font-bold text-[#0D3322] text-lg">Cố đô di sản</h3>
+                        <p id="why-1-desc" class="text-xs md:text-sm text-black leading-relaxed">Kinh thành, lăng tẩm và cung điện triều Nguyễn nằm ngay giữa đời sống thường ngày.</p>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🛶</div>
+                <div class="bg-cream/90 p-6 sm:p-8 rounded-3xl border border-[#0D3322]/15 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-[#0D3322] text-cream flex items-center justify-center shrink-0 shadow-sm text-2xl">🛶</div>
                     <div class="space-y-1">
-                        <h3 id="why-2-title" class="font-bold text-deepBlue text-lg">Sông Hương chậm rãi</h3>
-                        <p id="why-2-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
+                        <h3 id="why-2-title" class="font-bold text-[#0D3322] text-lg">Sông Hương chậm rãi</h3>
+                        <p id="why-2-desc" class="text-xs md:text-sm text-black leading-relaxed">Nhịp sống êm, thuyền trên sông và hoàng hôn soi xuống mái chùa.</p>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-cream p-6 sm:p-8 rounded-3xl border border-deepBlue/10 flex items-start gap-5 shadow-sm relative overflow-hidden">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-400 flex items-center justify-center shrink-0 shadow-sm text-2xl">🍜</div>
+                <div class="bg-cream/90 p-6 sm:p-8 rounded-3xl border border-[#0D3322]/15 flex items-start gap-5 shadow-sm relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-2xl bg-[#0D3322] text-cream flex items-center justify-center shrink-0 shadow-sm text-2xl">🍜</div>
                     <div class="space-y-1">
-                        <h3 id="why-3-title" class="font-bold text-deepBlue text-lg">Ẩm thực cung đình</h3>
-                        <p id="why-3-desc" class="text-xs md:text-sm text-dark/70 leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
+                        <h3 id="why-3-title" class="font-bold text-[#0D3322] text-lg">Ẩm thực cung đình</h3>
+                        <p id="why-3-desc" class="text-xs md:text-sm text-black leading-relaxed">Từ bún bò, bánh bèo đến những món tinh tế gắn với ẩm thực cung đình.</p>
                     </div>
                 </div>
             </div>
@@ -145,170 +211,175 @@
     </section>
 
     <!-- Explore Section -->
-    <section id="explore" class="py-20 px-4 bg-deepBlue text-cream">
+    <section id="explore" class="py-20 px-4 bg-[#0D3322]/90 backdrop-blur-md text-cream relative z-10">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12">
                 <div class="space-y-2">
-                    <span id="explore-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-white/10 px-3 py-1 rounded-full">Sitemap Khám Phá</span>
-                    <h2 id="explore-title" class="font-serif text-3xl sm:text-4xl font-bold">Khám phá Huế</h2>
-                    <p id="explore-subtitle" class="text-cream/80 text-sm">Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.</p>
+                    <span id="explore-badge" class="text-[#F3C68F] font-bold uppercase text-xs tracking-widest bg-white/10 px-3 py-1 rounded-full">Sitemap Khám Phá</span>
+                    <h2 id="explore-title" class="font-serif text-3xl sm:text-4xl font-bold text-white">Khám phá Huế</h2>
+                    <p id="explore-subtitle" class="text-cream/90 text-sm font-light">Điểm đến di sản, quán cà phê độc đáo và những góc khuất đầy hoài niệm.</p>
                 </div>
                 <div class="flex gap-2 mt-6 md:mt-0 flex-wrap">
-                    <button onclick="filterExplore('all')" id="filter-all" class="explore-btn px-5 py-2 rounded-full bg-terracotta text-white text-xs font-bold transition shadow">Tất cả</button>
-                    <button onclick="filterExplore('heritage')" id="filter-heritage" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Di tích</button>
-                    <button onclick="filterExplore('cafe')" id="filter-cafe" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Cà phê</button>
-                    <button onclick="filterExplore('hidden')" id="filter-hidden" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition">Hidden Gems</button>
+                    <button onclick="filterExplore('all')" id="filter-all" class="explore-btn px-5 py-2 rounded-full bg-cream text-[#0D3322] text-xs font-bold transition shadow">Tất cả</button>
+                    <button onclick="filterExplore('heritage')" id="filter-heritage" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Di tích</button>
+                    <button onclick="filterExplore('cafe')" id="filter-cafe" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Cà phê</button>
+                    <button onclick="filterExplore('hidden')" id="filter-hidden" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Hidden Gems</button>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="explore-card heritage bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đại Nội Huế', 'Kinh thành triều Nguyễn với kiến trúc cung điện nguy nga, nơi lưu giữ dấu ấn lịch sử hàng trăm năm.', '23 Đoàn Thị Điểm, TP. Huế')">
+                <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Đại Nội Huế', 'Kinh thành triều Nguyễn với kiến trúc cung điện nguy nga, nơi lưu giữ dấu ấn lịch sử hàng trăm năm.', '23 Đoàn Thị Điểm, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg');"></div>
-                    <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Heritage</span>
-                    <h3 id="place-1-title" class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Đại Nội Huế</h3>
-                    <p id="place-1-desc" class="text-xs text-cream/70 mt-2 leading-relaxed">Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...</p>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
+                    <h3 id="place-1-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đại Nội Huế</h3>
+                    <p id="place-1-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...</p>
                 </div>
-                <div class="explore-card cafe bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Cà phê muối Chợ Gia Hội', 'Quán cà phê truyền thống nổi tiếng với hương vị cà phê muối đậm đà chất Huế, không gian hoài cổ.', '10 Nguyễn Huệ, TP. Huế')">
+                <div class="explore-card cafe bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cà phê muối Chợ Gia Hội', 'Quán cà phê truyền thống nổi tiếng với hương vị cà phê muối đậm đà chất Huế, không gian hoài cổ.', '10 Nguyễn Huệ, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-dbf4ba77-1d8b-4569-acb3-5d7be21522f8.jpg');"></div>
-                    <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Cafe</span>
-                    <h3 id="place-2-title" class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Cà phê muối truyền thống</h3>
-                    <p id="place-2-desc" class="text-xs text-cream/70 mt-2 leading-relaxed">Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...</p>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Cafe</span>
+                    <h3 id="place-2-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Cà phê muối truyền thống</h3>
+                    <p id="place-2-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...</p>
                 </div>
-                <div class="explore-card hidden bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-terracotta transition cursor-pointer group" onclick="openPlaceDetail('Đồi Vọng Cảnh', 'Điểm ngắm hoàng hôn tuyệt đẹp bên dòng sông Hương, rợp bóng thông xanh và lăng tẩm ẩn hiện.', 'Đồi Vọng Cảnh, Điện Biên Phủ, TP. Huế')">
+                <div class="explore-card hidden bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Đồi Vọng Cảnh', 'Điểm ngắm hoàng hôn tuyệt đẹp bên dòng sông Hương, rợp bóng thông xanh và lăng tẩm ẩn hiện.', 'Đồi Vọng Cảnh, Điện Biên Phủ, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg');"></div>
-                    <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Hidden Gem</span>
-                    <h3 id="place-3-title" class="text-xl font-bold mt-1 text-white group-hover:text-terracotta transition">Đồi Vọng Cảnh</h3>
-                    <p id="place-3-desc" class="text-xs text-cream/70 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Hidden Gem</span>
+                    <h3 id="place-3-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Đồi Vọng Cảnh</h3>
+                    <p id="place-3-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Meet the Locals Section -->
-    <section id="locals" class="py-20 px-4 container mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-            <div class="space-y-3">
-                <span id="locals-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Người bản địa</span>
-                <h2 id="locals-title" class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Meet the Locals</h2>
-                <p id="locals-subtitle" class="text-dark/70 text-sm">Những hướng dẫn viên tâm huyết mang câu chuyện Cố đô đến gần hơn với bạn.</p>
-            </div>
-            <button onclick="openGuideModal()" id="guide-btn" class="mt-6 md:mt-0 bg-terracotta text-white px-6 py-3 rounded-xl font-bold hover:bg-terracotta/90 transition shadow-lg shadow-terracotta/20">Đăng ký làm Local Guide</button>
+    <!-- Thêm phần Những chuyến đi (Journey Stories / Nhật ký hành trình) với 4 ảnh và note chuẩn bản địa -->
+    <section id="stories" class="py-20 px-4 container mx-auto relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <span id="stories-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Nhật ký hành trình</span>
+            <h2 id="stories-title" class="font-serif text-3xl sm:text-4xl font-bold text-[#0D3322]">Những chuyến đi qua lăng kính bản địa</h2>
+            <p id="stories-subtitle" class="text-black font-medium text-sm">Mỗi bước chân qua những con ngõ nhỏ, mỗi sớm mai bên dòng Hương là một câu chuyện tình yêu Đạt viết riêng cho Huế.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
-                <div>
-                    <h3 class="text-xl font-bold text-deepBlue">Lê Hoàng Bảo Ngọc</h3>
-                    <span id="guide-role-1" class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Food Tour & Văn hóa</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- Story 1 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
+                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-4e271336-85ec-42b8-b392-8854e6d401a1.jpg');"></div>
+                <div class="p-6 space-y-2">
+                    <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider bg-[#0D3322]/10 px-3 py-1 rounded-full">Phượt xứ Huế</span>
+                    <h3 class="text-xl font-bold text-[#0D3322] font-serif pt-2">Vi vu trên yên xe máy</h3>
+                    <p class="text-xs text-black/80 leading-relaxed">“Lên xe và đi thôi! Cùng du khách nước ngoài vi vu khám phá những cung đường tuyệt đẹp quanh Cố đô. Come as a traveler, leave as a friend.”[cite: 8]</p>
                 </div>
-                <p id="guide-quote-1" class="text-sm text-dark/70 italic leading-relaxed">"Sinh ra và lớn lên ở Huế, mình sẽ đưa các bạn đi ăn những món ngon đậm vị tình quê."</p>
             </div>
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
-                <div>
-                    <h3 class="text-xl font-bold text-deepBlue">Nguyễn Minh Quân</h3>
-                    <span id="guide-role-2" class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Lịch sử & Di tích</span>
+
+            <!-- Story 2 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
+                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-5aba273d-3b32-4aaa-94dc-4d46b34ca209.jpg');"></div>
+                <div class="p-6 space-y-2">
+                    <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider bg-[#0D3322]/10 px-3 py-1 rounded-full">Giao lưu văn hóa</span>
+                    <h3 class="text-xl font-bold text-[#0D3322] font-serif pt-2">Khoảnh khắc kết nối</h3>
+                    <p class="text-xs text-black/80 leading-relaxed">“Nụ cười rạng rỡ và những khoảnh khắc kết nối không khoảng cách giữa những người bạn phương xa và Local Guide nhà HueLocal.”[cite: 9]</p>
                 </div>
-                <p id="guide-quote-2" class="text-sm text-dark/70 italic leading-relaxed">"Đam mê tìm hiểu triều đại nhà Nguyễn và những câu chuyện thâm cung bí sử tại Đại Nội."</p>
             </div>
-            <div class="bg-white rounded-3xl p-8 shadow-xl border border-deepBlue/10 text-center space-y-4">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Guide" class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-terracotta shadow-md">
-                <div>
-                    <h3 class="text-xl font-bold text-deepBlue">Trần Thảo Vy</h3>
-                    <span id="guide-role-3" class="text-xs text-terracotta font-bold uppercase tracking-wider">Chuyên gia Photo & Hidden Gems</span>
+
+            <!-- Story 3 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
+                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-69c34345-a85f-4d1d-acfd-30b5bab68cee.jpg');"></div>
+                <div class="p-6 space-y-2">
+                    <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider bg-[#0D3322]/10 px-3 py-1 rounded-full">Tình bạn phương xa</span>
+                    <h3 class="text-xl font-bold text-[#0D3322] font-serif pt-2">Những người bạn mới</h3>
+                    <p class="text-xs text-black/80 leading-relaxed">“Đúng với tinh thần HueLocal: Từ những vị khách du lịch xa lạ, chúng ta gặp nhau và trở thành những người bạn thân thiết.”[cite: 10]</p>
                 </div>
-                <p id="guide-quote-3" class="text-sm text-dark/70 italic leading-relaxed">"Săn lùng những góc chụp ảnh nên thơ nhất ở xứ Huế mộng mơ cùng du khách gần xa."</p>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
+                <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('https://cdn.phototourl.com/member/2026-11-12-e6250c6d-5d68-4ae1-8009-3592a1ab85f1.jpg');"></div>
+                <div class="p-6 space-y-2">
+                    <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider bg-[#0D3322]/10 px-3 py-1 rounded-full">Cố đô hoài niệm</span>
+                    <h3 class="text-xl font-bold text-[#0D3322] font-serif pt-2">Dáng vẻ truyền thống</h3>
+                    <p class="text-xs text-black/80 leading-relaxed">“Khoác lên mình tà áo dài truyền thống, bước qua khung cổng đậm chất Cố đô để cảm nhận trọn vẹn hồn thơ xứ Huế.”</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="py-20 px-4 container mx-auto">
+    <section id="partners" class="py-20 px-4 container mx-auto relative z-10">
         <div class="flex flex-col md:flex-row justify-between items-end mb-16">
             <div class="space-y-3">
-                <span id="partners-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hệ sinh thái liên kết</span>
-                <h2 id="partners-title" class="text-3xl sm:text-4xl font-bold text-deepBlue">Đối tác địa phương</h2>
-                <p id="partners-subtitle" class="text-dark/70 text-sm">Đồng hành cùng các thương hiệu lưu trú, ẩm thực và dịch vụ hàng đầu tại Huế.</p>
+                <span id="partners-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Hệ sinh thái liên kết</span>
+                <h2 id="partners-title" class="text-3xl sm:text-4xl font-bold text-[#0D3322]">Đối tác địa phương</h2>
+                <p id="partners-subtitle" class="text-black font-medium text-sm">Đồng hành cùng các thương hiệu lưu trú, ẩm thực và dịch vụ hàng đầu tại Huế.</p>
             </div>
-            <button onclick="openPartnerModal()" id="partner-btn" class="mt-6 md:mt-0 bg-deepBlue text-cream px-6 py-3 rounded-xl font-bold hover:bg-terracotta transition shadow-lg">Trở thành đối tác</button>
+            <button onclick="openPartnerModal()" id="partner-btn" class="mt-6 md:mt-0 bg-[#0D3322] text-cream px-6 py-3 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow-lg">Trở thành đối tác</button>
         </div>
 
-        <!-- Khối đối tác "Rồng Rắn Lên Mây" -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-deepBlue/10 max-w-lg mx-auto my-8 text-center space-y-6">
-            <div class="relative rounded-2xl overflow-hidden border-2 border-deepBlue/10 bg-cream p-4">
+        <div class="bg-white/95 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-xl border border-[#0D3322]/15 max-w-lg mx-auto my-8 text-center space-y-6">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-[#0D3322]/15 bg-cream p-4">
                 <img src="https://cdn.phototourl.com/member/2026-11-11-39403a29-aad2-4894-bbba-c0f0619c55c7.jpg" alt="Rồng Rắn Lên Mây" class="w-full h-auto object-cover rounded-xl shadow-inner">
             </div>
 
             <div class="space-y-1">
-                <span class="text-xs text-terracotta font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
-                <h3 class="text-2xl sm:text-3xl font-black text-deepBlue tracking-wide" style="font-family: Arial, sans-serif;">Rồng Rắn Lên Mây</h3>
+                <span class="text-xs text-[#0D3322] font-bold uppercase tracking-widest">Đồng hành cùng HueLocal</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-[#0D3322] tracking-wide" style="font-family: Arial, sans-serif;">Rồng Rắn Lên Mây</h3>
             </div>
 
             <div class="flex flex-col gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61581662163890" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                    <i class="fa-brands fa-facebook text-terracotta"></i> Facebook · Rồng rắn lên mây
+                <a href="https://www.facebook.com/profile.php?id=61581662163890" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-facebook text-[#0D3322]"></i> Facebook · Rồng rắn lên mây
                 </a>
-                <a href="https://www.instagram.com/_rongran.lenmay_/" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                    <i class="fa-brands fa-instagram text-terracotta"></i> Instagram · _rongran.lenmay_
+                <a href="https://www.instagram.com/_rongran.lenmay_/" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-instagram text-[#0D3322]"></i> Instagram · _rongran.lenmay_
                 </a>
-                <a href="LINK_TIKTOK" target="_blank" class="flex items-center justify-center gap-2 border-2 border-terracotta/40 hover:border-terracotta bg-cream/40 hover:bg-terracotta/5 text-deepBlue text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
-                    <i class="fa-brands fa-tiktok text-terracotta"></i> TikTok · Rồng rắn lên mây
+                <a href="LINK_TIKTOK" target="_blank" class="flex items-center justify-center gap-2 border-2 border-[#0D3322]/30 hover:border-[#0D3322] bg-cream/60 hover:bg-[#0D3322]/5 text-[#0D3322] text-sm font-bold py-3 px-6 rounded-full transition shadow-sm">
+                    <i class="fa-brands fa-tiktok text-[#0D3322]"></i> TikTok · Rồng rắn lên mây
                 </a>
             </div>
 
-            <div class="rounded-2xl overflow-hidden border border-deepBlue/10 shadow-md">
+            <div class="rounded-2xl overflow-hidden border border-[#0D3322]/15 shadow-md">
                 <img src="https://cdn.phototourl.com/member/2026-11-11-06ff133e-dfc5-434c-a1a3-b45156f325db.jpg" alt="Banner Rồng Rắn Lên Mây" class="w-full h-auto object-cover">
             </div>
         </div>
-
-        
     </section>
 
     <!-- Team Members Section -->
-    <section id="team" class="py-20 px-4 bg-white border-t border-deepBlue/10">
+    <section id="team" class="py-20 px-4 bg-white/80 backdrop-blur-md border-t border-[#0D3322]/10 relative z-10">
         <div class="container mx-auto">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span id="team-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Đội ngũ sáng lập</span>
-                <h2 id="team-title" class="font-serif text-3xl sm:text-4xl font-bold text-deepBlue">Thành viên HueLocal</h2>
-                <p id="team-subtitle" class="text-dark/70 text-sm">Những bạn trẻ đam mê công nghệ và khát vọng quảng bá văn hóa Cố đô.</p>
+                <span id="team-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Đội ngũ sáng lập</span>
+                <h2 id="team-title" class="font-serif text-3xl sm:text-4xl font-bold text-[#0D3322]">Thành viên HueLocal</h2>
+                <p id="team-subtitle" class="text-black font-medium text-sm">Những bạn trẻ đam mê công nghệ và khát vọng quảng bá văn hóa Cố đô.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Hoài Bảo -->
-                <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
-                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-1b0296aa-e16e-4825-8e05-61c01590c957.jpg');"></div>
+                <div class="bg-cream/90 rounded-3xl p-8 border border-[#0D3322]/15 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-[#0D3322] transition">
+                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-[#0D3322]" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-1b0296aa-e16e-4825-8e05-61c01590c957.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
-                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Leader</span>
-                        <h3 class="text-xl font-bold text-deepBlue">Hoài Bảo</h3>
-                        <p id="member-desc-1" class="text-xs text-dark/70 leading-relaxed">Định hướng chiến lược, điều phối hoạt động chung và dẫn dắt đội ngũ phát triển dự án HueLocal.</p>
+                        <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider">Leader</span>
+                        <h3 class="text-xl font-bold text-[#0D3322]">Hoài Bảo</h3>
+                        <p id="member-desc-1" class="text-xs text-black leading-relaxed">Định hướng chiến lược, điều phối hoạt động chung và dẫn dắt đội ngũ phát triển dự án HueLocal.</p>
                     </div>
                 </div>
-                <!-- Gia Hiếu -->
-                <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
-                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-61e4b830-769c-4595-9ba2-de6905278287.jpg');"></div>
+                <div class="bg-cream/90 rounded-3xl p-8 border border-[#0D3322]/15 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-[#0D3322] transition">
+                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-[#0D3322]" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-61e4b830-769c-4595-9ba2-de6905278287.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
-                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Visual</span>
-                        <h3 class="text-xl font-bold text-deepBlue">Gia Hiếu</h3>
-                        <p id="member-desc-2" class="text-xs text-dark/70 leading-relaxed">Thiết kế giao diện, hình ảnh thương hiệu và định hình phong cách thẩm mỹ mang đậm dấu ấn Cố đô.</p>
+                        <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider">Visual</span>
+                        <h3 class="text-xl font-bold text-[#0D3322]">Gia Hiếu</h3>
+                        <p id="member-desc-2" class="text-xs text-black leading-relaxed">Thiết kế giao diện, hình ảnh thương hiệu và định hình phong cách thẩm mỹ mang đậm dấu ấn Cố đô.</p>
                     </div>
                 </div>
-                <!-- Hùng Hồ -->
-                <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
-                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-23734635-9ac1-4a80-b63b-6d1230430d28.jpg');"></div>
+                <div class="bg-cream/90 rounded-3xl p-8 border border-[#0D3322]/15 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-[#0D3322] transition">
+                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-[#0D3322]" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-23734635-9ac1-4a80-b63b-6d1230430d28.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
-                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Manager</span>
-                        <h3 class="text-xl font-bold text-deepBlue">Hùng Hồ</h3>
-                        <p id="member-desc-3" class="text-xs text-dark/70 leading-relaxed">Quản lý vận hành, kế hoạch triển khai và kết nối các đối tác dịch vụ trong hệ sinh thái.</p>
+                        <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider">Manager</span>
+                        <h3 class="text-xl font-bold text-[#0D3322]">Hùng Hồ</h3>
+                        <p id="member-desc-3" class="text-xs text-black leading-relaxed">Quản lý vận hành, kế hoạch triển khai và kết nối các đối tác dịch vụ trong hệ sinh thái.</p>
                     </div>
                 </div>
-                <!-- Minh Đạt -->
-                <div class="bg-cream/50 rounded-3xl p-8 border border-deepBlue/10 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-terracotta transition">
-                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-terracotta" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-9367a0f3-467a-427b-8b48-5f909fad60ee.jpg');"></div>
+                <div class="bg-cream/90 rounded-3xl p-8 border border-[#0D3322]/15 flex flex-col sm:flex-row items-center gap-6 shadow-lg group hover:border-[#0D3322] transition">
+                    <div class="w-32 h-32 rounded-2xl bg-cover bg-center shrink-0 shadow-md border-2 border-[#0D3322]" style="background-image: url('https://cdn.phototourl.com/member/2026-11-11-9367a0f3-467a-427b-8b48-5f909fad60ee.jpg');"></div>
                     <div class="text-center sm:text-left space-y-2">
-                        <span class="text-xs text-terracotta font-bold uppercase tracking-wider">Media leader</span>
-                        <h3 class="text-xl font-bold text-deepBlue">Minh Đạt</h3>
-                        <p id="member-desc-4" class="text-xs text-dark/70 leading-relaxed">Dẫn dắt chiến lược truyền thông, kỹ thuật hệ thống web, lập trình CMS và tích hợp dữ liệu.</p>
+                        <span class="text-xs text-[#0D3322] font-bold uppercase tracking-wider">Media leader</span>
+                        <h3 class="text-xl font-bold text-[#0D3322]">Minh Đạt</h3>
+                        <p id="member-desc-4" class="text-xs text-black leading-relaxed">Dẫn dắt chiến lược truyền thông, kỹ thuật hệ thống web, lập trình CMS và tích hợp dữ liệu.</p>
                     </div>
                 </div>
             </div>
@@ -316,60 +387,60 @@
     </section>
 
     <!-- Contact & Detailed Booking Form Section -->
-    <section id="contact" class="py-20 px-4 container mx-auto max-w-3xl">
-        <div class="bg-white rounded-3xl p-10 shadow-2xl border border-deepBlue/10">
+    <section id="contact" class="py-20 px-4 container mx-auto max-w-3xl relative z-10">
+        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-10 shadow-2xl border border-[#0D3322]/15">
             <div class="text-center mb-10 space-y-2">
-                <span id="contact-badge" class="text-terracotta font-bold uppercase text-xs tracking-widest bg-terracotta/10 px-3 py-1 rounded-full">Hỗ trợ 24/7</span>
-                <h2 id="contact-title" class="font-serif text-3xl font-bold text-deepBlue">Liên hệ & Đặt trải nghiệm</h2>
-                <p id="contact-subtitle" class="text-dark/70 text-sm">Điền thông tin chi tiết để đội ngũ HueLocal sắp xếp lịch trình tốt nhất cho bạn.</p>
+                <span id="contact-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Hỗ trợ 24/7</span>
+                <h2 id="contact-title" class="font-serif text-3xl font-bold text-[#0D3322]">Liên hệ & Đặt trải nghiệm</h2>
+                <p id="contact-subtitle" class="text-black font-medium text-sm">Điền thông tin chi tiết để đội ngũ HueLocal sắp xếp lịch trình tốt nhất cho bạn.</p>
             </div>
 
             <form onsubmit="handleContactSubmit(event)" class="space-y-5">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label id="label-name" class="block text-xs font-bold text-deepBlue uppercase mb-2">Họ và tên</label>
-                        <input type="text" id="contactName" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                        <label id="label-name" class="block text-xs font-bold text-[#0D3322] uppercase mb-2">Họ và tên</label>
+                        <input type="text" id="contactName" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322] transition">
                     </div>
                     <div>
-                        <label id="label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-2">Email / WhatsApp / Số điện thoại</label>
-                        <input type="text" id="contactEmail" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                        <label id="label-contact" class="block text-xs font-bold text-[#0D3322] uppercase mb-2">Email / WhatsApp / Số điện thoại</label>
+                        <input type="text" id="contactEmail" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322] transition">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label id="label-date" class="block text-xs font-bold text-deepBlue uppercase mb-2">Ngày mong muốn đi</label>
-                        <input type="date" id="contactDate" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                        <label id="label-date" class="block text-xs font-bold text-[#0D3322] uppercase mb-2">Ngày mong muốn đi</label>
+                        <input type="date" id="contactDate" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322] transition">
                     </div>
                     <div>
-                        <label id="label-guests" class="block text-xs font-bold text-deepBlue uppercase mb-2">Số lượng khách</label>
-                        <input type="number" id="contactGuests" min="1" value="2" required class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition">
+                        <label id="label-guests" class="block text-xs font-bold text-[#0D3322] uppercase mb-2">Số lượng khách</label>
+                        <input type="number" id="contactGuests" min="1" value="2" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322] transition">
                     </div>
                 </div>
 
                 <div>
-                    <label id="label-msg" class="block text-xs font-bold text-deepBlue uppercase mb-2">Yêu cầu đặc biệt / Lời nhắn</label>
-                    <textarea id="contactMsg" rows="3" class="w-full bg-cream/70 border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta transition" placeholder="Nhập ghi chú hoặc yêu cầu riêng cho chuyến đi..."></textarea>
+                    <label id="label-msg" class="block text-xs font-bold text-[#0D3322] uppercase mb-2">Yêu cầu đặc biệt / Lời nhắn</label>
+                    <textarea id="contactMsg" rows="3" class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322] transition" placeholder="Nhập ghi chú hoặc yêu cầu riêng cho chuyến đi..."></textarea>
                 </div>
 
-                <button type="submit" id="submit-contact-btn" class="w-full bg-deepBlue text-cream py-4 rounded-xl font-bold hover:bg-terracotta transition shadow-xl">Gửi yêu cầu đặt chỗ</button>
+                <button type="submit" id="submit-contact-btn" class="w-full bg-[#0D3322] text-cream py-4 rounded-xl font-bold hover:bg-[#0D3322]/95 transition shadow-xl">Gửi yêu cầu đặt chỗ</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-deepBlue text-cream/70 border-t border-white/10 py-16 px-4">
+    <footer class="bg-[#0D3322] text-cream/90 border-t border-white/10 py-16 px-4 relative z-10">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
             <div class="space-y-4">
-                <h3 class="text-2xl font-black text-white tracking-wider">HUE<span class="text-terracotta">LOCAL</span></h3>
-                <p id="footer-desc" class="text-xs leading-relaxed">Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.</p>
+                <h3 class="text-2xl font-black text-white tracking-wider">HUE<span class="text-[#F3C68F]">LOCAL</span></h3>
+                <p id="footer-desc" class="text-xs leading-relaxed text-cream/80">Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.</p>
             </div>
             <div>
                 <h4 id="footer-col-1-title" class="font-bold text-white text-sm mb-4">Khám phá</h4>
                 <ul class="space-y-2.5 text-xs">
                     <li><a href="#explore" id="footer-link-1" class="hover:text-white transition">Di tích lịch sử</a></li>
                     <li><a href="#explore" id="footer-link-2" class="hover:text-white transition">Ẩm thực cố đô</a></li>
-                    <li><a href="#locals" id="footer-link-3" class="hover:text-white transition">Local Guide</a></li>
+                    <li><a href="#stories" id="footer-link-stories" class="hover:text-white transition">Những chuyến đi</a></li>
                 </ul>
             </div>
             <div>
@@ -388,133 +459,123 @@
                     <a href="#" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <div class="pt-3 border-t border-white/10">
-                    <button onclick="openAdminLogin()" id="admin-portal-btn" class="text-xs text-cream/90 hover:text-white underline font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-lock text-terracotta"></i> Quản trị viên (CMS Portal)</button>
+                    <button onclick="openAdminLogin()" id="admin-portal-btn" class="text-xs text-cream hover:text-white underline font-bold inline-flex items-center gap-1.5"><i class="fa-solid fa-lock text-[#F3C68F]"></i> Quản trị viên (CMS Portal)</button>
                 </div>
             </div>
         </div>
-        <div id="footer-copyright" class="container mx-auto text-center text-xs text-cream/50 pt-8 border-t border-white/10">
+        <div id="footer-copyright" class="container mx-auto text-center text-xs text-cream/70 pt-8 border-t border-white/10">
             &copy; 2026 HueLocal. All rights reserved. Discover Hue through local eyes.
         </div>
     </footer>
 
     <!-- MODALS -->
     <div id="placeModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-8 text-dark relative shadow-2xl">
-            <button onclick="closeModal('placeModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="placeTitle" class="font-serif text-2xl font-bold text-deepBlue mb-2"></h3>
-            <p id="placeAddress" class="text-xs text-terracotta font-bold mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-2"></i> <span></span></p>
-            <p id="placeDesc" class="text-sm text-dark/80 leading-relaxed mb-6"></p>
-            <div class="bg-cream p-4 rounded-2xl flex items-center justify-between">
-                <span id="place-status" class="text-xs font-bold text-deepBlue"><i class="fa-solid fa-circle-check text-green-600 mr-1"></i> Trạng thái: Mở cửa đón khách</span>
-                <button onclick="closeModal('placeModal')" id="close-btn-1" class="bg-deepBlue text-cream px-5 py-2 rounded-xl text-xs font-bold">Đóng</button>
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 text-black relative shadow-2xl">
+            <button onclick="closeModal('placeModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="placeTitle" class="font-serif text-2xl font-bold text-[#0D3322] mb-2"></h3>
+            <p id="placeAddress" class="text-xs text-[#0D3322] font-bold mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-2"></i> <span></span></p>
+            <p id="placeDesc" class="text-sm text-black leading-relaxed mb-6"></p>
+            <div class="bg-cream p-4 rounded-2xl flex items-center justify-between border border-[#0D3322]/10">
+                <span id="place-status" class="text-xs font-bold text-[#0D3322]"><i class="fa-solid fa-circle-check text-green-600 mr-1"></i> Trạng thái: Mở cửa đón khách</span>
+                <button onclick="closeModal('placeModal')" id="close-btn-1" class="bg-[#0D3322] text-cream px-5 py-2 rounded-xl text-xs font-bold">Đóng</button>
             </div>
         </div>
     </div>
 
-    <div id="storyModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full p-8 text-dark relative shadow-2xl max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal('storyModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <span id="storyAuthor" class="text-xs text-terracotta font-bold uppercase tracking-wider"></span>
-            <h3 id="storyTitle" class="font-serif text-2xl md:text-3xl font-bold text-deepBlue mt-1 mb-4"></h3>
-            <div id="storyContent" class="text-sm text-dark/80 leading-relaxed space-y-4"></div>
-        </div>
-    </div>
-
     <div id="guideModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
-            <button onclick="closeModal('guideModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-guide-title" class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký làm Local Guide</h3>
-            <p id="modal-guide-sub" class="text-xs text-dark/60 mb-6">Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.</p>
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-black relative shadow-2xl">
+            <button onclick="closeModal('guideModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-guide-title" class="font-serif text-2xl font-bold text-[#0D3322] mb-1">Đăng ký làm Local Guide</h3>
+            <p id="modal-guide-sub" class="text-xs text-black/70 mb-6">Gia nhập đội ngũ hướng dẫn viên bản địa HueLocal.</p>
             <form onsubmit="submitGuide(event)" class="space-y-4">
                 <div>
-                    <label id="g-label-name" class="block text-xs font-bold text-deepBlue uppercase mb-1">Họ và tên</label>
-                    <input type="text" id="gName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="g-label-name" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Họ và tên</label>
+                    <input type="text" id="gName" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="g-label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / Số điện thoại</label>
-                    <input type="text" id="gContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="g-label-contact" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Email / Số điện thoại</label>
+                    <input type="text" id="gContact" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="g-label-lang" class="block text-xs font-bold text-deepBlue uppercase mb-1">Ngôn ngữ thông thạo</label>
-                    <input type="text" id="gLang" placeholder="VD: Tiếng Việt, English..." required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="g-label-lang" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Ngôn ngữ thông thạo</label>
+                    <input type="text" id="gLang" placeholder="VD: Tiếng Việt, English..." required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="g-label-bio" class="block text-xs font-bold text-deepBlue uppercase mb-1">Giới thiệu bản thân & kinh nghiệm</label>
-                    <textarea id="gBio" rows="3" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none"></textarea>
+                    <label id="g-label-bio" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Giới thiệu bản thân & kinh nghiệm</label>
+                    <textarea id="gBio" rows="3" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]"></textarea>
                 </div>
-                <button type="submit" id="g-submit-btn" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Gửi đơn ứng tuyển</button>
+                <button type="submit" id="g-submit-btn" class="w-full bg-[#0D3322] text-cream py-3.5 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow">Gửi đơn ứng tuyển</button>
             </form>
         </div>
     </div>
 
     <div id="partnerModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-dark relative shadow-2xl">
-            <button onclick="closeModal('partnerModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modal-partner-title" class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng ký Hợp tác đối tác</h3>
-            <p id="modal-partner-sub" class="text-xs text-dark/60 mb-6">Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.</p>
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-black relative shadow-2xl">
+            <button onclick="closeModal('partnerModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modal-partner-title" class="font-serif text-2xl font-bold text-[#0D3322] mb-1">Đăng ký Hợp tác đối tác</h3>
+            <p id="modal-partner-sub" class="text-xs text-black/70 mb-6">Kết nối dịch vụ của bạn với hệ sinh thái HueLocal.</p>
             <form onsubmit="submitPartner(event)" class="space-y-4">
                 <div>
-                    <label id="p-label-brand" class="block text-xs font-bold text-deepBlue uppercase mb-1">Tên thương hiệu / Doanh nghiệp</label>
-                    <input type="text" id="pBrand" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="p-label-brand" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Tên thương hiệu / Doanh nghiệp</label>
+                    <input type="text" id="pBrand" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="p-label-name" class="block text-xs font-bold text-deepBlue uppercase mb-1">Người liên hệ</label>
-                    <input type="text" id="pName" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="p-label-name" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Người liên hệ</label>
+                    <input type="text" id="pName" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="p-label-contact" class="block text-xs font-bold text-deepBlue uppercase mb-1">Email / Số điện thoại</label>
-                    <input type="text" id="pContact" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="p-label-contact" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Email / Số điện thoại</label>
+                    <input type="text" id="pContact" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
                 <div>
-                    <label id="p-label-type" class="block text-xs font-bold text-deepBlue uppercase mb-1">Loại hình dịch vụ</label>
-                    <input type="text" id="pType" placeholder="VD: Khách sạn, Nhà hàng, Cà phê..." required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-terracotta">
+                    <label id="p-label-type" class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Loại hình dịch vụ</label>
+                    <input type="text" id="pType" placeholder="VD: Khách sạn, Nhà hàng, Cà phê..." required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none focus:border-[#0D3322]">
                 </div>
-                <button type="submit" id="p-submit-btn" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Gửi yêu cầu hợp tác</button>
+                <button type="submit" id="p-submit-btn" class="w-full bg-[#0D3322] text-cream py-3.5 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow">Gửi yêu cầu hợp tác</button>
             </form>
         </div>
     </div>
 
     <!-- Admin Login Modal -->
     <div id="adminLoginModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-dark relative shadow-2xl">
-            <button onclick="closeModal('adminLoginModal')" class="absolute top-5 right-5 text-dark/40 hover:text-dark text-xl"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="font-serif text-2xl font-bold text-deepBlue mb-1">Đăng nhập Quản trị</h3>
-            <p class="text-xs text-dark/60 mb-6">HueLocal CMS Control Center</p>
+        <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-black relative shadow-2xl">
+            <button onclick="closeModal('adminLoginModal')" class="absolute top-5 right-5 text-black/40 hover:text-black text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-serif text-2xl font-bold text-[#0D3322] mb-1">Đăng nhập Quản trị</h3>
+            <p class="text-xs text-black/70 mb-6">HueLocal CMS Control Center</p>
             <form onsubmit="handleAdminLogin(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Email Admin</label>
-                    <input type="email" id="adminEmailInput" value="admin@huelocal.vn" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                    <label class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Email Admin</label>
+                    <input type="email" id="adminEmailInput" value="admin@huelocal.vn" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-deepBlue uppercase mb-1">Mật khẩu</label>
-                    <input type="password" id="adminPassInput" value="123456" required class="w-full bg-cream border border-deepBlue/10 rounded-xl px-4 py-3 text-sm focus:outline-none">
+                    <label class="block text-xs font-bold text-[#0D3322] uppercase mb-1">Mật khẩu</label>
+                    <input type="password" id="adminPassInput" value="123456" required class="w-full bg-cream border border-[#0D3322]/20 rounded-xl px-4 py-3 text-sm text-black focus:outline-none">
                 </div>
-                <button type="submit" class="w-full bg-deepBlue text-cream py-3.5 rounded-xl font-bold hover:bg-terracotta transition shadow">Đăng nhập CMS</button>
+                <button type="submit" class="w-full bg-[#0D3322] text-cream py-3.5 rounded-xl font-bold hover:bg-[#0D3322]/90 transition shadow">Đăng nhập CMS</button>
             </form>
         </div>
     </div>
 
     <!-- Admin Dashboard Modal -->
     <div id="adminDashboardModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-cream rounded-3xl max-w-5xl w-full h-[90vh] flex flex-col text-dark relative shadow-2xl overflow-hidden">
-            <div class="bg-deepBlue text-white p-6 flex justify-between items-center">
+        <div class="bg-cream rounded-3xl max-w-5xl w-full h-[90vh] flex flex-col text-black relative shadow-2xl overflow-hidden">
+            <div class="bg-[#0D3322] text-white p-6 flex justify-between items-center">
                 <div>
                     <h3 class="font-serif text-2xl font-bold">HueLocal CMS Control Center</h3>
-                    <p class="text-xs text-cream/70">Quản lý trực tiếp yêu cầu đặt chỗ, ứng tuyển HDV và đối tác</p>
+                    <p class="text-xs text-cream/80">Quản lý trực tiếp yêu cầu đặt chỗ, ứng tuyển HDV và đối tác</p>
                 </div>
                 <div class="flex items-center space-x-3">
-                    <button onclick="logoutAdmin()" class="bg-terracotta text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition">Đăng xuất</button>
+                    <button onclick="logoutAdmin()" class="bg-red-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-red-700 transition">Đăng xuất</button>
                     <button onclick="closeModal('adminDashboardModal')" class="text-white text-xl px-2"><i class="fa-solid fa-xmark"></i></button>
                 </div>
             </div>
 
             <div class="flex-1 overflow-y-auto p-6 space-y-8">
-                <!-- Bookings Table -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
-                    <h4 class="font-bold text-deepBlue text-base mb-4">1. Yêu cầu Đặt chỗ trải nghiệm (<span id="countBookings">0</span>)</h4>
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-[#0D3322]/15">
+                    <h4 class="font-bold text-[#0D3322] text-base mb-4">1. Yêu cầu Đặt chỗ trải nghiệm (<span id="countBookings">0</span>)</h4>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-cream text-deepBlue font-bold uppercase">
+                        <table class="w-full text-left text-xs text-black">
+                            <thead class="bg-cream text-[#0D3322] font-bold uppercase">
                                 <tr>
                                     <th class="p-3">Họ tên</th>
                                     <th class="p-3">Liên hệ</th>
@@ -530,12 +591,11 @@
                     </div>
                 </div>
 
-                <!-- Guides Table -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
-                    <h4 class="font-bold text-deepBlue text-base mb-4">2. Đơn ứng tuyển Local Guide (<span id="countGuides">0</span>)</h4>
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-[#0D3322]/15">
+                    <h4 class="font-bold text-[#0D3322] text-base mb-4">2. Đơn ứng tuyển Local Guide (<span id="countGuides">0</span>)</h4>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-cream text-deepBlue font-bold uppercase">
+                        <table class="w-full text-left text-xs text-black">
+                            <thead class="bg-cream text-[#0D3322] font-bold uppercase">
                                 <tr>
                                     <th class="p-3">Họ tên</th>
                                     <th class="p-3">Liên hệ</th>
@@ -549,12 +609,11 @@
                     </div>
                 </div>
 
-                <!-- Partners Table -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg border border-deepBlue/10">
-                    <h4 class="font-bold text-deepBlue text-base mb-4">3. Yêu cầu Hợp tác đối tác (<span id="countPartners">0</span>)</h4>
+                <div class="bg-white p-6 rounded-3xl shadow-lg border border-[#0D3322]/15">
+                    <h4 class="font-bold text-[#0D3322] text-base mb-4">3. Yêu cầu Hợp tác đối tác (<span id="countPartners">0</span>)</h4>
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs">
-                            <thead class="bg-cream text-deepBlue font-bold uppercase">
+                        <table class="w-full text-left text-xs text-black">
+                            <thead class="bg-cream text-[#0D3322] font-bold uppercase">
                                 <tr>
                                     <th class="p-3">Thương hiệu</th>
                                     <th class="p-3">Người liên hệ</th>
@@ -589,9 +648,10 @@
             vi: {
                 topBanner: "Khám phá Huế qua lăng kính người bản địa | Discover Hue through local eyes",
                 navHome: "Trang chủ",
+                navAbout: "Giới thiệu",
                 navExplore: "Khám phá Huế",
+                navStories: "Những chuyến đi",
                 navLocals: "Local Guide",
-                navStories: "Stories",
                 navPartners: "Đối tác",
                 navMember: "Thành viên",
                 navContact: "Liên hệ & Đặt chỗ",
@@ -600,6 +660,16 @@
                 heroTitle: "Discover Hue through local eyes.",
                 heroDesc: "Cố đô Huế qua góc nhìn của người bản địa: những con đường rêu phong, bữa ăn đậm vị và câu chuyện cung đình còn vang trong từng mái ngói.",
                 heroBtn: "Xem hình ảnh",
+                aboutHueBadge: "Về Cố Đô Huế",
+                aboutHueTitle: "Hồn thơ xứ Cố đô",
+                aboutHueDesc: "Huế trầm mặc bên dòng Hương giang là trung tâm văn hóa, lịch sử đặc sắc với hệ thống cung điện, lăng tẩm triều Nguyễn uy nghi và tinh hoa ẩm thực phong phú. Sức hút của Huế còn đến từ nhịp sống chậm rãi và tình cảm chân thành của con người nơi đây.",
+                aboutHueLocalBadge: "Về chúng tôi",
+                aboutHueLocalTitle: "HueLocal là gì?",
+                aboutSlogan: "“Come as a traveler. Leave as a friend.”",
+                missionTitle: "Mục đích thành lập",
+                missionDesc: "Được điều phối bởi <strong>Nguyễn Phan Hoài Bảo</strong>, HueLocal tạo ra cầu nối gần gũi giữa du khách và người bản địa. Giúp du khách hiểu sâu sắc hơn về Huế qua những câu chuyện đời thường và tạo môi trường cho người trẻ quảng bá quê hương.",
+                meaningTitle: "Ý nghĩa thương hiệu",
+                meaningDesc: "Sự kết hợp giữa <strong>“Hue”</strong> và <strong>“Local”</strong> thể hiện góc nhìn chân thực của người bản địa. Màu sắc và logo tượng trưng cho di sản, dòng sông, ánh mặt trời năng lượng và nụ cười hiếu khách.",
                 whyTitle: "Vì sao là Huế?",
                 whySubtitle: "Ba điều khiến Huế khác biệt với mọi nơi bạn từng đến.",
                 why1Title: "Cố đô di sản",
@@ -621,33 +691,13 @@
                 place2Desc: "Nơi khởi nguồn hương vị cà phê độc đáo làm say lòng bao du khách khi đến Cố đô...",
                 place3Title: "Đồi Vọng Cảnh",
                 place3Desc: "Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...",
-                localsBadge: "Người bản địa",
-                localsTitle: "Meet the Locals",
-                localsSubtitle: "Những hướng dẫn viên tâm huyết mang câu chuyện Cố đô đến gần hơn với bạn.",
-                guideBtn: "Đăng ký làm Local Guide",
-                guideRole1: "Chuyên gia Food Tour & Văn hóa",
-                guideQuote1: "\"Sinh ra và lớn lên ở Huế, mình sẽ đưa các bạn đi ăn những món ngon đậm vị tình quê.\"",
-                guideRole2: "Chuyên gia Lịch sử & Di tích",
-                guideQuote2: "\"Đam mê tìm hiểu triều đại nhà Nguyễn và những câu chuyện thâm cung bí sử tại Đại Nội.\"",
-                guideRole3: "Chuyên gia Photo & Hidden Gems",
-                guideQuote3: "\"Săn lùng những góc chụp ảnh nên thơ nhất ở xứ Huế mộng mơ cùng du khách gần xa.\"",
-                storiesBadge: "Nhật ký & Góc nhìn",
-                storiesTitle: "HueLocal Stories",
-                storiesSubtitle: "Góc nhìn văn hóa, lịch sử và cảm nhận chân thực từ những chuyến đi.",
-                storyTag1: "Ẩm thực",
-                story1Title: "Bí mật đằng sau tô bún bò Huế chuẩn vị xưa",
-                storyTag2: "Nhật ký khách",
-                story2Title: "Nhịp sống chậm rãi bên dòng sông Hương buổi sớm",
-                readMore: "Đọc tiếp",
+                storiesBadge: "Nhật ký hành trình",
+                storiesTitle: "Những chuyến đi qua lăng kính bản địa",
+                storiesSubtitle: "Mỗi bước chân qua những con ngõ nhỏ, mỗi sớm mai bên dòng Hương là một câu chuyện tình yêu Đạt viết riêng cho Huế.",
                 partnersBadge: "Hệ sinh thái liên kết",
                 partnersTitle: "Đối tác địa phương",
                 partnersSubtitle: "Đồng hành cùng các thương hiệu lưu trú, ẩm thực và dịch vụ hàng đầu tại Huế.",
                 partnerBtn: "Trở thành đối tác",
-                partnerDesc1: "Lưu trú & Nghỉ dưỡng",
-                partnerDesc2: "Ẩm thực & Cà phê",
-                partnerDesc3: "Di chuyển & Cho thuê xe",
-                partnerBrand4: "Đặc sản Cố Đô",
-                partnerDesc4: "Quà lưu niệm thủ công",
                 teamBadge: "Đội ngũ sáng lập",
                 teamTitle: "Thành viên HueLocal",
                 teamSubtitle: "Những bạn trẻ đam mê công nghệ và khát vọng quảng bá văn hóa Cố đô.",
@@ -668,7 +718,7 @@
                 footerCol1: "Khám phá",
                 footerLink1: "Di tích lịch sử",
                 footerLink2: "Ẩm thực cố đô",
-                footerLink3: "Local Guide",
+                footerLinkStories: "Những chuyến đi",
                 footerCol2: "Chính sách",
                 footerPolicy1: "Chính sách bảo mật",
                 footerPolicy2: "Điều khoản sử dụng",
@@ -696,9 +746,9 @@
             en: {
                 topBanner: "Discover Hue through local eyes | Khám phá Huế qua lăng kính người bản địa",
                 navHome: "Home",
+                navAbout: "About Us",
                 navExplore: "Explore Hue",
-                navLocals: "Local Guide",
-                navStories: "Stories",
+                navStories: "Journey Stories",
                 navPartners: "Partners",
                 navMember: "Membership",
                 navContact: "Contact & Booking",
@@ -707,6 +757,16 @@
                 heroTitle: "Discover Hue through local eyes.",
                 heroDesc: "The ancient capital of Hue through local eyes: mossy paths, flavorful meals, and royal stories echoing in every tiled roof.",
                 heroBtn: "Explore Gallery",
+                aboutHueBadge: "About Ancient Capital Hue",
+                aboutHueTitle: "The Poetic Soul of Hue",
+                aboutHueDesc: "Hue, nestled peacefully by the Perfume River, is a distinguished cultural and historical center featuring majestic Nguyen dynasty palaces, royal tombs, and rich culinary arts. The enduring charm of Hue also stems from its slow-paced lifestyle and the warm, sincere hospitality of its local people.",
+                aboutHueLocalBadge: "About Us",
+                aboutHueLocalTitle: "What is HueLocal?",
+                aboutSlogan: "“Come as a traveler. Leave as a friend.”",
+                missionTitle: "Purpose & Mission",
+                missionDesc: "Coordinated by <strong>Nguyen Phan Hoai Bao</strong>, HueLocal builds a close bridge between travelers and locals. It helps visitors gain a deeper understanding of Hue through authentic everyday stories while empowering local youth to showcase their homeland.",
+                meaningTitle: "Brand Meaning",
+                meaningDesc: "Combining <strong>“Hue”</strong> and <strong>“Local”</strong> reflects native insights and authenticity. Our colors and logo symbolize heritage, rivers, energetic sunlight, and welcoming smiles.",
                 whyTitle: "Why Hue?",
                 whySubtitle: "Three things that make Hue unlike anywhere else you've ever been.",
                 why1Title: "Heritage Capital",
@@ -728,33 +788,13 @@
                 place2Desc: "The birthplace of the unique salt coffee flavor that captivates travelers in the ancient capital...",
                 place3Title: "Vong Canh Hill",
                 place3Desc: "A breathtaking sunset spot by the Perfume River where time stands still...",
-                localsBadge: "Locals",
-                localsTitle: "Meet the Locals",
-                localsSubtitle: "Passionate local guides bringing the ancient capital's stories closer to you.",
-                guideBtn: "Apply as Local Guide",
-                guideRole1: "Food Tour & Culture Expert",
-                guideQuote1: "\"Born and raised in Hue, I will take you on a delicious journey filled with hometown warmth.\"",
-                guideRole2: "History & Heritage Expert",
-                guideQuote2: "\"Passionate about exploring the Nguyen Dynasty and secret stories within the Imperial Citadel.\"",
-                guideRole3: "Photo & Hidden Gems Expert",
-                guideQuote3: "\"Hunting for the most poetic photo angles in dreamy Hue with travelers from near and far.\"",
-                storiesBadge: "Journal & Perspectives",
-                storiesTitle: "HueLocal Stories",
-                storiesSubtitle: "Cultural and historical insights and authentic travel notes.",
-                storyTag1: "Cuisine",
-                story1Title: "The Secret Behind an Authentic Bowl of Bun Bo Hue",
-                storyTag2: "Traveler Journal",
-                story2Title: "Slow Living Along the Perfume River at Dawn",
-                readMore: "Read more",
+                storiesBadge: "Journey Diary",
+                storiesTitle: "Journey Stories Through Local Eyes",
+                storiesSubtitle: "Every step through small alleys, every early morning by the Perfume River is a love story written exclusively for Hue.",
                 partnersBadge: "Partner Ecosystem",
                 partnersTitle: "Local Partners",
                 partnersSubtitle: "Collaborating with top accommodation, dining, and service brands in Hue.",
                 partnerBtn: "Become a Partner",
-                partnerDesc1: "Stay & Hospitality",
-                partnerDesc2: "Cuisine & Cafe",
-                partnerDesc3: "Transport & Bike Rental",
-                partnerBrand4: "Ancient Capital Specialties",
-                partnerDesc4: "Handmade Souvenirs",
                 teamBadge: "Founding Team",
                 teamTitle: "HueLocal Members",
                 teamSubtitle: "Young individuals passionate about technology and dedicated to promoting ancient capital culture.",
@@ -775,7 +815,7 @@
                 footerCol1: "Explore",
                 footerLink1: "Historical Sites",
                 footerLink2: "Ancient Capital Cuisine",
-                footerLink3: "Local Guide",
+                footerLinkStories: "Journey Stories",
                 footerCol2: "Policies",
                 footerPolicy1: "Privacy Policy",
                 footerPolicy2: "Terms of Use",
@@ -804,10 +844,10 @@
 
         function switchLang(lang) {
             if(lang === 'en') {
-                document.getElementById('lang-en-btn').className = 'font-bold text-terracotta underline';
+                document.getElementById('lang-en-btn').className = 'font-bold text-[#F3C68F] underline';
                 document.getElementById('lang-vi-btn').className = 'text-cream/70 hover:text-white';
             } else {
-                document.getElementById('lang-vi-btn').className = 'font-bold text-terracotta underline';
+                document.getElementById('lang-vi-btn').className = 'font-bold text-[#F3C68F] underline';
                 document.getElementById('lang-en-btn').className = 'opacity-70 hover:opacity-100';
                 lang = 'vi';
             }
@@ -819,6 +859,17 @@
             if(document.getElementById('hero-title')) document.getElementById('hero-title').innerText = t.heroTitle;
             if(document.getElementById('hero-desc')) document.getElementById('hero-desc').innerText = t.heroDesc;
             if(document.getElementById('hero-btn')) document.getElementById('hero-btn').innerText = t.heroBtn;
+
+            if(document.getElementById('about-hue-badge')) document.getElementById('about-hue-badge').innerText = t.aboutHueBadge;
+            if(document.getElementById('about-hue-title')) document.getElementById('about-hue-title').innerText = t.aboutHueTitle;
+            if(document.getElementById('about-hue-desc')) document.getElementById('about-hue-desc').innerText = t.aboutHueDesc;
+            if(document.getElementById('about-huelocal-badge')) document.getElementById('about-huelocal-badge').innerText = t.aboutHueLocalBadge;
+            if(document.getElementById('about-huelocal-title')) document.getElementById('about-huelocal-title').innerText = t.aboutHueLocalTitle;
+            if(document.getElementById('about-slogan')) document.getElementById('about-slogan').innerText = t.aboutSlogan;
+            if(document.getElementById('mission-title')) document.getElementById('mission-title').innerHTML = `<i class="fa-solid fa-bullseye text-[#0D3322]"></i> ${t.missionTitle}`;
+            if(document.getElementById('mission-desc')) document.getElementById('mission-desc').innerHTML = t.missionDesc;
+            if(document.getElementById('meaning-title')) document.getElementById('meaning-title').innerHTML = `<i class="fa-solid fa-compass text-[#0D3322]"></i> ${t.meaningTitle}`;
+            if(document.getElementById('meaning-desc')) document.getElementById('meaning-desc').innerHTML = t.meaningDesc;
 
             if(document.getElementById('why-title')) document.getElementById('why-title').innerText = t.whyTitle;
             if(document.getElementById('why-subtitle')) document.getElementById('why-subtitle').innerText = t.whySubtitle;
@@ -844,36 +895,14 @@
             if(document.getElementById('place-3-title')) document.getElementById('place-3-title').innerText = t.place3Title;
             if(document.getElementById('place-3-desc')) document.getElementById('place-3-desc').innerText = t.place3Desc;
 
-            if(document.getElementById('locals-badge')) document.getElementById('locals-badge').innerText = t.localsBadge;
-            if(document.getElementById('locals-title')) document.getElementById('locals-title').innerText = t.localsTitle;
-            if(document.getElementById('locals-subtitle')) document.getElementById('locals-subtitle').innerText = t.localsSubtitle;
-            if(document.getElementById('guide-btn')) document.getElementById('guide-btn').innerText = t.guideBtn;
-            if(document.getElementById('guide-role-1')) document.getElementById('guide-role-1').innerText = t.guideRole1;
-            if(document.getElementById('guide-quote-1')) document.getElementById('guide-quote-1').innerText = t.guideQuote1;
-            if(document.getElementById('guide-role-2')) document.getElementById('guide-role-2').innerText = t.guideRole2;
-            if(document.getElementById('guide-quote-2')) document.getElementById('guide-quote-2').innerText = t.guideQuote2;
-            if(document.getElementById('guide-role-3')) document.getElementById('guide-role-3').innerText = t.guideRole3;
-            if(document.getElementById('guide-quote-3')) document.getElementById('guide-quote-3').innerText = t.guideQuote3;
-
             if(document.getElementById('stories-badge')) document.getElementById('stories-badge').innerText = t.storiesBadge;
             if(document.getElementById('stories-title')) document.getElementById('stories-title').innerText = t.storiesTitle;
             if(document.getElementById('stories-subtitle')) document.getElementById('stories-subtitle').innerText = t.storiesSubtitle;
-            if(document.getElementById('story-tag-1')) document.getElementById('story-tag-1').innerText = t.storyTag1;
-            if(document.getElementById('story-1-title')) document.getElementById('story-1-title').innerText = t.story1Title;
-            if(document.getElementById('story-tag-2')) document.getElementById('story-tag-2').innerText = t.storyTag2;
-            if(document.getElementById('story-2-title')) document.getElementById('story-2-title').innerText = t.story2Title;
-            if(document.getElementById('read-more-1')) document.getElementById('read-more-1').innerHTML = `${t.readMore} <i class="fa-solid fa-arrow-right text-xs"></i>`;
-            if(document.getElementById('read-more-2')) document.getElementById('read-more-2').innerHTML = `${t.readMore} <i class="fa-solid fa-arrow-right text-xs"></i>`;
 
             if(document.getElementById('partners-badge')) document.getElementById('partners-badge').innerText = t.partnersBadge;
             if(document.getElementById('partners-title')) document.getElementById('partners-title').innerText = t.partnersTitle;
             if(document.getElementById('partners-subtitle')) document.getElementById('partners-subtitle').innerText = t.partnersSubtitle;
             if(document.getElementById('partner-btn')) document.getElementById('partner-btn').innerText = t.partnerBtn;
-            if(document.getElementById('partner-desc-1')) document.getElementById('partner-desc-1').innerText = t.partnerDesc1;
-            if(document.getElementById('partner-desc-2')) document.getElementById('partner-desc-2').innerText = t.partnerDesc2;
-            if(document.getElementById('partner-desc-3')) document.getElementById('partner-desc-3').innerText = t.partnerDesc3;
-            if(document.getElementById('partner-brand-4')) document.getElementById('partner-brand-4').innerText = t.partnerBrand4;
-            if(document.getElementById('partner-desc-4')) document.getElementById('partner-desc-4').innerText = t.partnerDesc4;
 
             if(document.getElementById('team-badge')) document.getElementById('team-badge').innerText = t.teamBadge;
             if(document.getElementById('team-title')) document.getElementById('team-title').innerText = t.teamTitle;
@@ -897,13 +926,13 @@
             if(document.getElementById('footer-col-1-title')) document.getElementById('footer-col-1-title').innerText = t.footerCol1;
             if(document.getElementById('footer-link-1')) document.getElementById('footer-link-1').innerText = t.footerLink1;
             if(document.getElementById('footer-link-2')) document.getElementById('footer-link-2').innerText = t.footerLink2;
-            if(document.getElementById('footer-link-3')) document.getElementById('footer-link-3').innerText = t.footerLink3;
+            if(document.getElementById('footer-link-stories')) document.getElementById('footer-link-stories').innerText = t.footerLinkStories;
             if(document.getElementById('footer-col-2-title')) document.getElementById('footer-col-2-title').innerText = t.footerCol2;
             if(document.getElementById('footer-policy-1')) document.getElementById('footer-policy-1').innerText = t.footerPolicy1;
             if(document.getElementById('footer-policy-2')) document.getElementById('footer-policy-2').innerText = t.footerPolicy2;
             if(document.getElementById('footer-policy-3')) document.getElementById('footer-policy-3').innerText = t.footerPolicy3;
             if(document.getElementById('footer-col-3-title')) document.getElementById('footer-col-3-title').innerText = t.footerCol3;
-            if(document.getElementById('admin-portal-btn')) document.getElementById('admin-portal-btn').innerHTML = `<i class="fa-solid fa-lock text-terracotta"></i> ${t.adminPortalBtn}`;
+            if(document.getElementById('admin-portal-btn')) document.getElementById('admin-portal-btn').innerHTML = `<i class="fa-solid fa-lock text-[#F3C68F]"></i> ${t.adminPortalBtn}`;
             if(document.getElementById('footer-copyright')) document.getElementById('footer-copyright').innerHTML = t.footerCopyright;
 
             if(document.getElementById('place-status')) document.getElementById('place-status').innerHTML = `<i class="fa-solid fa-circle-check text-green-600 mr-1"></i> ${t.placeStatus}`;
@@ -926,13 +955,12 @@
             if(document.getElementById('p-submit-btn')) document.getElementById('p-submit-btn').innerText = t.pSubmitBtn;
 
             document.querySelectorAll('.nav-home').forEach(el => el.innerText = t.navHome);
+            document.querySelectorAll('.nav-about').forEach(el => el.innerText = t.navAbout);
             document.querySelectorAll('.nav-explore').forEach(el => el.innerText = t.navExplore);
-            document.querySelectorAll('.nav-locals').forEach(el => el.innerText = t.navLocals);
             document.querySelectorAll('.nav-stories').forEach(el => el.innerText = t.navStories);
             document.querySelectorAll('.nav-partners').forEach(el => el.innerText = t.navPartners);
             document.querySelectorAll('.nav-member').forEach(el => el.innerText = t.navMember);
             document.querySelectorAll('.nav-contact').forEach(el => el.innerText = t.navContact);
-            document.querySelectorAll('.cta-book-btn').forEach(el => el.innerText = t.ctaBook);
         }
 
         function toggleMobileMenu() {
@@ -985,13 +1013,6 @@
             document.getElementById('placeDesc').innerText = desc;
             document.querySelector('#placeAddress span').innerText = address;
             document.getElementById('placeModal').classList.remove('hidden');
-        }
-
-        function openStoryModal(title, content, author) {
-            document.getElementById('storyTitle').innerText = title;
-            document.getElementById('storyContent').innerHTML = `<p>${content}</p><p class="mt-4">Nội dung chi tiết được biên soạn bởi đội ngũ HueLocal Stories, phản ánh chân thực nhịp sống và văn hóa Cố đô.</p>`;
-            document.getElementById('storyAuthor').innerText = 'Bởi ' + author;
-            document.getElementById('storyModal').classList.remove('hidden');
         }
 
         function openGuideModal() {
@@ -1088,21 +1109,21 @@
 
             let bHtml = '';
             db.bookings.forEach((item, index) => {
-                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.date || '-'}</td><td class="p-3">${item.guests || '-'} khách</td><td class="p-3 text-terracotta">${item.msg || '-'}</td><td class="p-3">${item.time}</td><td class="p-3 text-center"><button onclick="deleteRecord('booking', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
+                bHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.date || '-'}</td><td class="p-3 text-black">${item.guests || '-'} khách</td><td class="p-3 text-[#0D3322] font-semibold">${item.msg || '-'}</td><td class="p-3 text-black">${item.time}</td><td class="p-3 text-center"><button onclick="deleteRecord('booking', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="7" class="p-4 text-center text-dark/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
+            document.getElementById('tableBookingsBody').innerHTML = bHtml || '<tr><td colspan="7" class="p-4 text-center text-black/50">Chưa có yêu cầu đặt chỗ nào.</td></tr>';
 
             let gHtml = '';
             db.guides.forEach((item, index) => {
-                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.lang}</td><td class="p-3">${item.bio}</td><td class="p-3 text-center"><button onclick="deleteRecord('guide', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
+                gHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.lang}</td><td class="p-3 text-black">${item.bio}</td><td class="p-3 text-center"><button onclick="deleteRecord('guide', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="5" class="p-4 text-center text-dark/50">Chưa có đơn ứng tuyển nào.</td></tr>';
+            document.getElementById('tableGuidesBody').innerHTML = gHtml || '<tr><td colspan="5" class="p-4 text-center text-black/50">Chưa có đơn ứng tuyển nào.</td></tr>';
 
             let pHtml = '';
             db.partners.forEach((item, index) => {
-                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold">${item.brand}</td><td class="p-3">${item.name}</td><td class="p-3">${item.contact}</td><td class="p-3">${item.type}</td><td class="p-3 text-center"><button onclick="deleteRecord('partner', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
+                pHtml += `<tr class="border-b border-cream"><td class="p-3 font-bold text-black">${item.brand}</td><td class="p-3 text-black">${item.name}</td><td class="p-3 text-black">${item.contact}</td><td class="p-3 text-black">${item.type}</td><td class="p-3 text-center"><button onclick="deleteRecord('partner', ${index})" class="bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white text-xs px-2.5 py-1 rounded-lg transition font-bold"><i class="fa-solid fa-trash-can"></i> Xóa</button></td></tr>`;
             });
-            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="5" class="p-4 text-center text-dark/50">Chưa có yêu cầu đối tác nào.</td></tr>';
+            document.getElementById('tablePartnersBody').innerHTML = pHtml || '<tr><td colspan="5" class="p-4 text-center text-black/50">Chưa có yêu cầu đối tác nào.</td></tr>';
         }
     </script>
 </body>
