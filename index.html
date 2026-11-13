@@ -60,43 +60,36 @@
         </div>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-          <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
-            <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="HueLocal Logo" class="w-9 h-9 object-cover rounded-xl border border-[#0D3322]/20 shadow-sm">
-            <div>
-                <span class="text-[#0D3322] mr-0.5">HUE</span>LOCAL
-            </div>
-          </a>
-            
-          <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
-                <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
-                <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
-                <a href="#stories" class="nav-stories hover:text-[#0D3322] font-semibold text-black transition">Những chuyến đi</a>
-                <a href="#partners" class="nav-partners hover:text-[#0D3322] font-semibold text-black transition">Đối tác</a>
-                <a href="#team" class="nav-member hover:text-[#0D3322] transition text-[#0D3322] font-bold">Thành viên</a>
-                <a href="#contact" class="nav-contact hover:text-[#0D3322] font-semibold text-black transition">Liên hệ & Đặt chỗ</a>
-            </nav>
-
-            <!-- Mobile Hamburger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-[#0D3322] text-xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+     <!-- Main Navigation Header -->
+<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
+    <!-- Sử dụng w-full và max-w-full kết hợp px-6 để logo dịch sát mép trái màn hình -->
+    <div class="w-full px-6 py-3 flex justify-between items-center">
+      <!-- Logo HueLocal nằm sát bên trái -->
+      <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
+        <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="HueLocal Logo" class="w-9 h-9 object-cover rounded-xl border border-[#0D3322]/20 shadow-sm">
+        <div>
+            <span class="text-[#0D3322] mr-0.5">HUE</span>LOCAL
         </div>
+      </a>
+        
+      <!-- Menu điều hướng -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
+            <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
+            <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
+            <a href="#ai-tourism" class="nav-ai hover:text-[#0D3322] font-semibold text-black transition">AI với du lịch</a>
+            <a href="#stories" class="nav-stories hover:text-[#0D3322] font-semibold text-black transition">Những chuyến đi</a>
+            <a href="#partners" class="nav-partners hover:text-[#0D3322] font-semibold text-black transition">Đối tác</a>
+            <a href="#team" class="nav-member hover:text-[#0D3322] transition text-[#0D3322] font-bold">Thành viên</a>
+            <a href="#contact" class="nav-contact hover:text-[#0D3322] font-semibold text-black transition">Liên hệ & Đặt chỗ</a>
+        </nav>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-[#0D3322]/10 px-4 py-4 space-y-3">
-            <a href="#home" class="block font-medium text-black nav-home" onclick="toggleMobileMenu()">Trang chủ</a>
-            <a href="#about" class="block font-medium text-black nav-about" onclick="toggleMobileMenu()">Giới thiệu</a>
-            <a href="#explore" class="block font-medium text-black nav-explore" onclick="toggleMobileMenu()">Khám phá Huế</a>
-            <a href="#stories" class="block font-medium text-black nav-stories" onclick="toggleMobileMenu()">Những chuyến đi</a>
-            <a href="#partners" class="block font-medium text-black nav-partners" onclick="toggleMobileMenu()">Đối tác</a>
-            <a href="#team" class="block font-medium text-[#0D3322] font-bold nav-member" onclick="toggleMobileMenu()">Thành viên</a>
-            <a href="#contact" class="block font-medium text-black nav-contact" onclick="toggleMobileMenu()">Liên hệ & Đặt chỗ</a>
-        </div>
-    </header>
+        <!-- Mobile Hamburger -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-[#0D3322] text-xl focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="hero relative text-[#0D3322] py-16 px-4 overflow-hidden z-10" style="padding-top: 70px;">
@@ -329,6 +322,74 @@
         </div>
     </section>
 
+    <!-- MỤC MỚI: AI VỚI DU LỊCH -->
+    <section id="ai-tourism" class="py-20 px-4 container mx-auto max-w-4xl relative z-10">
+        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-12 shadow-2xl border border-[#0D3322]/15 space-y-8">
+            <div class="text-center space-y-3">
+                <span id="ai-badge" class="text-[#0D3322] font-bold uppercase text-xs tracking-widest bg-[#0D3322]/10 px-3 py-1 rounded-full">Góc nhìn công nghệ</span>
+                <h2 id="ai-title" class="font-serif text-3xl sm:text-4xl font-bold text-[#0D3322]">AI với du lịch</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-sm text-black leading-relaxed">
+                    <p id="ai-desc-1">
+                        Chúng mình không phủ nhận sự tiện lợi và những giá trị mà AI mang lại. Nhưng chúng mình tin rằng, du lịch không chỉ là những dòng thông tin được cung cấp, mà còn là những câu chuyện được kể bằng cảm xúc, những nụ cười trong giao tiếp và sự kết nối giữa người với người.
+                    </p>
+                    <p id="ai-desc-2">
+                        AI có thể giúp du khách biết thêm về Huế, nhưng tình yêu của một người con xứ Huế dành cho quê hương mình lại là một câu chuyện khác.
+                    </p>
+                    <p id="ai-desc-3">
+                        Chúng mình không muốn đứng ngoài sự phát triển của công nghệ, nhưng cũng không muốn một ngày nào đó, những người trẻ yêu du lịch, yêu văn hóa và muốn kể câu chuyện quê hương lại trở nên không còn cần thiết.
+                    </p>
+                    <p id="ai-desc-4" class="font-bold text-[#0D3322]">
+                        HueLocal chọn đồng hành cùng công nghệ, chứ không chọn để công nghệ thay thế con người. Bởi chúng mình tin rằng, công nghệ có thể kể một câu chuyện, nhưng chính con người mới thổi hồn vào câu chuyện ấy. 💜
+                    </p>
+                </div>
+                
+                <!-- Tách riêng Video và File Âm thanh -->
+<div class="rounded-2xl overflow-hidden shadow-xl border border-[#0D3322]/20 bg-black relative">
+    <!-- Thẻ Video (chỉ hiển thị hình ảnh, đã tắt tiếng gốc của video) -->
+    <video id="separateVideo" autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[350px]">
+        <source src="https://www.image2url.com/r2/default/videos/1794563451067-19ebc53d-ce9a-43b3-81ad-b536c4ede58b.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+    </video>
+
+    <!-- Thẻ Audio (file âm thanh riêng biệt) -->
+    <audio id="separateAudio" loop>
+        <source src="https://www.image2url.com/r2/default/audio/1794564068691-74c6537e-2328-4be8-9aa3-09433b874574.mp3" type="audio/mp3">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+</div>
+
+<!-- Script tự động phát đồng bộ Video và Âm thanh khi lướt tới màn hình -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById('separateVideo');
+        const audio = document.getElementById('separateAudio');
+
+        if (video && audio) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Khi lướt tới mục này: chạy video và phát file âm thanh riêng
+                        video.play().catch(e => console.log("Video autoplay bị chặn"));
+                        audio.play().catch(e => console.log("Audio autoplay bị chặn do chính sách trình duyệt"));
+                    } else {
+                        // Khi lướt đi chỗ khác: dừng video và tạm dừng âm thanh
+                        video.pause();
+                        audio.pause();
+                    }
+                });
+            }, { threshold: 0.5 }); // Khi lướt thấy ít nhất 50% khung hình
+
+            observer.observe(video);
+        }
+    });
+</script>
+            </div>
+        </div>
+    </section>
+
     <!-- Nhật ký hành trình -->
     <section id="stories" class="py-20 px-4 container mx-auto relative z-10">
         <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -539,6 +600,7 @@
                 <ul class="space-y-2.5 text-xs">
                     <li><a href="#explore" id="footer-link-1" class="hover:text-white transition">Di tích lịch sử</a></li>
                     <li><a href="#explore" id="footer-link-2" class="hover:text-white transition">Ẩm thực cố đô</a></li>
+                    <li><a href="#ai-tourism" id="footer-link-ai" class="hover:text-white transition">AI với du lịch</a></li>
                     <li><a href="#stories" id="footer-link-stories" class="hover:text-white transition">Những chuyến đi</a></li>
                 </ul>
             </div>
@@ -659,6 +721,7 @@
                 navHome: "Trang chủ",
                 navAbout: "Giới thiệu",
                 navExplore: "Khám phá Huế",
+                navAi: "AI với du lịch",
                 navStories: "Những chuyến đi",
                 navPartners: "Đối tác",
                 navMember: "Thành viên",
@@ -717,6 +780,12 @@
                 place11Desc: "Điểm dừng chân thư giãn tuyệt vời với kiến trúc cổ kính và không gian yên bình đậm chất Cố đô...",
                 place12Title: "Hồ Thủy Tiên",
                 place12Desc: "Khu công viên nước ma mị nằm ẩn mình giữa rừng thông Thiên An, thu hút đông đảo du khách tò mò...",
+                aiBadge: "Góc nhìn công nghệ",
+                aiTitle: "AI với du lịch",
+                aiDesc1: "Chúng mình không phủ nhận sự tiện lợi và những giá trị mà AI mang lại. Nhưng chúng mình tin rằng, du lịch không chỉ là những dòng thông tin được cung cấp, mà còn là những câu chuyện được kể bằng cảm xúc, những nụ cười trong giao tiếp và sự kết nối giữa người với người.",
+                aiDesc2: "AI có thể giúp du khách biết thêm về Huế, nhưng tình yêu của một người con xứ Huế dành cho quê hương mình lại là một câu chuyện khác.",
+                aiDesc3: "Chúng mình không muốn đứng ngoài sự phát triển của công nghệ, nhưng cũng không muốn một ngày nào đó, những người trẻ yêu du lịch, yêu văn hóa và muốn kể câu chuyện quê hương lại trở nên không còn cần thiết.",
+                aiDesc4: "HueLocal chọn đồng hành cùng công nghệ, chứ không chọn để công nghệ thay thế con người. Bởi chúng mình tin rằng, công nghệ có thể kể một câu chuyện, nhưng chính con người mới thổi hồn vào câu chuyện ấy. 💜",
                 storiesBadge: "Nhật ký hành trình",
                 storiesTitle: "Những chuyến đi qua lăng kính bản địa",
                 storiesSubtitle: "Mỗi bước chân qua những con ngõ nhỏ, mỗi sớm mai bên dòng Hương là một câu chuyện tình yêu Đạt viết riêng cho Huế.",
@@ -757,6 +826,7 @@
                 footerCol1: "Khám phá",
                 footerLink1: "Di tích lịch sử",
                 footerLink2: "Ẩm thực cố đô",
+                footerLinkAi: "AI với du lịch",
                 footerLinkStories: "Những chuyến đi",
                 footerCol2: "Chính sách",
                 footerPolicy1: "Chính sách bảo mật",
@@ -773,6 +843,7 @@
                 navHome: "Home",
                 navAbout: "About Us",
                 navExplore: "Explore Hue",
+                navAi: "AI & Tourism",
                 navStories: "Journey Stories",
                 navPartners: "Partners",
                 navMember: "Membership",
@@ -831,6 +902,12 @@
                 place11Desc: "A nostalgic cafe space offering traditional tea and coffee flavors with an authentic old-Hue vibe...",
                 place12Title: "Thuy Tien Lake",
                 place12Desc: "An eerie abandoned water park hidden within the Thien An pine hills, a famous check-in spot for explorers...",
+                aiBadge: "Technology Perspective",
+                aiTitle: "AI & Tourism",
+                aiDesc1: "We do not deny the convenience and value that AI brings. However, we believe that tourism is not just about providing information, but also about stories told through emotions, smiles in communication, and human-to-human connection.",
+                aiDesc2: "AI can help visitors learn more about Hue, but the love of a native son for his homeland is an entirely different story.",
+                aiDesc3: "We do not want to stand outside of technological advancement, but neither do we want a day to come when young people who love travel, culture, and telling their hometown stories become unnecessary.",
+                aiDesc4: "HueLocal chooses to accompany technology, not to let technology replace humans. Because we believe that technology can tell a story, but only humans can breathe life into it. 💜",
                 storiesBadge: "Journey Diary",
                 storiesTitle: "Journey Stories Through Local Eyes",
                 storiesSubtitle: "Every step through small alleys, every early morning by the Perfume River is a love story written exclusively for Hue.",
@@ -871,6 +948,7 @@
                 footerCol1: "Explore",
                 footerLink1: "Historical Sites",
                 footerLink2: "Ancient Capital Cuisine",
+                footerLinkAi: "AI & Tourism",
                 footerLinkStories: "Journey Stories",
                 footerCol2: "Policies",
                 footerPolicy1: "Privacy Policy",
@@ -956,6 +1034,13 @@
             if(document.getElementById('place-12-title')) document.getElementById('place-12-title').innerText = t.place12Title;
             if(document.getElementById('place-12-desc')) document.getElementById('place-12-desc').innerText = t.place12Desc;
 
+            if(document.getElementById('ai-badge')) document.getElementById('ai-badge').innerText = t.aiBadge;
+            if(document.getElementById('ai-title')) document.getElementById('ai-title').innerText = t.aiTitle;
+            if(document.getElementById('ai-desc-1')) document.getElementById('ai-desc-1').innerText = t.aiDesc1;
+            if(document.getElementById('ai-desc-2')) document.getElementById('ai-desc-2').innerText = t.aiDesc2;
+            if(document.getElementById('ai-desc-3')) document.getElementById('ai-desc-3').innerText = t.aiDesc3;
+            if(document.getElementById('ai-desc-4')) document.getElementById('ai-desc-4').innerText = t.aiDesc4;
+
             if(document.getElementById('stories-badge')) document.getElementById('stories-badge').innerText = t.storiesBadge;
             if(document.getElementById('stories-title')) document.getElementById('stories-title').innerText = t.storiesTitle;
             if(document.getElementById('stories-subtitle')) document.getElementById('stories-subtitle').innerText = t.storiesSubtitle;
@@ -1001,6 +1086,7 @@
             if(document.getElementById('footer-col-1-title')) document.getElementById('footer-col-1-title').innerText = t.footerCol1;
             if(document.getElementById('footer-link-1')) document.getElementById('footer-link-1').innerText = t.footerLink1;
             if(document.getElementById('footer-link-2')) document.getElementById('footer-link-2').innerText = t.footerLink2;
+            if(document.getElementById('footer-link-ai')) document.getElementById('footer-link-ai').innerText = t.footerLinkAi;
             if(document.getElementById('footer-link-stories')) document.getElementById('footer-link-stories').innerText = t.footerLinkStories;
             if(document.getElementById('footer-col-2-title')) document.getElementById('footer-col-2-title').innerText = t.footerCol2;
             if(document.getElementById('footer-policy-1')) document.getElementById('footer-policy-1').innerText = t.footerPolicy1;
@@ -1016,6 +1102,7 @@
             document.querySelectorAll('.nav-home').forEach(el => el.innerText = t.navHome);
             document.querySelectorAll('.nav-about').forEach(el => el.innerText = t.navAbout);
             document.querySelectorAll('.nav-explore').forEach(el => el.innerText = t.navExplore);
+            document.querySelectorAll('.nav-ai').forEach(el => el.innerText = t.navAi);
             document.querySelectorAll('.nav-stories').forEach(el => el.innerText = t.navStories);
             document.querySelectorAll('.nav-partners').forEach(el => el.innerText = t.navPartners);
             document.querySelectorAll('.nav-member').forEach(el => el.innerText = t.navMember);
