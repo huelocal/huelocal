@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HueLocal - Discover Hue through local eyes</title>
     <link rel="icon" type="image/jpeg" href="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
+    <!-- Thẻ khai báo chuẩn Apple Touch Icon cho điện thoại -->
+    <link rel="apple-touch-icon" href="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.png">
     <meta property="og:image" content="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -60,36 +62,47 @@
         </div>
     </div>
 
-     <!-- Main Navigation Header -->
-<header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
-    <!-- Sử dụng w-full và max-w-full kết hợp px-6 để logo dịch sát mép trái màn hình -->
-    <div class="w-full px-6 py-3 flex justify-between items-center">
-      <!-- Logo HueLocal nằm sát bên trái -->
-      <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
-        <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="HueLocal Logo" class="w-9 h-9 object-cover rounded-xl border border-[#0D3322]/20 shadow-sm">
-        <div>
-            <span class="text-[#0D3322] mr-0.5">HUE</span>LOCAL
-        </div>
-      </a>
-        
-      <!-- Menu điều hướng -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-            <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
-            <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
-            <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
-            <a href="#ai-tourism" class="nav-ai hover:text-[#0D3322] font-semibold text-black transition">AI với du lịch</a>
-            <a href="#stories" class="nav-stories hover:text-[#0D3322] font-semibold text-black transition">Những chuyến đi</a>
-            <a href="#partners" class="nav-partners hover:text-[#0D3322] font-semibold text-black transition">Đối tác</a>
-            <a href="#team" class="nav-member hover:text-[#0D3322] transition text-[#0D3322] font-bold">Thành viên</a>
-            <a href="#contact" class="nav-contact hover:text-[#0D3322] font-semibold text-black transition">Liên hệ & Đặt chỗ</a>
-        </nav>
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-[#0D3322]/10 shadow-sm">
+        <div class="w-full px-6 py-3 flex justify-between items-center">
+            <!-- Logo HueLocal nằm sát bên trái -->
+            <a href="#" class="text-2xl font-black text-[#0D3322] tracking-wider flex items-center gap-2">
+                <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="HueLocal Logo" class="w-9 h-9 object-cover rounded-xl border border-[#0D3322]/20 shadow-sm">
+                <div>
+                    <span class="text-[#0D3322] mr-0.5">HUE</span>LOCAL
+                </div>
+            </a>
+            
+            <!-- Menu điều hướng Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="nav-home hover:text-[#0D3322] font-semibold text-black transition">Trang chủ</a>
+                <a href="#about" class="nav-about hover:text-[#0D3322] font-semibold text-black transition">Giới thiệu</a>
+                <a href="#explore" class="nav-explore hover:text-[#0D3322] font-semibold text-black transition">Khám phá Huế</a>
+                <a href="#ai-tourism" class="nav-ai hover:text-[#0D3322] font-semibold text-black transition">AI với du lịch</a>
+                <a href="#stories" class="nav-stories hover:text-[#0D3322] font-semibold text-black transition">Những chuyến đi</a>
+                <a href="#partners" class="nav-partners hover:text-[#0D3322] font-semibold text-black transition">Đối tác</a>
+                <a href="#team" class="nav-member hover:text-[#0D3322] transition text-[#0D3322] font-bold">Thành viên</a>
+                <a href="#contact" class="nav-contact hover:text-[#0D3322] font-semibold text-black transition">Liên hệ & Đặt chỗ</a>
+            </nav>
 
-        <!-- Mobile Hamburger -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-[#0D3322] text-xl focus:outline-none">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-    </div>
-</header>
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-[#0D3322] text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown (Đã được bổ sung đầy đủ) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-[#0D3322]/10 px-6 py-4 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block nav-home text-black font-semibold hover:text-[#0D3322]">Trang chủ</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block nav-about text-black font-semibold hover:text-[#0D3322]">Giới thiệu</a>
+            <a href="#explore" onclick="toggleMobileMenu()" class="block nav-explore text-black font-semibold hover:text-[#0D3322]">Khám phá Huế</a>
+            <a href="#ai-tourism" onclick="toggleMobileMenu()" class="block nav-ai text-black font-semibold hover:text-[#0D3322]">AI với du lịch</a>
+            <a href="#stories" onclick="toggleMobileMenu()" class="block nav-stories text-black font-semibold hover:text-[#0D3322]">Những chuyến đi</a>
+            <a href="#partners" onclick="toggleMobileMenu()" class="block nav-partners text-black font-semibold hover:text-[#0D3322]">Đối tác</a>
+            <a href="#team" onclick="toggleMobileMenu()" class="block nav-member text-[#0D3322] font-bold">Thành viên</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block nav-contact text-black font-semibold hover:text-[#0D3322]">Liên hệ & Đặt chỗ</a>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero relative text-[#0D3322] py-16 px-4 overflow-hidden z-10" style="padding-top: 70px;">
@@ -331,7 +344,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4 text-sm text-black leading-relaxed">
+                <div class="space-y-4 text-sm text-black leading-relaxed text-justify">
                     <p id="ai-desc-1">
                         Chúng mình không phủ nhận sự tiện lợi và những giá trị mà AI mang lại. Nhưng chúng mình tin rằng, du lịch không chỉ là những dòng thông tin được cung cấp, mà còn là những câu chuyện được kể bằng cảm xúc, những nụ cười trong giao tiếp và sự kết nối giữa người với người.
                     </p>
@@ -346,45 +359,13 @@
                     </p>
                 </div>
                 
-                <!-- Tách riêng Video và File Âm thanh -->
-<div class="rounded-2xl overflow-hidden shadow-xl border border-[#0D3322]/20 bg-black relative">
-    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[350px]">
-        <source src="https://www.image2url.com/r2/default/videos/1794563451067-19ebc53d-ce9a-43b3-81ad-b536c4ede58b.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ thẻ video.
-    </video>
-
-    <!-- Thẻ Audio (file âm thanh riêng biệt) -->
-    <audio id="separateAudio" loop>
-        <source src="https://www.image2url.com/r2/default/audio/1794564068691-74c6537e-2328-4be8-9aa3-09433b874574.mp3" type="audio/mp3">
-        Trình duyệt của bạn không hỗ trợ thẻ audio.
-    </audio>
-</div>
-
-<!-- Script tự động phát đồng bộ Video và Âm thanh khi lướt tới màn hình -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const video = document.getElementById('separateVideo');
-        const audio = document.getElementById('separateAudio');
-
-        if (video && audio) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Khi lướt tới mục này: chạy video và phát file âm thanh riêng
-                        video.play().catch(e => console.log("Video autoplay bị chặn"));
-                        audio.play().catch(e => console.log("Audio autoplay bị chặn do chính sách trình duyệt"));
-                    } else {
-                        // Khi lướt đi chỗ khác: dừng video và tạm dừng âm thanh
-                        video.pause();
-                        audio.pause();
-                    }
-                });
-            }, { threshold: 0.5 }); // Khi lướt thấy ít nhất 50% khung hình
-
-            observer.observe(video);
-        }
-    });
-</script>
+                <!-- Video AI với du lịch (chạy mượt trên di động) -->
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-[#0D3322]/20 bg-black relative">
+                    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[350px]">
+                        <source src="https://www.image2url.com/r2/default/videos/1794563451067-19ebc53d-ce9a-43b3-81ad-b536c4ede58b.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ thẻ video.
+                    </video>
+                </div>
             </div>
         </div>
     </section>
@@ -567,14 +548,14 @@
         </div>
     </section>
 
-    <!-- Video tự động phát khi lướt tới -->
+    <!-- Video cuối trang -->
     <section class="py-12 px-4 container mx-auto max-w-4xl relative z-10 text-center">
-<div class="rounded-3xl overflow-hidden shadow-2xl border border-[#0D3322]/15 bg-black">
-    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[500px]">
-        <source src="https://www.image2url.com/r2/default/videos/1794484476290-624c01e7-5baf-4bac-9b2c-afe06e4761e5.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ thẻ video.
-    </video>
-</div>
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#0D3322]/15 bg-black">
+            <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[500px]">
+                <source src="https://www.image2url.com/r2/default/videos/1794484476290-624c01e7-5baf-4bac-9b2c-afe06e4761e5.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -584,7 +565,6 @@
                 <h3 class="text-2xl font-black text-white tracking-wider">HUE<span class="text-[#F3C68F]">LOCAL</span></h3>
                 <p id="footer-desc" class="text-xs leading-relaxed text-cream/80">Discover Hue through local eyes. Nền tảng du lịch bản địa hàng đầu tại Cố đô Huế.</p>
                 
-                <!-- BỔ SUNG: Hai ảnh mã QR ở góc dưới cùng bên trái -->
                 <div class="flex items-center gap-3 pt-2">
                     <div class="w-16 h-16 bg-white p-1 rounded-xl shadow border border-white/20">
                         <img src="https://cdn.phototourl.com/member/2026-11-12-0f6c54e5-8aad-4d84-9f8a-29d3d2edb64b.png" alt="QR Code 1" class="w-full h-full object-contain">
@@ -1110,7 +1090,9 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
         }
 
         function closeModal(modalId) {
