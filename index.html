@@ -103,7 +103,7 @@
             <a href="#contact" onclick="toggleMobileMenu()" class="block nav-contact text-black font-semibold hover:text-[#0D3322]">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
-    <!-- THẺ CSS HIỆU ỨNG CHẠY NGANG (MARQUEE) -->
+   <!-- THẺ CSS HIỆU ỨNG CHẠY NGANG (MARQUEE KHÍT FULL MÀN HÌNH) -->
 <style>
     @keyframes marquee {
         0% { transform: translateX(0%); }
@@ -112,43 +112,43 @@
     .animate-marquee {
         display: flex;
         width: max-content;
-        animation: marquee 25s linear infinite;
+        animation: marquee 20s linear infinite;
     }
     .animate-marquee:hover {
         animation-play-state: paused;
     }
 </style>
 
-<!-- GIAO DIỆN DẢI ẢNH CHẠY NGANG VỚI Ô HUELOCAL CỐ ĐỊNH GÓC TRÁI -->
-<div class="relative overflow-hidden bg-[#0D3322] py-3 border-y border-[#F3C68F]/30 z-40 shadow-md">
-    <!-- Ô nhãn HueLocal cố định ở góc trái -->
-    <div class="absolute left-0 top-0 bottom-0 z-30 bg-[#0D3322] px-4 flex items-center gap-2.5 border-r border-[#F3C68F]/30 shadow-2xl">
-        <span class="text-xs font-black text-cream tracking-wider">HUELOCAL <span class="text-[#F3C68F]">NEWS</span></span>
+<!-- GIAO DIỆN DẢI ẢNH CHẠY SÁT KHÍT FULL KHÔNG KHOẢNG TRỐNG -->
+<div class="relative overflow-hidden bg-[#0D3322] border-y border-[#F3C68F]/30 z-40 shadow-md">
+    <!-- Ô nhãn huelocal news cố định ở góc trái -->
+    <div class="absolute left-0 top-0 bottom-0 z-30 bg-[#0D3322]/95 backdrop-blur px-4 flex items-center gap-2 border-r border-[#F3C68F]/30 shadow-2xl">
+        <img src="https://cdn.phototourl.com/member/2026-11-11-6304de5e-d1b8-4dc5-bc7a-ccb2e60c5df3.jpg" alt="Logo" class="w-7 h-7 object-cover rounded-lg border border-[#F3C68F]/40 shadow">
+        <span class="text-xs font-black text-cream tracking-wider">huelocal <span class="text-[#F3C68F]">news</span></span>
     </div>
     
-    <!-- Dải ảnh chạy liên tục về bên trái -->
-    <div class="animate-marquee items-center space-x-4 pl-36">
+    <!-- Dải ảnh chạy liên tục, sát khít nhau, không khoảng cách trống (space-x-0) -->
+    <div class="animate-marquee items-center pl-32">
         <!-- Nhóm ảnh 1 -->
-        <div class="flex items-center space-x-4 shrink-0">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-56548139-5e67-4b92-a2d1-a2a739171661.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-2c4869d2-e37e-475e-b20b-64c8531d1d0b.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-7666042f-755d-40c3-87b3-123089cf45bd.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-9929d0ea-30fe-42d7-a8be-e5aa33279766.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
+        <div class="flex items-center shrink-0">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-56548139-5e67-4b92-a2d1-a2a739171661.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-2c4869d2-e37e-475e-b20b-64c8531d1d0b.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-7666042f-755d-40c3-87b3-123089cf45bd.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-9929d0ea-30fe-42d7-a8be-e5aa33279766.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg" class="w-40 h-16 object-cover border-r border-black/20">
         </div>
-        <!-- Nhóm ảnh 2 (Lặp lại để tạo hiệu ứng chạy vô tận mượt mà không bị giật) -->
-        <div class="flex items-center space-x-4 shrink-0">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-56548139-5e67-4b92-a2d1-a2a739171661.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-2c4869d2-e37e-475e-b20b-64c8531d1d0b.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-7666042f-755d-40c3-87b3-123089cf45bd.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-9929d0ea-30fe-42d7-a8be-e5aa33279766.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
-            <img src="https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg" class="w-36 h-16 object-cover rounded-xl shadow border border-white/20">
+        <!-- Nhóm ảnh 2 (Lặp lại để chạy vòng lặp vô tận mượt mà) -->
+        <div class="flex items-center shrink-0">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-87324246-b09e-4f5d-aadd-0be6f95f3bce.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-56548139-5e67-4b92-a2d1-a2a739171661.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-2c4869d2-e37e-475e-b20b-64c8531d1d0b.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-7666042f-755d-40c3-87b3-123089cf45bd.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-9929d0ea-30fe-42d7-a8be-e5aa33279766.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+            <img src="https://cdn.phototourl.com/member/2026-11-12-386f7947-0df5-4bb4-9842-a84e81aefc99.jpg" class="w-40 h-16 object-cover border-r border-black/20">
         </div>
     </div>
 </div>
-
     <!-- Hero Section -->
     <section id="home" class="hero relative text-[#0D3322] py-16 px-4 overflow-hidden z-10" style="padding-top: 70px;">
         <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
