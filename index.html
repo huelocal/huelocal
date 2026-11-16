@@ -91,7 +91,7 @@
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown (Đã được bổ sung đầy đủ) -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-[#0D3322]/10 px-6 py-4 space-y-3">
             <a href="#home" onclick="toggleMobileMenu()" class="block nav-home text-black font-semibold hover:text-[#0D3322]">Trang chủ</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block nav-about text-black font-semibold hover:text-[#0D3322]">Giới thiệu</a>
@@ -103,51 +103,49 @@
             <a href="#contact" onclick="toggleMobileMenu()" class="block nav-contact text-black font-semibold hover:text-[#0D3322]">Liên hệ & Đặt chỗ</a>
         </div>
     </header>
-   <!-- THẺ CSS HIỆU ỨNG CHẠY NGANG (MARQUEE KHÍT FULL MÀN HÌNH) -->
-<style>
-    @keyframes marquee {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-        display: flex;
-        width: max-content;
-        animation: marquee 20s linear infinite;
-    }
-    .animate-marquee:hover {
-        animation-play-state: paused;
-    }
-</style>
 
-<!-- GIAO DIỆN DẢI ẢNH CHẠY SÁT KHÍT FULL KHÔNG KHOẢNG TRỐNG -->
-<div class="relative overflow-hidden bg-[#0D3322] border-y border-[#F3C68F]/30 z-40 shadow-md">
-    <!-- Ô nhãn huelocal news cố định ở góc trái -->
-    <div class="absolute left-0 top-0 bottom-0 z-30 bg-[#0D3322]/95 backdrop-blur px-4 flex items-center gap-2 border-r border-[#F3C68F]/30 shadow-2xl">
-        <span class="text-xs font-black text-cream tracking-wider">huelocal <span class="text-[#F3C68F]">news</span></span>
-    </div>
-    
-    <!-- Dải ảnh chạy liên tục, sát khít nhau, không khoảng cách trống (space-x-0) -->
-    <div class="animate-marquee items-center pl-32">
-        <!-- Nhóm ảnh 1 -->
-        <div class="flex items-center shrink-0">
-            <img src="colau.jpg" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="khaidinh.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="nonla.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="minhmang.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="anhemlocal.jpg" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="hoagiay.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+    <!-- THẺ CSS HIỆU ỨNG CHẠY NGANG (MARQUEE KHÍT FULL MÀN HÌNH) -->
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 20s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <!-- GIAO DIỆN DẢI ẢNH CHẠY SÁT KHÍT FULL KHÔNG KHOẢNG TRỐNG -->
+    <div class="relative overflow-hidden bg-[#0D3322] border-y border-[#F3C68F]/30 z-40 shadow-md">
+        <div class="absolute left-0 top-0 bottom-0 z-30 bg-[#0D3322]/95 backdrop-blur px-4 flex items-center gap-2 border-r border-[#F3C68F]/30 shadow-2xl">
+            <span class="text-xs font-black text-cream tracking-wider">huelocal <span class="text-[#F3C68F]">news</span></span>
         </div>
-        <!-- Nhóm ảnh 2 (Lặp lại để chạy vòng lặp vô tận mượt mà) -->
-        <div class="flex items-center shrink-0">
-            <img src="colau.jpg" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="khaidinh.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="nonla.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="minhmang.jfif" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="anhemlocal.jpg" class="w-40 h-16 object-cover border-r border-black/20">
-            <img src="hoagiay.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+        
+        <div class="animate-marquee items-center pl-32">
+            <div class="flex items-center shrink-0">
+                <img src="colau.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="khaidinh.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="nonla.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="minhmang.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="anhemlocal.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="hoagiay.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+            </div>
+            <div class="flex items-center shrink-0">
+                <img src="colau.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="khaidinh.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="nonla.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="minhmang.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="anhemlocal.jpg" class="w-40 h-16 object-cover border-r border-black/20">
+                <img src="hoagiay.jfif" class="w-40 h-16 object-cover border-r border-black/20">
+            </div>
         </div>
     </div>
-</div>
+
     <!-- Hero Section (Đã thu hẹp khoảng cách cho gọn) -->
     <section id="home" class="hero relative text-[#0D3322] py-12 px-4 overflow-hidden z-10" style="padding-top: 40px;">
         <div class="container mx-auto relative z-10 max-w-3xl text-center space-y-6 my-4">
@@ -185,7 +183,6 @@
     <!-- Giới thiệu chung về Huế & HueLocal -->
     <section id="about" class="py-16 px-4 bg-white/60 backdrop-blur-md relative z-10 border-b border-[#0D3322]/10">
         <div class="container mx-auto max-w-4xl space-y-12">
-            
             <div class="bg-cream/90 rounded-3xl p-8 shadow-lg border border-[#0D3322]/15 space-y-4">
                 <div id="about-hue-badge" class="inline-block bg-[#0D3322]/10 text-[#0D3322] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                     Về Cố Đô Huế
@@ -228,7 +225,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -281,7 +277,7 @@
                     <button onclick="filterExplore('all')" id="filter-all" class="explore-btn px-5 py-2 rounded-full bg-cream text-[#0D3322] text-xs font-bold transition shadow">Tất cả</button>
                     <button onclick="filterExplore('heritage')" id="filter-heritage" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Di tích</button>
                     <button onclick="filterExplore('craft')" id="filter-craft" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Làng nghề</button>
-                    <button onclick="filterExplore('cafe')" id="filter-cafe" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Cà phê</button>
+                    <button onclick="filterExplore('experience')" id="filter-experience" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Trải nghiệm</button>
                     <button onclick="filterExplore('hidden')" id="filter-hidden" class="explore-btn px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold transition text-white">Hidden Gems</button>
                 </div>
             </div>
@@ -335,7 +331,7 @@
                     <p id="place-6-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Ngắm hoàng hôn thơ mộng bên sông Hương, nơi thời gian như ngừng trôi...</p>
                 </div>
 
-                <!-- BỔ SUNG: Chùa Thiên Mụ -->
+                <!-- 7. Chùa Thiên Mụ -->
                 <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Chùa Thiên Mụ', 'Ngôi cổ tự linh thiêng bên dòng sông Hương thơ mộng, biểu tượng cổ kính gắn liền với văn hóa tâm linh xứ Huế.', 'Đồi Hà Khê, phường Hương Long, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('thienmu.jfif');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
@@ -343,7 +339,7 @@
                     <p id="place-7-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Biểu tượng tâm linh lâu đời với Tháp Phước Duyên uy nghiêm soi bóng xuống dòng sông Hương...</p>
                 </div>
 
-                <!-- BỔ SUNG: Lăng Minh Mạng -->
+                <!-- 8. Lăng Minh Mạng -->
                 <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Lăng Minh Mạng (Hiếu Lăng)', 'Công trình lăng tẩm uy nghi, hài hòa tuyệt mỹ giữa kiến trúc cung đình thâm nghiêm và thiên nhiên sơn thủy hữu tình.', 'Xã Hương Thọ, thành phố Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('minhmang.jfif');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
@@ -351,7 +347,7 @@
                     <p id="place-8-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Quần thể kiến trúc hoàng gia mang đậm triết lý Nho giáo, bao bọc bởi hồ nước và rừng thông tĩnh lặng...</p>
                 </div>
 
-                <!-- BỔ SUNG: Cung An Định -->
+                <!-- 9. Cung An Định -->
                 <div class="explore-card heritage bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cung An Định', 'Dinh thự hoàng gia mang phong cách kiến trúc châu Âu kết hợp truyền thống Á Đông đầy lãng mạn và cổ kính.', '179 Phan Đình Phùng, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('andinh.jfif');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Heritage</span>
@@ -359,7 +355,7 @@
                     <p id="place-9-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Dinh thự tuyệt đẹp của vua Khải Định và Bảo Đại với những đường nét kiến trúc Tây phương tinh tế...</p>
                 </div>
 
-                <!-- BỔ SUNG: Làng hoa giấy Thanh Tiên -->
+                <!-- 10. Làng hoa giấy Thanh Tiên -->
                 <div class="explore-card craft bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Làng hoa giấy Thanh Tiên', 'Làng nghề làm hoa giấy truyền thống hơn 300 năm tuổi, nổi tiếng với những cành hoa rực rỡ sắc màu phục vụ đời sống tâm linh.', 'Làng Thanh Tiên, xã Phú Mậu, huyện Phú Vang, Thừa Thiên Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('hoagiay.jfif');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Traditional Craft</span>
@@ -367,15 +363,23 @@
                     <p id="place-10-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Nơi lưu giữ nghệ thuật làm hoa thủ công truyền thống bên dòng sông Truồi và phá Tam Giang...</p>
                 </div>
 
-                <!-- BỔ SUNG: Cổ Lầu -->
-                <div class="explore-card cafe bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cổ Lầu Cafe', 'Không gian cà phê mang đậm dấu ấn hoài cổ, nơi thưởng thức hương vị trà và cà phê đậm chất Huế xưa.', 'Khu vực nội thành TP. Huế')">
+                <!-- 11. Cổ Lầu Cafe -->
+                <div class="explore-card experience bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Cổ Lầu Cafe', 'Không gian cà phê mang đậm dấu ấn hoài cổ, nơi thưởng thức hương vị trà và cà phê đậm chất Huế xưa.', 'Khu vực nội thành TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('colau.jpg');"></div>
-                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Cafe</span>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Experiential Activities</span>
                     <h3 id="place-11-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Cổ Lầu</h3>
                     <p id="place-11-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Điểm dừng chân thư giãn tuyệt vời với kiến trúc cổ kính và không gian yên bình đậm chất Cố đô...</p>
                 </div>
 
-                <!-- BỔ SUNG: Hồ Thủy Tiên -->
+                <!-- 12. Tiệm Áo Dài Cổ Lầu (Thêm mới) -->
+                <div class="explore-card experience bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Tiệm Áo Dài Cổ Lầu', 'Không gian cho thuê và trải nghiệm áo dài truyền thống, lưu giữ những khung hình hoài niệm đậm chất Cố đô.', 'TP. Huế')">
+                    <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('aodaideptrai.jpg');"></div>
+                    <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Experiential Activities</span>
+                    <h3 id="place-13-title" class="text-xl font-bold mt-1 text-white group-hover:text-[#F3C68F] transition">Tiệm Áo Dài Cổ Lầu</h3>
+                    <p id="place-13-desc" class="text-xs text-cream/90 mt-2 leading-relaxed">Trải nghiệm mặc trang phục áo dài truyền thống và check-in không gian hoài cổ giữa lòng Cố đô...</p>
+                </div>
+
+                <!-- 13. Hồ Thủy Tiên -->
                 <div class="explore-card hidden bg-white/10 border border-white/20 rounded-3xl p-6 hover:border-[#F3C68F] transition cursor-pointer group" onclick="openPlaceDetail('Hồ Thủy Tiên', 'Công viên nước bỏ hoang đầy kỳ bí và mê hoặc, điểm check-in nổi tiếng cho những ai yêu thích khám phá vẻ đẹp hoang sơ.', 'Đồi Thiên An, xã Thủy Bằng, TP. Huế')">
                     <div class="h-48 rounded-2xl bg-cover bg-center mb-4 group-hover:scale-[1.02] transition-transform duration-300" style="background-image: url('thuytien.jfif');"></div>
                     <span class="text-xs text-[#F3C68F] font-bold uppercase tracking-wider">Hidden Gem</span>
@@ -410,12 +414,12 @@
                     </p>
                 </div>
                 
-<div class="rounded-2xl overflow-hidden shadow-xl border border-[#0D3322]/20 bg-black relative">
-    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[350px]">
-        <source src="https://www.image2url.com/r2/default/videos/1794563451067-19ebc53d-ce9a-43b3-81ad-b536c4ede58b.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ thẻ video.
-    </video>
-</div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-[#0D3322]/20 bg-black relative">
+                    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[350px]">
+                        <source src="https://www.image2url.com/r2/default/videos/1794563451067-19ebc53d-ce9a-43b3-81ad-b536c4ede58b.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ thẻ video.
+                    </video>
+                </div>
             </div>
         </div>
     </section>
@@ -429,7 +433,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <!-- Story 1 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
                 <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('xemay.jpg');"></div>
                 <div class="p-6 space-y-2">
@@ -439,7 +442,6 @@
                 </div>
             </div>
 
-            <!-- Story 2 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
                 <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('daden.jpg');"></div>
                 <div class="p-6 space-y-2">
@@ -449,7 +451,6 @@
                 </div>
             </div>
 
-            <!-- Story 3 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
                 <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('hunghocuoi.jpg');"></div>
                 <div class="p-6 space-y-2">
@@ -459,7 +460,6 @@
                 </div>
             </div>
 
-            <!-- Story 4 -->
             <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#0D3322]/15 flex flex-col group">
                 <div class="h-72 bg-cover bg-center group-hover:scale-105 transition duration-500" style="background-image: url('aodaideptrai.jpg');"></div>
                 <div class="p-6 space-y-2">
@@ -555,12 +555,13 @@
             </div>
         </div>
     </section>
-    <!-- Ảnh căn giữa sau phần giới thiệu thành viên (Chuẩn responsive cho cả PC & Điện thoại) -->
-<section class="py-12 px-4 flex justify-center items-center relative z-10">
-    <div class="w-full max-w-3xl flex justify-center">
-        <img src="anhemlocal.jpg" alt="HueLocal Centered Image" class="w-full h-auto object-cover rounded-3xl shadow-2xl border border-[#0D3322]/20">
-    </div>
-</section>
+
+    <!-- Ảnh căn giữa sau phần giới thiệu thành viên -->
+    <section class="py-12 px-4 flex justify-center items-center relative z-10">
+        <div class="w-full max-w-3xl flex justify-center">
+            <img src="anhemlocal.jpg" alt="HueLocal Centered Image" class="w-full h-auto object-cover rounded-3xl shadow-2xl border border-[#0D3322]/20">
+        </div>
+    </section>
 
     <!-- Contact & Detailed Booking Form Section -->
     <section id="contact" class="py-20 px-4 container mx-auto max-w-3xl relative z-10">
@@ -606,12 +607,12 @@
 
     <!-- Video cuối trang -->
     <section class="py-12 px-4 container mx-auto max-w-4xl relative z-10 text-center">
-<div class="rounded-3xl overflow-hidden shadow-2xl border border-[#0D3322]/15 bg-black">
-    <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[500px]">
-        <source src="https://www.image2url.com/r2/default/videos/1794484476290-624c01e7-5baf-4bac-9b2c-afe06e4761e5.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ thẻ video.
-    </video>
-</div>
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-[#0D3322]/15 bg-black">
+            <video autoplay muted loop playsinline class="w-full h-auto object-cover max-h-[500px]">
+                <source src="https://www.image2url.com/r2/default/videos/1794484476290-624c01e7-5baf-4bac-9b2c-afe06e4761e5.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -789,7 +790,7 @@
                 filterAll: "Tất cả",
                 filterHeritage: "Di tích",
                 filterCraft: "Làng nghề",
-                filterCafe: "Cà phê",
+                filterExperience: "Trải nghiệm",
                 filterHidden: "Hidden Gems",
                 place1Title: "Đại Nội Huế",
                 place1Desc: "Trung tâm quyền lực triều Nguyễn xưa với hệ thống cung điện, đền đài tráng lệ...",
@@ -813,6 +814,8 @@
                 place10Desc: "Nơi lưu giữ nghệ thuật làm hoa thủ công truyền thống bên dòng sông Truồi và phá Tam Giang...",
                 place11Title: "Cổ Lầu",
                 place11Desc: "Điểm dừng chân thư giãn tuyệt vời với kiến trúc cổ kính và không gian yên bình đậm chất Cố đô...",
+                place13Title: "Tiệm Áo Dài Cổ Lầu",
+                place13Desc: "Trải nghiệm mặc trang phục áo dài truyền thống và check-in không gian hoài cổ giữa lòng Cố đô...",
                 place12Title: "Hồ Thủy Tiên",
                 place12Desc: "Khu công viên nước ma mị nằm ẩn mình giữa rừng thông Thiên An, thu hút đông đảo du khách tò mò...",
                 aiBadge: "Góc nhìn công nghệ",
@@ -911,7 +914,7 @@
                 filterAll: "All",
                 filterHeritage: "Heritage",
                 filterCraft: "Craft Villages",
-                filterCafe: "Cafe",
+                filterExperience: "Experiential activities",
                 filterHidden: "Hidden Gems",
                 place1Title: "Hue Imperial Citadel",
                 place1Desc: "The power center of the Nguyen Dynasty featuring magnificent palaces...",
@@ -934,7 +937,9 @@
                 place10Title: "Thanh Tien Paper Flower Village",
                 place10Desc: "A traditional paper flower crafting village over 300 years old, famous for its vibrant colored blossoms...",
                 place11Title: "Co Lau Cafe",
-                place11Desc: "A nostalgic cafe space offering traditional tea and coffee flavors with an authentic old-Hue vibe...",
+                place11Desc: "A wonderful relaxing stop with ancient architecture and peaceful old-capital ambiance...",
+                place13Title: "Co Lau Ao Dai Shop",
+                place13Desc: "A traditional ao dai rental space capturing nostalgic, authentic ancient capital portraits...",
                 place12Title: "Thuy Tien Lake",
                 place12Desc: "An eerie abandoned water park hidden within the Thien An pine hills, a famous check-in spot for explorers...",
                 aiBadge: "Technology Perspective",
@@ -1041,7 +1046,7 @@
             if(document.getElementById('filter-all')) document.getElementById('filter-all').innerText = t.filterAll;
             if(document.getElementById('filter-heritage')) document.getElementById('filter-heritage').innerText = t.filterHeritage;
             if(document.getElementById('filter-craft')) document.getElementById('filter-craft').innerText = t.filterCraft;
-            if(document.getElementById('filter-cafe')) document.getElementById('filter-cafe').innerText = t.filterCafe;
+            if(document.getElementById('filter-experience')) document.getElementById('filter-experience').innerText = t.filterExperience;
             if(document.getElementById('filter-hidden')) document.getElementById('filter-hidden').innerText = t.filterHidden;
 
             if(document.getElementById('place-1-title')) document.getElementById('place-1-title').innerText = t.place1Title;
@@ -1066,6 +1071,8 @@
             if(document.getElementById('place-10-desc')) document.getElementById('place-10-desc').innerText = t.place10Desc;
             if(document.getElementById('place-11-title')) document.getElementById('place-11-title').innerText = t.place11Title;
             if(document.getElementById('place-11-desc')) document.getElementById('place-11-desc').innerText = t.place11Desc;
+            if(document.getElementById('place-13-title')) document.getElementById('place-13-title').innerText = t.place13Title;
+            if(document.getElementById('place-13-desc')) document.getElementById('place-13-desc').innerText = t.place13Desc;
             if(document.getElementById('place-12-title')) document.getElementById('place-12-title').innerText = t.place12Title;
             if(document.getElementById('place-12-desc')) document.getElementById('place-12-desc').innerText = t.place12Desc;
 
